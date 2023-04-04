@@ -1,0 +1,177 @@
+<!-- Creating by LION LIM | https://lionlim1111.github.io/lsb -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="logo slb.jpg" type="image/x-icon">
+
+    <!--======= CSS =======-->
+    <link rel="stylesheet" href="style.css">
+
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+    <title>Register</title>
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="logo.png">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">SMK MUNSHI<br>IBRAHIM LABIS</span>
+                </div>
+            </div>
+
+            <i class='bx bx-menu toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="index.html">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="about-us.html">
+                            <i class='bx bx-user icon' ></i>
+                            <span class="text nav-text">About Us</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="info.html">
+                            <i class='bx bx-info-circle icon' ></i>
+                            <span class="text nav-text">Information</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="activity.html">
+                            <i class='bx bx-info-circle icon' ></i>
+                            <span class="text nav-text">Activity</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="noti.html">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Notifications</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="register.html">
+                            <i class='bx bx-registered icon' ></i>
+                            <span class="text nav-text">Register Form</span>
+                        </a>
+                    </li>
+
+                    
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+                
+            </div>
+        </div>
+
+    </nav>
+
+    <section class="home">
+       <div class="text">REGISTER FORM</div>
+
+       <form action="register.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="birthdate">Indentity Card Number: </label>
+        <input type="text" id="birthdate" name="birthdate" required>
+
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate" name="birthdate" required>
+
+        
+      
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      
+        <label for="country">Class:</label>
+        <select id="country" name="country" required>
+          <option value="">Select Class</option>
+          <option value="1KAA">1 KAA</option>
+          <option value="1A">1 A</option>
+          <option value="1B">1 B</option>
+          <option value="1C">1 C</option>
+          <option value="1D">1 D</option>
+          <option value="2KAA">2 KAA</option>
+          <option value="2A">2 A</option>
+          <option value="2B">2 B</option>
+          <option value="2C">2 C</option>
+          <option value="2D">2 D</option>
+          <option value="3KAA">3 KAA</option>
+          <option value="3A">3 A</option>
+          <option value="3B">3 B</option>
+          <option value="3C">3 C</option>
+          <option value="3D">3 D</option>
+          <option value="4KAA">4 KAA</option>
+          <option value="4A">4 A</option>
+          <option value="4B">4 B</option>
+          <option value="4C">4 C</option>
+          <option value="4D">4 D</option>
+          <option value="4PVMA">4 PVMA</option>
+          <option value="5KAA">5 KAA</option>
+          <option value="5A">5 A</option>
+          <option value="5B">5 B</option>
+          <option value="5C">5 C</option>
+          <option value="5D">5 D</option>
+          <option value="5E">5 E</option>
+          <option value="5PVMA">5 PVMA</option>
+        </select>
+
+        <label for="birthdate">Date:</label>
+        <input type="date" id="birthdate" name="birthdate" required>
+        <br>
+        <button type="submit">Register</button>
+      </form>
+      
+
+    </section>
+    <script src="script.js"></script>
+    
+</body>
+</html>
