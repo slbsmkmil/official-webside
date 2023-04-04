@@ -110,7 +110,8 @@
     <section class="home">
         <div class="text">REGISTER FORM</div>
 
-        <form method="POST">
+        <form action="https://formspree.io/f/xbjezbgp"
+        method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -176,31 +177,5 @@
     <script src="script.js"></script>
 
 </body>
-<script src="https://smtpjs.com/v3/smtp.js">
-</script>
-<script>
-    var btn = document.getElementById('btn');
-    btn.addEventListener('click', function (e) {
-        e.preventDefault()
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-        var identity = document.getElementById('identity').value;
-        var birthdate = document.getElementById('birthdate').value;
-        var gender = document.getElementById('gender').value;
-        var level = document.getElementById('level').value;
-        var date = document.getElementById('date').value;
-        var body = 'Name: ' + namd + '<br> Email: ' + email + '<br> Identity Card Number: ' + identity + '<br> Birthdate: ' + birthdate + '<br> Gender: ' + gender + '<br> Form: ' + level + '<br> Registration Date: ' + date;
-        Email.send({
-            Host: "smtp.gmail.com",
-            Username: "slbsmkmil@gmail.com",
-            Password: "jlmholtrkzolcayf",
-            To: 'slbsmkmil@gmail.com',
-            From: email,
-            Subject: "New Message From" + name,
-            Body: body
-        }).then(
-            message => alert('You Sucess To Register')
-        ); 
-</script>
 
 </html>
