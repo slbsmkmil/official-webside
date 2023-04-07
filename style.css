@@ -365,6 +365,7 @@ form {
     align-items: center;
     text-align: center;
     justify-content: center;
+    background-color: white;
 }
 .testimonial{
     position: relative;
