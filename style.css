@@ -365,20 +365,20 @@ form {
     align-items: center;
     text-align: center;
     justify-content: center;
-    background-color: #e3f2fd;
 }
 .testimonial{
     position: relative;
     max-width: 900px;
+    height: 400px;
     width: 100%;
     padding: 50px 0;
     row-gap: 30px;
     overflow: hidden;
 }
 .testimonial .image{
-    height: 180px;
-    width: 180px;
-    object-fit: cover;
+    height: 210px;
+    width: 200px;
+    object-fit: fill;
     border-radius: 50%;
 }
 .testimonial .slide{
@@ -386,16 +386,19 @@ form {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    align-self: center;
+    align-tracks: center;
+    text-align: center;
 }
 .slide p{
     text-align: center;
     padding: 0 100px;
     font-size: 14px;
     font-weight: 400;
-    color: #333;
+    color: royalblue;
 }
 .btn{
-    border: 1px solid #3498db;
+    border: 1px solid #3e8e41;
     background: none;
     padding: 10px 20px;
     font-size: 20px;
@@ -406,20 +409,33 @@ form {
     overflow: hidden;
 }
 .btn4{
-    color: #fff;
+    color: #3e8e41;
+    background-color: transparent;
 }
 .btn4:hover{
-    color: #3498db;
+    border: 1px solid #3498db;
+    background-color: #3498db;
+    color: white;
+    transition: 0.6s;
 }
 .btn::before{
-    content:"";
+    content: "";
     position: absolute;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 0%;
     background: #3498db; 
+    z-index: -1;
+    transition: 0.8s;
 }
-
+.btn4::before{
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+    height: 180%;
+}
+.btn4:hover::before{
+    height: 0%;
+}
 .team .member {
     text-align: center;
     margin-bottom: 20px;
@@ -1899,4 +1915,8 @@ form {
     .gy-xxl-5 {
         --bs-gutter-y: 3rem
     }
+}
+
+.text-2{
+    color: red;
 }
