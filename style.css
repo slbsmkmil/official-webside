@@ -370,7 +370,7 @@ form {
 .testimonial{
     position: relative;
     max-width: 900px;
-    height: 400px;
+    height: 650px;
     width: 100%;
     padding: 50px 0;
     row-gap: 30px;
@@ -1920,4 +1920,10 @@ form {
 
 .text-2{
     color: red;
+}
+
+.image-1{
+    height: 270px;
+    width: 500px;
+    object-fit: fill;
 }
