@@ -399,7 +399,7 @@ form {
     color: royalblue;
 }
 .btn{
-    border: 1px solid #3e8e41;
+    border: 1px solid #3498db;
     background: none;
     padding: 10px 20px;
     font-size: 20px;
@@ -410,12 +410,12 @@ form {
     overflow: hidden;
 }
 .btn4{
-    color: #3e8e41;
-    background-color: transparent;
+    color: white;
+    background-color: #3498db;
 }
 .btn4:hover{
-    border: 1px solid #3498db;
-    background-color: #3498db;
+    border: 1px solid red;
+    background-color: red;
     color: white;
     transition: 0.6s;
 }
