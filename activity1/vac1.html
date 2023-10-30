@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .video-container {
+            position: relative;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+
+        .custom-controls {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        button.play-button {
+            background: #3498db;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        select {
+            padding: 5px;
+        }
+
+        .progress-container {
+            flex: 1;
+            position: relative;
+            height: 20px;
+            background: #333;
+            cursor: pointer;
+        }
+
+        .progress-bar {
+            position: absolute;
+            height: 100%;
+            width: 0;
+            background: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video id="myVideo">
+            <source src="ac1.mp4" type="video/mp4">
+        </video>
+        <div class="custom-controls">
+            <div class="control-group">
+                <button id="play-pause" class="play-button">Play</button>
+                <span id="current-time">0:00</span>
+            </div>
+            <div class="control-group">
+                <label for="speed-control">Speed:</label>
+                <select id="speed-control">
+                    <option value="1">1x</option>
+                    <option value="1.5">1.5x</option>
+                    <option value="2">2x</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="resolution-control">Resolution:</label>
+                <select id="resolution-control">
+                    <option value="360p">360p</option>
+                    <option value="720p">720p</option>
+                    <option value="1080p">1080p</option>
+                </select>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var video = document.getElementById("myVideo");
+        var playButton = document.getElementById("play-pause");
+        var currentTimeDisplay = document.getElementById("current-time");
+        var speedControl = document.getElementById("speed-control");
+        var resolutionControl = document.getElementById("resolution-control");
+        var progressContainer = document.querySelector(".progress-container");
+        var progressBar = document.querySelector(".progress-bar");
+        var isDragging = false;
+
+        playButton.addEventListener("click", function() {
+            if (video.paused) {
+                video.play();
+                playButton.textContent = "Pause";
+            } else {
+                video.pause();
+                playButton.textContent = "Play";
+            }
+        });
+
+        video.addEventListener("timeupdate", function() {
+            var currentTime = video.currentTime;
+            var minutes = Math.floor(currentTime / 60);
+            var seconds = Math.floor(currentTime % 60);
+            currentTimeDisplay.textContent = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+            if (!isDragging) {
+                var duration = video.duration;
+                var progress = (currentTime / duration) * 100;
+                progressBar.style.width = progress + "%";
+            }
+        });
+
+        progressContainer.addEventListener("mousedown", function(e) {
+            isDragging = true;
+            updateProgressBar(e);
+        });
+
+        window.addEventListener("mousemove", function(e) {
+            if (isDragging) {
+                updateProgressBar(e);
+            }
+        });
+
+        window.addEventListener("mouseup", function() {
+            isDragging = false;
+        });
+
+        speedControl.addEventListener("change", function() {
+            video.playbackRate = speedControl.value;
+        });
+
+        resolutionControl.addEventListener("change", function() {
+            var selectedResolution = resolutionControl.value;
+            video.src = "video_" + selectedResolution + ".mp4"; // Change the video source based on resolution
+            video.load(); // Reload the video
+        });
+
+        function updateProgressBar(e) {
+            var rect = progressContainer.getBoundingClientRect();
+            var offsetX = e.clientX - rect.left;
+            var width = rect.width;
+            var progress = (offsetX / width) * 100;
+            progressBar.style.width = progress + "%";
+            var duration = video.duration;
+            video.currentTime = (progress / 100) * duration;
+        }
+    </script>
+</body>
+</html>
