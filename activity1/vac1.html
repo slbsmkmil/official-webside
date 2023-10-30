@@ -31,8 +31,14 @@
             background: #3498db;
             color: #fff;
             border: none;
-            padding: 5px 10px;
+            border-radius: 5px;
+            padding: 10px 20px;
             cursor: pointer;
+            font-size: 16px;
+        }
+
+        button.play-button:hover {
+            background: #2374b4;
         }
 
         select {
@@ -57,9 +63,7 @@
 </head>
 <body>
     <div class="video-container">
-        <video id="myVideo">
-            <source src="https://drive.google.com/file/d/1T_kHt1Wf0n4hDcyFR1Km0CnJ95IAm029/view?usp=sharing">
-        </video>
+        <iframe id="myVideo" src="https://drive.google.com/file/d/1T_kHt1Wf0n4hDcyFR1Km0CnJ95IAm029/view?usp=drive_link"></iframe>
         <div class="custom-controls">
             <div class="control-group">
                 <button id="play-pause" class="play-button">Play</button>
@@ -99,22 +103,22 @@
 
         playButton.addEventListener("click", function() {
             if (video.paused) {
-                video.play();
+                video.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
                 playButton.textContent = "Pause";
             } else {
-                video.pause();
+                video.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
                 playButton.textContent = "Play";
             }
         });
 
         video.addEventListener("timeupdate", function() {
-            var currentTime = video.currentTime;
+            var currentTime = video.contentWindow.getDuration() * video.contentWindow.getCurrentTime();
             var minutes = Math.floor(currentTime / 60);
-            var seconds = Math.floor(currentTime % 60);
+            var seconds = Math floor(currentTime % 60);
             currentTimeDisplay.textContent = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 
             if (!isDragging) {
-                var duration = video.duration;
+                var duration = video.contentWindow.getDuration();
                 var progress = (currentTime / duration) * 100;
                 progressBar.style.width = progress + "%";
             }
@@ -136,13 +140,13 @@
         });
 
         speedControl.addEventListener("change", function() {
-            video.playbackRate = speedControl.value;
+            video.contentWindow.postMessage('{"event":"command","func":"setPlaybackRate","args":[' + speedControl.value + ']}', '*');
         });
 
         resolutionControl.addEventListener("change", function() {
             var selectedResolution = resolutionControl.value;
-            video.src = "video_" + selectedResolution + ".mp4"; // Change the video source based on resolution
-            video.load(); // Reload the video
+            // Update the video source based on resolution (if available)
+            // You might need to update the video source URL accordingly
         });
 
         function updateProgressBar(e) {
@@ -151,8 +155,8 @@
             var width = rect.width;
             var progress = (offsetX / width) * 100;
             progressBar.style.width = progress + "%";
-            var duration = video.duration;
-            video.currentTime = (progress / 100) * duration;
+            var duration = video.contentWindow.getDuration();
+            video.contentWindow.seekTo((progress / 100) * duration, true);
         }
     </script>
 </body>
