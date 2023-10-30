@@ -368,13 +368,13 @@ form {
     background-color: white;
 }
 .testimonial{
-    position: relative;
-    max-width: 900px;
+    position: center;
+    max-width: 1500px;
     height: 650px;
-    width: 100%;
+    width: 1130px;
     padding: 50px 0;
     row-gap: 30px;
-    overflow: hidden;
+    overflow: scroll;
 }
 .testimonial .image{
     height: 210px;
@@ -1926,4 +1926,17 @@ form {
     height: 270px;
     width: 500px;
     object-fit: fill;
+}
+
+.slide1 {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.slide1 p {
+    margin: 0; 
+    line-height: 1.5;
 }
