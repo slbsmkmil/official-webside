@@ -186,7 +186,7 @@ margin: 0 auto;
                   <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
                   <div class="mc-field-group"><label for="mce-FNAME">First Name <span class="asterisk">*</span></label><input type="text" name="FNAME"  id="mce-FNAME" required="" value=""></div>
                   <div class="mc-field-group"><label for="mce-LNAME">Last Name <span class="asterisk">*</span></label><input type="text" name="LNAME"  id="mce-LNAME" required="" value=""></div>
-                  <div class="mc-field-group"><label for="mce-PHONE">Phone Number <span class="asterisk">*</span></label><input type="text" name="PHONE" class="REQ_CSS" id="mce-PHONE" value=""></div>
+                  <div class="mc-field-group"><label for="mce-PHONE">Phone Number <span class="asterisk">*</span></label><input type="text" name="PHONE" class="REQ_CSS" id="mce-PHONE" value="" required></div>
               <div id="mce-responses" class="clear foot">
                   <div class="response" id="mce-error-response" style="display: none;"></div>
                   <div class="response" id="mce-success-response" style="display: none;"></div>
@@ -209,6 +209,58 @@ margin: 0 auto;
             </div>
         </section>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var form = document.getElementById('mc-embedded-subscribe-form');
+      
+          form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+      
+            // Your additional validation logic goes here
+            // For example, you can check if the email is valid
+            var emailInput = form.querySelector('#mce-EMAIL');
+            if (!isValidEmail(emailInput.value)) {
+              alert('slbsmkmil@gmail.com');
+              return false; // Prevent form submission if validation fails
+            }
+      
+            // If the validation passes, you can proceed with the form submission
+            subscribeToMailchimp(form);
+          });
+        });
+      
+        function subscribeToMailchimp(form) {
+          // You can use the Mailchimp API to subscribe the user
+          // This is just a placeholder and you should replace it with your actual API endpoint
+          var apiUrl = 'd7fc41b3cc501db6c07a8a6968330a14-us10';
+          var formData = new FormData(form);
+      
+          fetch(apiUrl, {
+            method: 'POST',
+            body: formData,
+          })
+          .then(response => {
+            if (response.ok) {
+              // Form submitted successfully, redirect to thank you page
+              window.location.href = 'thank-you.html';
+            } else {
+              alert('Error submitting form. Please try again.');
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again later.');
+          });
+        }
+      
+        function isValidEmail(email) {
+          // Regular expression for a valid email address
+          var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      
+          return emailRegex.test(email);
+        }
+      </script>
+      
     <script src="script.js"></script>
 </body>
 </html>
