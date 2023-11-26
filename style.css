@@ -412,6 +412,7 @@ form {
 .btn4{
     color: white;
     background-color: #3498db;
+    border-radius: 10px;
 }
 .btn4:hover{
     border: 1px solid red;
