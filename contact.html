@@ -12,6 +12,7 @@
 
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <title>Contact Us</title>
 </head>
@@ -106,6 +107,76 @@
     <section class="home">
         <div class="text">CONTACT US</div>
 
+        <hr style="width: 1000px; position: relative; left: 150px;">
+
+            <div class="section-header">
+                <div class="container1">
+                </div>
+              </div>
+
+              <div id="verticle-line"></div>
+              <div id="whatsapp">
+                <a href="https://wa.me/message/XX5OUGGRII3KN1" target="_blank" id="tooglr1" class="wtsapp">
+                    <i class='bx bxl-whatsapp bx-tada' ></i>
+                </a>
+              </div>
+
+              <div id="telegram">
+                <a href="https://t.me/+601155522281" target="_blank" id="tooglr1" class="tlg">
+                  <i class='bx bxl-telegram bx-tada' ></i>
+                </a>
+              </div>
+              
+              <div class="container1">
+                <div class="row">
+
+                    
+                  
+                  <div class="contact-info">
+                    <div class="contact-info-item">
+                      <div class="contact-info-icon">
+                        <i class="bx bxs-home icon"></i>
+                      </div>
+                      
+                      <div class="contact-info-content">
+                        <h4>Address</h4>
+                        <p>JKR 484,<br/> JALAN SEKOLAH,<br/>85300 LABIS, JOHOR.</p>
+                      </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                          <i class="bx bxs-envelope icon"></i>
+                        </div>
+
+                        
+                        
+                        <div class="contact-info-content">
+                          <h4>Email</h4>
+                         <p>slbsmkmil@gmail.com</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                      <div class="contact-info-icon">
+                        <i class="bx bxs-phone icon"></i>
+                      </div>
+                      
+                      <div class="contact-info-content">
+                        <h4>Phone</h4>
+                        <p>+60 11-5552 2281</p>
+                      </div>
+
+                      
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              
+
         <form action="https://formspree.io/f/xlekoerl"
         method="POST">
             <label for="text">Label with <label class="text-2">*</label> is required to fill</label><br>
@@ -167,7 +238,174 @@
      
     </section>
 
+    <style>
+        body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
 
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+section {
+  position: fixed;
+  z-index: 3;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.container1 {
+  max-width: 1080px;
+  max-height: 1800px;
+  margin-left: 300px;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.section-header {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.section-header h2 {
+  color: #FFF;
+  font-weight: bold;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.section-header p {
+  color: #FFF;
+}
+
+.row  {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-info {
+  width: 50%;
+}
+
+.contact-info-item {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.contact-info-icon {
+  height: 70px;
+  width: 70px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.contact-info-icon i {
+  font-size: 30px;
+  line-height: 70px;
+}
+
+.contact-info-content {
+  margin-left: 20px;
+}
+
+.contact-info-content h4 {
+  color: #1da9c0;
+  font-size: 1.4em;
+  margin-bottom: 5px;
+}
+
+.contact-info-content p {
+  color: black;
+  font-size: 1em;
+}
+
+#verticle-line{
+    width: 10px;
+    height: 310px;
+    background-color: silver;
+    border-left: 6px sliver solid;
+    left: 700px;
+    position: absolute;
+  }
+  
+#whatsapp .wtsapp{
+    position: absolute;
+    transform: all .5s ease;
+    background-color: #25d366;
+    display: block;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    border-radius: 50px;
+    border-right: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+    bottom: 270px;
+    left: 850px;
+    border: 0;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+}
+
+#telegram .tlg{
+    position: absolute;
+    transform: all .5s ease;
+    background-color: #229ED9;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    border-radius: 50px;
+    border-right: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+    bottom: 270px;
+    left: 920px;
+    border: 0;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+}
+
+
+
+
+@media (max-width: 991px) {
+  section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .row {
+    flex-direction: column;
+  }
+  
+  .contact-info {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+}
+
+    </style>
     
 
     <script src="script.js"></script>
