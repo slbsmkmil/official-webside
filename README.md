@@ -11,4 +11,8 @@ A brief description of what this project does and who it's for information of SL
 
 !!!If copy, administrator will follow the laws to solve the problem!!!
 
+!!!If you want the project, please contact me with the contact html in the website!!!
+
+Link: https://slbsmkmil.github.io/official-webside/contact.html
+
 !Thank you!
