@@ -106,7 +106,9 @@
 
     <section class="home">
         <div class="text">CONTACT US</div>
-
+        <a href="noti.html">
+          <hr style=" width: 90%; margin: 5px auto; border: none; border-top: 2px solid black;"><marquee class="flash1" behavior="scroll" direction="left" style="color: red; font-size: 25px;"><strong>!!! NEW NOTIFICATIONS AVAILABLE !!!  Click Here To Check Out The New Notification!</strong></marquee><hr style=" width: 90%; margin: 5px auto; border: none; border-top: 2px solid black;"><br>
+          </a>
         <hr style="width: 1000px; position: relative; left: 150px;">
 
             <div class="section-header">
@@ -196,6 +198,7 @@
             <label for="level">Class <label class="text-2">*</label></label>
             <select id="level" name="Level" required>
                 <option value="">Select Class</option>
+                <option value="1PA">1 PA</option>
                 <option value="1KAA">1 KAA</option>
                 <option value="1A">1 A</option>
                 <option value="1B">1 B</option>
@@ -230,7 +233,7 @@
             <input type="date" id="date" name="Date" required>
 
             <label for="message">Message <label class="text-2">*</label></label>
-			<textarea id="message" name="Message" rows="8" required></textarea>
+			      <textarea id="message" name="Message" rows="8" required style="resize: none;"></textarea>
 
             <br>
             <button type="submit" id="btn">Submit</button>
@@ -238,174 +241,174 @@
      
     </section>
 
-    <style>
-        body {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
+                <style>
+                    body {
+              min-height: 100vh;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-size: cover;
+              background-position: center;
+              position: relative;
+            }
 
-body::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0,0,0,0.8);
-}
+            body::after {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 100%;
+              width: 100%;
+              background-color: rgba(0,0,0,0.8);
+            }
 
-section {
-  position: fixed;
-  z-index: 3;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
+            section {
+              position: fixed;
+              z-index: 3;
+              padding-top: 50px;
+              padding-bottom: 50px;
+            }
 
-.container1 {
-  max-width: 1080px;
-  max-height: 1800px;
-  margin-left: 300px;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
+            .container1 {
+              max-width: 1080px;
+              max-height: 1800px;
+              margin-left: 300px;
+              margin-right: auto;
+              padding-left: 20px;
+              padding-right: 20px;
+            }
 
-.section-header {
-  margin-bottom: 50px;
-  text-align: center;
-}
+            .section-header {
+              margin-bottom: 50px;
+              text-align: center;
+            }
 
-.section-header h2 {
-  color: #FFF;
-  font-weight: bold;
-  font-size: 3em;
-  margin-bottom: 20px;
-}
+            .section-header h2 {
+              color: #FFF;
+              font-weight: bold;
+              font-size: 3em;
+              margin-bottom: 20px;
+            }
 
-.section-header p {
-  color: #FFF;
-}
+            .section-header p {
+              color: #FFF;
+            }
 
-.row  {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
+            .row  {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content: space-between;
+            }
 
-.contact-info {
-  width: 50%;
-}
+            .contact-info {
+              width: 50%;
+            }
 
-.contact-info-item {
-  display: flex;
-  margin-bottom: 30px;
-}
+            .contact-info-item {
+              display: flex;
+              margin-bottom: 30px;
+            }
 
-.contact-info-icon {
-  height: 70px;
-  width: 70px;
-  background-color: #fff;
-  text-align: center;
-  border-radius: 50%;
-}
+            .contact-info-icon {
+              height: 70px;
+              width: 70px;
+              background-color: #fff;
+              text-align: center;
+              border-radius: 50%;
+            }
 
-.contact-info-icon i {
-  font-size: 30px;
-  line-height: 70px;
-}
+            .contact-info-icon i {
+              font-size: 30px;
+              line-height: 70px;
+            }
 
-.contact-info-content {
-  margin-left: 20px;
-}
+            .contact-info-content {
+              margin-left: 20px;
+            }
 
-.contact-info-content h4 {
-  color: #1da9c0;
-  font-size: 1.4em;
-  margin-bottom: 5px;
-}
+            .contact-info-content h4 {
+              color: #1da9c0;
+              font-size: 1.4em;
+              margin-bottom: 5px;
+            }
 
-.contact-info-content p {
-  color: black;
-  font-size: 1em;
-}
+            .contact-info-content p {
+              color: black;
+              font-size: 1em;
+            }
 
-#verticle-line{
-    width: 10px;
-    height: 310px;
-    background-color: silver;
-    border-left: 6px sliver solid;
-    left: 700px;
-    position: absolute;
-  }
-  
-#whatsapp .wtsapp{
-    position: absolute;
-    transform: all .5s ease;
-    background-color: #25d366;
-    display: block;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
-    border-radius: 50px;
-    border-right: none;
-    color: #fff;
-    font-weight: 700;
-    font-size: 30px;
-    bottom: 300px;
-    left: 850px;
-    border: 0;
-    z-index: 9999;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-}
+            #verticle-line{
+                width: 10px;
+                height: 310px;
+                background-color: silver;
+                border-left: 6px sliver solid;
+                left: 700px;
+                position: absolute;
+              }
+              
+            #whatsapp .wtsapp{
+                position: absolute;
+                transform: all .5s ease;
+                background-color: #25d366;
+                display: block;
+                text-align: center;
+                box-shadow: 0 0 20px rgba(0,0,0,0.15);
+                border-radius: 50px;
+                border-right: none;
+                color: #fff;
+                font-weight: 700;
+                font-size: 30px;
+                bottom: 300px;
+                left: 850px;
+                border: 0;
+                z-index: 9999;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+            }
 
-#telegram .tlg{
-    position: absolute;
-    transform: all .5s ease;
-    background-color: #229ED9;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
-    border-radius: 50px;
-    border-right: none;
-    color: #fff;
-    font-weight: 700;
-    font-size: 30px;
-    bottom: 300px;
-    left: 920px;
-    border: 0;
-    z-index: 9999;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-}
-
-
+            #telegram .tlg{
+                position: absolute;
+                transform: all .5s ease;
+                background-color: #229ED9;
+                text-align: center;
+                box-shadow: 0 0 20px rgba(0,0,0,0.15);
+                border-radius: 50px;
+                border-right: none;
+                color: #fff;
+                font-weight: 700;
+                font-size: 30px;
+                bottom: 300px;
+                left: 920px;
+                border: 0;
+                z-index: 9999;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+            }
 
 
-@media (max-width: 991px) {
-  section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  
-  .row {
-    flex-direction: column;
-  }
-  
-  .contact-info {
-    margin-bottom: 40px;
-    width: 100%;
-  }
-}
 
-    </style>
+
+            @media (max-width: 991px) {
+              section {
+                padding-top: 50px;
+                padding-bottom: 50px;
+              }
+              
+              .row {
+                flex-direction: column;
+              }
+              
+              .contact-info {
+                margin-bottom: 40px;
+                width: 100%;
+              }
+            }
+
+                </style>
     
 
     <script src="script.js"></script>
