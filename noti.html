@@ -104,17 +104,144 @@
 
     <section class="home">
         <div class="text">NOTIFICATIONS</div>
+        <a href="noti.html">
+            <hr style=" width: 90%; margin: 5px auto; border: none; border-top: 2px solid black;"><marquee class="flash1" behavior="scroll" direction="left" style="color: red; font-size: 25px;"><strong>!!! NEW NOTIFICATIONS AVAILABLE !!!  Click Here To Check Out The New Notification!</strong></marquee><hr style=" width: 90%; margin: 5px auto; border: none; border-top: 2px solid black;"><br>
+            </a>
         <section class="container">
             <div class="testimonial">
                 <div class="testi-content">
-                    <div class="slide">
-                        <h1>NO NOTIFICATIONS AVAILABLE</h1>
-                        </a>
+                    <div class="slide5">
+                        <h1 class="flash" style="font-size: 25px;"><strong>!!! NEW NOTIFICATIONS AVAILABLE !!!</strong></h1>
+                        <div class="slide2" style="background-color: #FF1818;">
+                            <h2>School Registration Seccion 2024/2025<br>Form 2, 3, 4 and 5</h2>
+                            <p><br>Date : 9 March 2024</p>
+                            <p>Place : Each Classes</p><br>
+                        </div>
+                        <div class="slide2" style="background-color: #FF1818;">
+                            <h2>Back To School Seccion 2024/2025<br>Form 1, 2, 3, 4 and 5</h2>
+                            <p><br>Date : 10 March 2024</p>
+                            <p>Place : Each Classes</p><br>
+                        </div>
+                        <div class="slide2" style="background-color: #FF1818;">
+                            <h2>Program Orientasi Pelajar Tingkatan Peralihan & Tingkatan 1<br>Sesi 2024/2025</h2>
+                            <p><br>Date : 11, 13 and 14 March 2024</p>
+                            <p>Place : School Hall</p><br>
+                        </div>
+                    </a>
                     </div>
                 </div>
         </section>
     </section>
 
+
+    <style>
+        @keyframes flashColors {
+            0% { color: yellow; }
+            33.33% { color: blue; }
+            66.66% { color: red; }
+            100% { color: yellow; }
+        }
+
+        h1.flash {
+            animation: flashColors 1.5s infinite;
+             
+        }
+        /* Apply styles to the slide container */
+        .slide2 {
+            background-image: url(activity);
+            background-repeat: repeat;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            position: relative;
+            color: #fff;
+            text-shadow: 0 0 2px black;
+        }
+
+        .slide2 h2, .slide2 p{
+            background-color: #ffec8a;
+        }
+
+        .slide3 {
+            background-image: url(activity);
+            background-repeat: repeat;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            position: relative;
+            color: #fff;
+        }
+
+        .slide3 h2, .slide3 p{
+            background-color: #ffec8a;
+        }
+
+        .slide4 {
+            background-image: url(activity);
+            background-repeat: repeat;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            position: relative;
+            color: black;
+        }
+
+        .slide4 h2, .slide4 p{
+            background-color: #ffec8a;
+        }
+
+        .slide5 {
+            background-image: url(activity);
+            background-repeat: repeat;
+            background-color: #00ff00;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            position: relative;
+            color: black;
+        }
+
+        .slide5 h2, .slide5 p{
+            background-color: transparent;
+        }
+
+        .slide5 .image{
+            text-align: center;
+            position: relative;
+            left: 280px;
+            bottom: 105px;
+            z-index: 1;
+            width: 10px;
+            height: 10px;
+            opacity: 0.6;
+        }
+
+        /* Apply styles to the paragraph elements within the slide */
+        .slide2 p {
+            margin: 0; /* Remove default margin to prevent extra space */
+            line-height: 1.5; /* Adjust line spacing */
+        }
+
+        /* Style for the "More Information" button */
+        .more-info-button {
+            position: center;
+            bottom: 10px;
+            right: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 
 
 
