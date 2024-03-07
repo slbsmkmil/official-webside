@@ -1940,4 +1940,18 @@ form {
 .slide1 p {
     margin: 0; 
     line-height: 1.5;
+    text-align: left;
+    text-justify: auto;
 }
+@keyframes flashColors {
+            0% { color: red; }
+            25% { color: #00ff00; }
+            50% { color: black; }
+            75% { color: yellow; }
+            100% { color: red; }
+        }
+
+        marquee.flash1 {
+            animation: flashColors 1s infinite;
+             
+        }
