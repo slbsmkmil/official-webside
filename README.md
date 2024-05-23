@@ -5,7 +5,7 @@ A brief description of what this project does and who it's for information of SL
 
 !School Project And Information Only!
 
-!None Copyright But Cannot Copy!
+!COPYRIGHT 2024!
 
 !Attention!
 
