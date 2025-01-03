@@ -13,6 +13,6 @@ A brief description of what this project does and who it's for information of SL
 
 !!!If you want the project, please contact me with the contact html in the website!!!
 
-Link: https://slbsmkmil.github.io/official-webside/contact.html
+Link: https://bit.ly/ttsmilcu
 
 !Thank you!
