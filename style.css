@@ -9,12 +9,14 @@
 
 :root{
     /* ===== Colors ===== */
-    --body-color: #E4E9F7;
-    --sidebar-color: #FFF;
-    --primary-color: #695CFE;
-    --primary-color-light: #F6F5FF;
-    --toggle-color: #DDD;
-    --text-color: #707070;
+    --body-color: #f8f9fa;
+    --sidebar-color: #ffffff;
+    --primary-color: #6366f1;
+    --primary-color-light: #e0e7ff;
+    --toggle-color: #d1d5db;
+    --text-color: #374151;
+    --card-bg: #ffffff;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.12);
 
     /* ====== Transition ====== */
     --tran-03: all 0.2s ease;
@@ -35,12 +37,14 @@ body{
 }
 
 body.dark{
-    --body-color: #18191a;
-    --sidebar-color: #242526;
-    --primary-color: #3a3b3c;
-    --primary-color-light: #3a3b3c;
-    --toggle-color: #fff;
-    --text-color: #ccc;
+    --body-color: #111827;
+    --sidebar-color: #1f2937;
+    --primary-color: #818cf8;
+    --primary-color-light: #3730a3;
+    --toggle-color: #4b5563;
+    --text-color: #f3f4f6;
+    --card-bg: #1f2937;
+    --card-shadow: 0 1px 3px rgba(255,255,255,0.1);
 }
 
 /* ===== Sidebar ===== */
@@ -49,11 +53,13 @@ body.dark{
     top: 0;
     left: 0;
     height: 100%;
-    width: 250px;
+    width: 280px;
     padding: 10px 14px;
     background: var(--sidebar-color);
     transition: var(--tran-05);
     z-index: 100;  
+    border-right: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.05);
 }
 .sidebar.close{
     width: 88px;
@@ -143,6 +149,7 @@ header .image-text .profession{
     transform: translateY(-50%) rotate(180deg);
     height: 25px;
     width: 25px;
+    background: var(--primary-color);
     background-color: var(--primary-color);
     color: var(--sidebar-color);
     border-radius: 50%;
@@ -196,10 +203,13 @@ body.dark .sidebar header .toggle{
     border-radius: 6px;
     text-decoration: none;
     transition: var(--tran-03);
+    margin: 4px 0;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
 .sidebar li a:hover{
-    background-color: var(--primary-color);
+    background: var(--primary-color);
+    transform: translateX(4px);
 }
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text{
@@ -291,12 +301,28 @@ body.dark .switch::before{
     width: calc(100% - 250px);
     background-color: var(--body-color);
     transition: var(--tran-05);
+    padding: 2rem;
+    background: var(--body-color);
 }
 .home .text{
-    font-size: 30px;
-    font-weight: 500;
+    font-size: 2.5rem;
+    font-weight: 700;
     color: var(--text-color);
-    padding: 12px 60px;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.home .text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80%;
+    width: 4px;
+    background: var(--primary-color);
+    border-radius: 4px;
 }
 
 .home .text-l{
@@ -327,9 +353,11 @@ form {
     flex-direction: column;
     max-width: 500px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2rem;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 12px;
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
   }
   
   label {
@@ -346,19 +374,31 @@ form {
     border: 1px solid #ccc;
     font-size: 16px;
   }
+
+  input:focus, select:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.1) !important;
+}
+
   
   button[type="submit"] {
-    padding: 10px 20px;
+    padding: 12px 24px !important;
     background-color: #4CAF50;
+    background: linear-gradient(135deg, var(--primary-color), #4f46e5);
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px !important;
     font-size: 16px;
     cursor: pointer;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease;
   }
   
   button[type="submit"]:hover {
     background-color: #3e8e41;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   }
 .container{
     width: 70%;
@@ -366,6 +406,11 @@ form {
     text-align: center;
     justify-content: center;
     background-color: white;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    padding: 2rem;
+    margin: 1rem auto;
 }
 .testimonial{
     position: center;
@@ -377,10 +422,11 @@ form {
     overflow: scroll;
 }
 .testimonial .image{
-    height: 210px;
-    width: 200px;
-    object-fit: fill;
-    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    padding: 3px;
 }
 .testimonial .slide{
     display: flex;
@@ -391,6 +437,11 @@ form {
     align-tracks: center;
     text-align: center;
 }
+
+.slide {
+    animation: fadeIn 0.6s ease forwards;
+}
+
 .slide p{
     text-align: center;
     padding: 0 100px;
@@ -438,16 +489,37 @@ form {
 .btn4:hover::before{
     height: 0%;
 }
+
 .team .member {
     text-align: center;
     margin-bottom: 20px;
     padding: 30px 20px;
-    background: #fff;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    cursor: default;
   }
-  
+
+  .team .member:hover {
+    transform: translateY(-5px);
+}
+
+.team .memberlogo img {
+    max-width: 50%;
+    margin: 0 0 30px 0;
+  } 
+
   .team .member img {
     max-width: 100%;
     margin: 0 0 30px 0;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--primary-color);
   }
   
   .team .member h4 {
@@ -1955,3 +2027,34 @@ form {
             animation: flashColors 1s infinite;
              
         }
+
+/* ===== Modern Marquee ===== */
+marquee.flash1 {
+    animation: flashColors 8s infinite;
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    font-weight: 500;
+}
+
+
+/* ===== Modern Typography ===== */
+h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: var(--text-color);
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* ===== Animation Updates ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
