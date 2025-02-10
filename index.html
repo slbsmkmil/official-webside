@@ -23,6 +23,51 @@
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
+    <!-- Inline CSS for Attractive Button Styling and Animations -->
+    <style>
+        /* Base button styling */
+        .btn {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        /* Attractive gradient background using btn4 (updated with primary color #818cf8) */
+        .btn.btn4 {
+            background: linear-gradient(135deg, #818cf8, #a5b4fc);
+            color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /* Hover effect: subtle lift and increased shadow */
+        .btn.btn4:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        /* Add a shine effect on hover */
+        .btn.btn4::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: skewX(-25deg);
+        }
+        .btn.btn4:hover::before {
+            animation: shine 0.5s forwards;
+        }
+        @keyframes shine {
+            to {
+                left: 125%;
+            }
+        }
+    </style>
+
     <title>STUDENT LEADERS BOARD SMKMIL</title>
 </head>
 <body>

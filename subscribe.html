@@ -22,6 +22,186 @@
     <link rel="shortcut icon" href="logo slb rbg.png" type="image/x-icon">
     <link rel="stylesheet" href="system.php">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <style>
+        /* Captcha specific styles */
+        #mc_embed_signup {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            max-width: 500px;
+            margin: 0 auto;
+            width: 90%; /* Added for better mobile responsiveness */
+        }
+
+        .h1 {
+            font-size: clamp(1.2rem, 4vw, 1.5rem); /* Responsive font size */
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .p {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: clamp(0.9rem, 3vw, 1rem); /* Responsive font size */
+        }
+
+        #image {
+            background: var(--card-bg);
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-size: clamp(1.2rem, 4vw, 1.5rem); /* Responsive font size */
+            user-select: none;
+            margin: 1rem;
+            min-width: 100px; /* Reduced for mobile */
+            text-align: center;
+        }
+
+        #user-input {
+            background: var(--card-bg);
+            box-shadow: var(--card-shadow);
+            padding: 1rem;
+            border-radius: 8px;
+            width: 100%; /* Full width on mobile */
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        #user-input input {
+            border: 1px solid var(--primary-color-light);
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            width: 100%; /* Full width input */
+            max-width: 250px;
+        }
+
+        #btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%; /* Full width on mobile */
+            max-width: 200px;
+            margin-top: 1rem;
+        }
+
+        #btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        #key {
+            margin-top: 1rem;
+            font-weight: 500;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+        }
+
+        .inline {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0.5rem;
+        }
+
+        .correct { background: rgba(0,255,0,0.1); }
+        .wrong { background: rgba(255,0,0,0.1); }
+
+        /* Responsive container adjustments */
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .testimonial {
+            position: relative;
+            height: auto;
+            min-height: 450px;
+            max-width: 100%;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            .home {
+                padding: 1rem;
+            }
+
+            .text {
+                font-size: 2rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            #mc_embed_signup {
+                padding: 1rem;
+            }
+
+            .inline {
+                display: block;
+                margin: 0.5rem auto;
+                text-align: center;
+            }
+
+            #image {
+                margin: 1rem auto;
+            }
+
+            .testimonial {
+                padding: 10px;
+                height: auto;
+            }
+
+            marquee.flash1 {
+                font-size: 18px !important;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .text {
+                font-size: 1.5rem !important;
+            }
+
+            #mc_embed_signup {
+                padding: 0.8rem;
+            }
+
+            .h1 {
+                font-size: 1.2rem;
+            }
+
+            marquee.flash1 {
+                font-size: 16px !important;
+            }
+
+            #btn {
+                padding: 0.6rem 1.2rem;
+            }
+        }
+
+        /* Animation for content loading */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
 </head>
    
 <body>
@@ -111,266 +291,86 @@
         </div>
 
     </nav>
-    <div id="mc_embed_shell">
+
+    <section class="home">
+        <div class="text">SUBSCRIBE</div>
+        
+        <section class="container">
+            <div class="testimonial">
+                <a href="noti.html">
+                    <hr style="width: 90%; margin: 5px auto; border: none; border-top: 2px solid black;">
+                    <marquee class="flash1" behavior="scroll" direction="left">
+                        <strong>!!! NEW NOTIFICATIONS AVAILABLE !!! Click Here To Check Out The New Notification!</strong>
+                    </marquee>
+                    <hr style="width: 90%; margin: 5px auto; border: none; border-top: 2px solid black;">
+                </a>
+                
+                <div class="testi-content">
+                    <div class="slide">
+                        <div id="mc_embed_signup">
+                            <div class="h1" style="cursor: default;"><strong>RECAPTCHA CHECK</strong></div>
+                            <div class="p" style="cursor: default;">Click Submit button to make sure you are not a robot.<br><br>
+                                After the code has matched, it will automatically take you to the subscribe page.<br>Thank You!</div>
                             
-        <style type="text/css">
-              /* Reset some default styles */
-              #mc_embed_signup {
-background-color: #f9f9f9;
-padding: 20px;
-border-radius: 8px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-text-align: center;
-width: 500px;
-height: 500px;
-align-items: center;
-}
-
-#mc_embed_signup h2 {
-font-size: 24px;
-color: #333;
-margin-bottom: 20px;
-}
-
-.indicates-required {
-color: #777;
-margin-bottom: 10px;
-}
-
-.mc-field-group {
-margin-bottom: 20px;
-text-align: left;
-}
-
-.mc-field-group label {
-display: block;
-font-weight: bold;
-margin-bottom: 5px;
-color: #555;
-}
-
-.mc-field-group input {
-width: 100%;
-padding: 10px;
-box-sizing: border-box;
-margin-bottom: 10px;
-border: 1px solid #ddd;
-border-radius: 4px;
-}
-
-#mce-responses {
-display: none;
-}
-
-#mc-embedded-subscribe {
-background-color: #333;
-color: #fff;
-padding: 10px 20px;
-border: none;
-border-radius: 4px;
-cursor: pointer;
-font-size: 16px;
-}
-
-#mc-embedded-subscribe:hover {
-background-color: #555;
-}
-
-#subscribeButton {
-            display: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-.home1{
-    position: relative;
-    top: 0;
-    top: 0;
-    align-items: center;
-   
-}
-/* Optional: Add responsive styles for smaller screens */
-@media (max-width: 600px) {
-#mc_embed_signup {
-width: 90%;
-margin: 0 auto;
-}
-}
-
-
-        </style>
-        <section class="home1">
-            <section class="container">
-                <div class="testimonial">
-                    <a href="noti.html">
-                        <hr style=" width: 90%; margin: 5px auto; border: none; border-top: 2px solid black;"><marquee class="flash1" behavior="scroll" direction="left" style="color: red; font-size: 25px;"><strong>!!! NEW NOTIFICATIONS AVAILABLE !!!  Click Here To Check Out The New Notification!</strong></marquee><hr style=" width: 90%; margin: 5px auto; border: none; border-top: 2px solid black;"><br>
-                        </a>
-                    <div class="testi-content">
-                        <div class="slide">
-                           <div id="mc_embed_signup">
-                            <div class="container">
-                                <div class="h1"><strong>RECAPTCHA CHECK</strong></div>
-                                <div class="p">Click Submit button to make sure you are not a robot. <br><br>After the code has matched, it will automatically to take you to the subscribe page. <br>Thank You!</div>
-                                <br>
-                                <body onload="generate()">
-                                    <div id="user-input" class="inline">
-                                        <input type="text" id="submit" placeholder="Captcha code" />
-                                    </div>
-                                    
-                                    <div class="inline" onclick="generate()">
-                                        <i class="fas fa-sync"></i>
-                                    </div>
-                                    
-                                    <div id="image" class="inline" selectable="False"></div>
-                                    
-                                    <input type="submit"
-                                           id="btn"
-                                           onclick="printmsg()" />
-                                           <br>
-                                    <p id="key"></p>
-                                </body>
-                                <br>
+                            <div id="image" class="inline" selectable="False" style="cursor: default;"></div>
+                                
+                            <div id="user-input" class="inline">
+                                <input type="text" id="submit" placeholder="Captcha code" />
                             </div>
-                           </div>
-                           </div>
+                            
+                            <div class="inline" onclick="generate()">
+                                <i class="fas fa-sync"></i>
+                            </div>
+                            
+                            <div>
+                                <input type="submit" id="btn" onclick="printmsg()" value="Submit" />
+                            </div>
+                            <p id="key"></p>
                         </div>
                     </div>
                 </div>
-            </section>
             </div>
         </section>
-    </div>
-    <script src="script.js"></script>
-    <style>
+    </section>
 
-.correct {
-    background-color: rgba(0,255,0);
-}
-
-.wrong {
-    background-color: red;
-}
-
-#mc_embed_signup{
-    border: red 0px solid;
-}
-.h1{
-    font-size: 30px;
-    text-decoration: underline;
-    font-family: "montserrat";
-}
-.p{
-    font-size: 20px;
-    color: blue;
-    font-family: "montserrat";
-}
-#image{
-    margin-top: 10px;
-    box-shadow: 5px 5px 5px 5px gray;
-    width: 50px;;
-    padding: 40px;
-    font-weight: 400;
-    padding-bottom: 60px;
-    height: 50px;
-    user-select: none;
-    font-size: 30px;
-    border: red 0px solid;
-    margin-left: 10px;
-}
-#user-input{
-    box-shadow: 5px 5px 5px 5px gray;
-    width: auto;
-    margin-right: 10px;
-    padding: 10px;
-    padding-bottom: 0px;
-    height: 60px;
-    border: red 0px solid;
-}
-input{
-    border:1px black solid;
-    font-family: "montserrat";
-}
-.inline{
-    display: inline-table;
-    font-family: "montserrat";
-}
-#btn{
-    box-shadow: 5px 5px 5px grey;
-    font-size: 25px;
-    height: 40px;
-    width: 100px;
-    margin: 10px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: "montserrat";
-}
-#btn:hover {
-    background-color: #3e8e41;
-    font-family: "montserrat";
-  }
-#key{
-    font-size: 20px;
-    color: green;
-    font-family: "montserrat";
-}
-    </style>
-    <script src="script.js"></script>
     <script>
         let captcha;
-function generate() {
- 
-    // Clear old input
-    document.getElementById("submit").value = "";
- 
-    // Access the element to store
-    // the generated captcha
-    captcha = document.getElementById("image");
-    let uniquechar = "";
- 
-    const randomchar =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
- 
-    // Generate captcha for length of
-    // 5 with random character
-    for (let i = 1; i < 5; i++) {
-        uniquechar += randomchar.charAt(
-            Math.random() * randomchar.length)
-    }
- 
-    // Store generated input
-    captcha.innerHTML = uniquechar;
-}
- 
-function printmsg() {
-    const usr_input = document.getElementById("submit").value;
-    const keyElement = document.getElementById("key");
- 
-    // Check whether the input is equal
-    // to generated captcha or not
-    if (usr_input == captcha.innerHTML) {
-        let s = document.getElementById("key").innerHTML = "Matched";
-        keyElement.style.color = "rgba(0,255,0)";
-        document.body.className = 'correct';
-        window.location.href = "http://eepurl.com/iEbC8M";
-        generate();
+        function generate() {
+            document.getElementById("submit").value = "";
+            captcha = document.getElementById("image");
+            let uniquechar = "";
+            const randomchar = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            
+            for (let i = 1; i < 5; i++) {
+                uniquechar += randomchar.charAt(Math.random() * randomchar.length)
+            }
+            
+            captcha.innerHTML = uniquechar;
+        }
         
-    } else {
-        let s = document.getElementById("key").innerHTML = "Not Matched";
-        keyElement.style.color = "red";
-        document.body.className = 'wrong';
-        generate();
-    }
-}
+        function printmsg() {
+            const usr_input = document.getElementById("submit").value;
+            const keyElement = document.getElementById("key");
+            
+            if (usr_input == captcha.innerHTML) {
+                keyElement.innerHTML = "Matched";
+                keyElement.style.color = "var(--primary-color)";
+                document.body.className = 'correct';
+                window.location.href = "http://eepurl.com/iEbC8M";
+                generate();
+            } else {
+                keyElement.innerHTML = "Not Matched";
+                keyElement.style.color = "red";
+                document.body.className = 'wrong';
+                generate();
+            }
+        }
 
+        // Generate captcha on page load
+        window.onload = generate;
     </script>
+    
+    <script src="script.js"></script>
     <script async src="https://js.usechat.ai/widget/3624618d-de1b-4e92-9fcb-3b621b8218de.js"></script><a id="usechat-button" style="color: #ddd; font-size: 11px;" href="https://app.usechat.ai/widget/3624618d-de1b-4e92-9fcb-3b621b8218de">UseChat</a>
 </body>
 </html>

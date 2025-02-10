@@ -117,81 +117,188 @@
         <a href="noti.html">
             <hr style=" width: 90%; margin: 5px auto; border: none; border-top: 2px solid black;"><marquee class="flash1" behavior="scroll" direction="left" style="color: red; font-size: 25px;"><strong>!!! NEW NOTIFICATIONS AVAILABLE !!!  Click Here To Check Out The New Notification!</strong></marquee><hr style=" width: 90%; margin: 5px auto; border: none; border-top: 2px solid black;"><br>
             </a>
-        <form action="https://formspree.io/f/xbjezbgp"
-        method="POST">
-        <label for="text">Label with <label class="text-2">*</label> is required to fill</label><br>
-            <label for="name">Name <label class="text-2">*</label></label>
-            <input type="text" id="name" name="Name" required>
+        <form action="https://formspree.io/f/xbjezbgp" method="POST" style="max-width: 600px; margin: 0 auto; width: 100%;">
+            <!-- Inline CSS for responsive portrait to landscape layout and checkbox alignment -->
+            <style>
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+                .form-group {
+                    display: flex;
+                    flex-direction: column;
+                }
+                /* Full-width elements span the whole row */
+                .full-width {
+                    width: 100%;
+                }
+                /* Landscape mode: reflow into two columns */
+                @media (orientation: landscape) {
+                    form {
+                        flex-wrap: wrap;
+                    }
+                    .form-group {
+                        flex: 1 1 45%;
+                    }
+                    .full-width {
+                        flex: 1 1 100%;
+                    }
+                    /* Optionally, align the submit button to the right */
+                    button#btn {
+                        align-self: flex-end;
+                    }
+                }
+                /* Basic styling for inputs, selects, and textarea */
+                input, select, textarea {
+                    padding: 0.5rem;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+                /* Optional: style labels */
+                label {
+                    margin-bottom: 0.3rem;
+                }
+                /* Alternative checkbox alignment using inline-flex */
+                .checkbox-label {
+                    display: inline-flex !important;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+                .checkbox-label input[type="checkbox"] {
+                    vertical-align: middle;
+                    margin: 0;
+                }
+                /* Simple checkbox container */
+                .agreement-container {
+                    display: flex;
+                    align-items: center;
+                    margin: 10px 0;
+                }
 
-            <label for="email">Email <label class="text-2">*</label></label>
-            <input type="email" id="email" name="Email" required>
+                /* Checkbox styling */
+                .agreement-container input[type="checkbox"] {
+                    margin: 0 10px 0 0;
+                    width: auto;
+                    transform: translateY(-1px);
+                }
 
-            <label for="identity">Identity Card Number <label class="text-2">*</label></label>
-            <input type="text" id="identity" name="Identity" required>
+                /* Agreement text styling */
+                .agreement-text {
+                    flex: 1;
+                    line-height: 1.4;
+                    font-weight: normal;
+                }
+            </style>
 
-            <label for="birthdate">Birthdate <label class="text-2">*</label></label>
-            <input type="date" id="birthdate" name="Birthdate" required>
-
-
-
-            <label for="gender">Gender:<label class="text-2">*</label></label>
-            <select id="gender" name="Gender" required>
-                <option value="">Select Gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
-
-            <label for="level">Class <label class="text-2">*</label></label>
-            <select id="level" name="Level" required>
-                <option value="">Select Class</option>
-                <option value="1PA">1 PA</option>
-                <option value="1KAA">1 KAA</option>
-                <option value="1A">1 A</option>
-                <option value="1B">1 B</option>
-                <option value="1C">1 C</option>
-                <option value="1D">1 D</option>
-                <option value="2KAA">2 KAA</option>
-                <option value="2A">2 A</option>
-                <option value="2B">2 B</option>
-                <option value="2C">2 C</option>
-                <option value="2D">2 D</option>
-                <option value="3KAA">3 KAA</option>
-                <option value="3A">3 A</option>
-                <option value="3B">3 B</option>
-                <option value="3C">3 C</option>
-                <option value="3D">3 D</option>
-                <option value="4KAA">4 KAA</option>
-                <option value="4A">4 A</option>
-                <option value="4B">4 B</option>
-                <option value="4C">4 C</option>
-                <option value="4D">4 D</option>
-                <option value="4PVMA">4 PVMA</option>
-                <option value="5KAA">5 KAA</option>
-                <option value="5A">5 A</option>
-                <option value="5B">5 B</option>
-                <option value="5C">5 C</option>
-                <option value="5D">5 D</option>
-                <option value="5E">5 E</option>
-                <option value="5PVMA">5 PVMA</option>
-            </select>
-
-            <label for="gender">Register Activity:<label class="text-2">*</label></label>
-            <select id="gender" name="Activity" required>
-                <option value="">Select Activity</option>
-                <option value="Program Orientasi Pelajar Tingkatan Peralihan & Tingkatan 1 Sesi 2024/2025">Program Orientasi Pelajar Tingkatan Peralihan & Tingkatan 1 Sesi 2024/2025</option>
-                <option value="Test Activity">Test Activity</option>
-            </select>
-
-
-            <label for="date">Registration Date <label class="text-2">*</label></label>
-            <input type="date" id="date" name="Date" required>
-            <br>
-            <label>
-                <input type="checkbox" name="agreement" required>
-                  <span>I agree to SLB SMKMIL Offcial Website <a href="terms.html" target="_blank">Terms and Privacy Policy</a></span>
-              </label>
-              <br>
-            <button type="submit" id="btn">Register</button>
+            <div class="form-group full-width">
+                <label style="font-weight: bold;">Label with <label class="text-2">*</label> is required to fill</label>
+            </div>
+            <div class="form-group">
+                <label for="name">Name <label class="text-2">*</label></label>
+                <input type="text" id="name" name="Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email <label class="text-2">*</label></label>
+                <input type="email" id="email" name="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="identity">Identity Card Number <label class="text-2">*</label></label>
+                <input type="text" id="identity" name="Identity" required>
+            </div>
+            <div class="form-group">
+                <label for="birthdate">Birthdate <label class="text-2">*</label></label>
+                <input type="date" id="birthdate" name="Birthdate" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender: <label class="text-2">*</label></label>
+                <select id="gender" name="Gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="level">Class <label class="text-2">*</label></label>
+                <select id="level" name="Level" required>
+                    <option value="">Select Class</option>
+                    <option value="1PA">1 PA</option>
+                    <option value="1KAA">1 KAA</option>
+                    <option value="1A">1 A</option>
+                    <option value="1B">1 B</option>
+                    <option value="1C">1 C</option>
+                    <option value="1D">1 D</option>
+                    <option value="2KAA">2 KAA</option>
+                    <option value="2A">2 A</option>
+                    <option value="2B">2 B</option>
+                    <option value="2C">2 C</option>
+                    <option value="2D">2 D</option>
+                    <option value="3KAA">3 KAA</option>
+                    <option value="3A">3 A</option>
+                    <option value="3B">3 B</option>
+                    <option value="3C">3 C</option>
+                    <option value="3D">3 D</option>
+                    <option value="4KAA">4 KAA</option>
+                    <option value="4A">4 A</option>
+                    <option value="4B">4 B</option>
+                    <option value="4C">4 C</option>
+                    <option value="4D">4 D</option>
+                    <option value="4PVMA">4 PVMA</option>
+                    <option value="5KAA">5 KAA</option>
+                    <option value="5A">5 A</option>
+                    <option value="5B">5 B</option>
+                    <option value="5C">5 C</option>
+                    <option value="5D">5 D</option>
+                    <option value="5E">5 E</option>
+                    <option value="5PVMA">5 PVMA</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mainActivity">Register Activity: <label class="text-2">*</label></label>
+                <select id="mainActivity" name="Activity" required onchange="toggleHiringFields()">
+                    <option value="">Select Activity</option>
+                    <option value="Program Orientasi Pelajar Tingkatan Peralihan & Tingkatan 1 Sesi 2025/2026">
+                        Program Orientasi Pelajar Tingkatan Peralihan & Tingkatan 1 Sesi 2025/2026
+                    </option>
+                    <option value="School Committee Hiring">School Committee Hiring</option>
+                </select>
+            </div>
+            <div class="form-group" id="hiringPositionGroup" style="display: none;">
+                <label for="hiringPosition">Register Hiring Position: <label class="text-2">*</label></label>
+                <select id="hiringPosition" name="Register Hiring Position:" onchange="toggleTechTeamFields()">
+                    <option value="">Select Hiring Position</option>
+                    <option value="Member of Tech Team">Member of Tech Team</option>
+                    <option value="Master of Ceremony">Master of Ceremony</option>
+                </select>
+            </div>
+            <div class="form-group" id="techTeamPositionGroup" style="display: none;">
+                <label for="techTeamPosition">Register Tech Team Hiring Position: <label class="text-2">*</label></label>
+                <select id="techTeamPosition" name="Register Tech Team Hiring Position:">
+                    <option value="">Select Tech Team Hiring Position</option>
+                    <option value="Live Streaming Operator">Live Streaming Operator</option>
+                    <option value="Live Streaming Videographer">Live Streaming Videographer</option>
+                    <option value="PA System Operator">PA System Operator</option>
+                    <option value="Video Editor">Video Editor</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Registration Date <label class="text-2">*</label></label>
+                <input type="date" id="date" name="Date" required>
+            </div>
+            <div class="form-group full-width">
+                <div class="agreement-container">
+                    <input type="checkbox" name="agreement" id="agreement" required>
+                    <label for="agreement" class="agreement-text">
+                        I agree to SLB SMKMIL Official Website <a href="terms.html" target="_blank">Terms and Privacy Policy</a>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <button type="submit" id="btn">Register</button>
+            </div>
         </form>
 
 
@@ -200,6 +307,50 @@
 
     <script src="script.js"></script>
     <script async src="https://js.usechat.ai/widget/3624618d-de1b-4e92-9fcb-3b621b8218de.js"></script><a id="usechat-button" style="color: #ddd; font-size: 11px;" href="https://app.usechat.ai/widget/3624618d-de1b-4e92-9fcb-3b621b8218de">UseChat</a>
+    <script>
+        function toggleHiringFields() {
+            const mainActivity = document.getElementById('mainActivity');
+            const hiringPositionGroup = document.getElementById('hiringPositionGroup');
+            const hiringPosition = document.getElementById('hiringPosition');
+            const techTeamPositionGroup = document.getElementById('techTeamPositionGroup');
+            const techTeamPosition = document.getElementById('techTeamPosition');
+
+            // Show/hide hiring position based on main activity selection
+            if (mainActivity.value === 'School Committee Hiring') {
+                hiringPositionGroup.style.display = 'block';
+                hiringPosition.required = true;
+            } else {
+                hiringPositionGroup.style.display = 'none';
+                hiringPosition.required = false;
+                techTeamPositionGroup.style.display = 'none';
+                techTeamPosition.required = false;
+                // Reset the selections when hiding
+                hiringPosition.value = '';
+                techTeamPosition.value = '';
+            }
+        }
+
+        function toggleTechTeamFields() {
+            const hiringPosition = document.getElementById('hiringPosition');
+            const techTeamPositionGroup = document.getElementById('techTeamPositionGroup');
+            const techTeamPosition = document.getElementById('techTeamPosition');
+
+            // Show/hide tech team position based on hiring position selection
+            if (hiringPosition.value === 'Member of Tech Team') {
+                techTeamPositionGroup.style.display = 'block';
+                techTeamPosition.required = true;
+            } else {
+                techTeamPositionGroup.style.display = 'none';
+                techTeamPosition.required = false;
+                // Reset the selection when hiding
+                techTeamPosition.value = '';
+            }
+        }
+
+        // Run on page load to ensure correct initial state
+        toggleHiringFields();
+        toggleTechTeamFields();
+    </script>
 </body>
 
 </html>

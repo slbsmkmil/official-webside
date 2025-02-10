@@ -190,69 +190,123 @@
 
               
 
-        <form action="https://formspree.io/f/xlekoerl"
-        method="POST">
-            <label for="text">Label with <label class="text-2">*</label> is required to fill</label><br>
-            <label for="name">Name <label class="text-2">*</label></a></label>
-            <input type="text" id="name" name="Name" required>
+        <form action="https://formspree.io/f/xlekoerl" method="POST">
+            <!-- Inline CSS to handle portrait vs. landscape layout -->
+            <style>
+                /* Reset form to vertical by default */
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+                /* Each group gets a margin */
+                .form-group {
+                    display: flex;
+                    flex-direction: column;
+                }
+                /* Make these items span the full width in both layouts */
+                .full-width {
+                    width: 100%;
+                }
 
-            <label for="email">Email <label class="text-2">*</label></label>
-            <input type="email" id="email" name="Email" required>
+                /* Landscape orientation: arrange groups in two columns */
+                @media (orientation: landscape) {
+                    form {
+                        flex-wrap: wrap;
+                    }
+                    .form-group {
+                        flex: 1 1 45%;  /* Each group takes nearly half the width */
+                    }
+                    /* Full-width groups take the complete row */
+                    .full-width {
+                        flex: 1 1 100%;
+                    }
+                    /* Optional: align the submit button to the right */
+                    button#btn {
+                        align-self: flex-end;
+                    }
+                }
+                
+                /* Optional basic input styling */
+                input, select, textarea {
+                    padding: 0.5rem;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                }
+            </style>
 
-            <label for="gender">Gender <label class="text-2">*</label></label>
-            <select id="gender" name="Gender" required>
-                <option value="">Select Gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
-
-            <label for="level">Class <label class="text-2">*</label></label>
-            <select id="level" name="Level" required>
-                <option value="">Select Class</option>
-                <option value="1PA">1 PA</option>
-                <option value="1KAA">1 KAA</option>
-                <option value="1A">1 A</option>
-                <option value="1B">1 B</option>
-                <option value="1C">1 C</option>
-                <option value="1D">1 D</option>
-                <option value="2KAA">2 KAA</option>
-                <option value="2A">2 A</option>
-                <option value="2B">2 B</option>
-                <option value="2C">2 C</option>
-                <option value="2D">2 D</option>
-                <option value="3KAA">3 KAA</option>
-                <option value="3A">3 A</option>
-                <option value="3B">3 B</option>
-                <option value="3C">3 C</option>
-                <option value="3D">3 D</option>
-                <option value="4KAA">4 KAA</option>
-                <option value="4A">4 A</option>
-                <option value="4B">4 B</option>
-                <option value="4C">4 C</option>
-                <option value="4D">4 D</option>
-                <option value="4PVMA">4 PVMA</option>
-                <option value="5KAA">5 KAA</option>
-                <option value="5A">5 A</option>
-                <option value="5B">5 B</option>
-                <option value="5C">5 C</option>
-                <option value="5D">5 D</option>
-                <option value="5E">5 E</option>
-                <option value="5PVMA">5 PVMA</option>
-            </select>
-            
-            <label for="date">Date <label class="text-2">*</label></label>
-            <input type="date" id="date" name="Date" required>
-
-            <label for="message">Message <label class="text-2">*</label></label>
-			      <textarea id="message" name="Message" rows="8" required style="resize: none;"></textarea>
-
-            <br>
-            <label>
-              <input type="checkbox" name="agreement" required>
-                <span>I agree to SLB SMKMIL Offcial Website <a href="terms.html" target="_blank">Terms and Privacy Policy</a></span>
-            </label>
-            <br>
-            <button type="submit" id="btn">Submit</button>
+            <div class="form-group full-width">
+                <label style="font-weight: bold;">Label with <label class="text-2">*</label> is required to fill</label>
+            </div>
+            <div class="form-group">
+                <label for="name">Name <label class="text-2">*</label></label>
+                <input type="text" id="name" name="Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email <label class="text-2">*</label></label>
+                <input type="email" id="email" name="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender <label class="text-2">*</label></label>
+                <select id="gender" name="Gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="level">Class <label class="text-2">*</label></label>
+                <select id="level" name="Level" required>
+                    <option value="">Select Class</option>
+                    <option value="1PA">1 PA</option>
+                    <option value="1KAA">1 KAA</option>
+                    <option value="1A">1 A</option>
+                    <option value="1B">1 B</option>
+                    <option value="1C">1 C</option>
+                    <option value="1D">1 D</option>
+                    <option value="2KAA">2 KAA</option>
+                    <option value="2A">2 A</option>
+                    <option value="2B">2 B</option>
+                    <option value="2C">2 C</option>
+                    <option value="2D">2 D</option>
+                    <option value="3KAA">3 KAA</option>
+                    <option value="3A">3 A</option>
+                    <option value="3B">3 B</option>
+                    <option value="3C">3 C</option>
+                    <option value="3D">3 D</option>
+                    <option value="4KAA">4 KAA</option>
+                    <option value="4A">4 A</option>
+                    <option value="4B">4 B</option>
+                    <option value="4C">4 C</option>
+                    <option value="4D">4 D</option>
+                    <option value="4PVMA">4 PVMA</option>
+                    <option value="5KAA">5 KAA</option>
+                    <option value="5A">5 A</option>
+                    <option value="5B">5 B</option>
+                    <option value="5C">5 C</option>
+                    <option value="5D">5 D</option>
+                    <option value="5E">5 E</option>
+                    <option value="5PVMA">5 PVMA</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Date <label class="text-2">*</label></label>
+                <input type="date" id="date" name="Date" required>
+            </div>
+            <div class="form-group full-width">
+                <label for="message">Message <label class="text-2">*</label></label>
+                <textarea id="message" name="Message" rows="8" required style="resize: none;"></textarea>
+            </div>
+            <div class="form-group full-width">
+                <label>
+                    <input type="checkbox" name="agreement" required>
+                    <span>I agree to SLB SMKMIL Offcial Website <a href="terms.html" target="_blank">Terms and Privacy Policy</a></span>
+                </label>
+            </div>
+            <div class="form-group full-width">
+                <button type="submit" id="btn">Submit</button>
+            </div>
         </form>
      
     </section>
