@@ -1,8 +1,35 @@
-<!-- Creating by LION LIM | www.lsb2023.lionlim.com | www.lionlim.com/lsb2023 -->
 <!DOCTYPE html>
 <html lang="en">
-    <meta name="keywords" content="Student Leaders Board SMK Munshi Ibrahim Labis" />
+
 <head>
+    <meta charset="utf-8">
+    <title>SLB SMKMIL</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="logo slb rbg1.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTC7V5EM0J"></script>
 <script>
@@ -12,251 +39,121 @@
 
   gtag('config', 'G-CTC7V5EM0J');
 </script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="logo slb rbg.png" type="image/x-icon">
-    <script defer src="non-essential.js" async></script>
-
-    <!--======= CSS =======-->
-    <link rel="stylesheet" href="style.css">
-
-    <!----===== Boxicons CSS ===== -->
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-
-    <!-- Inline CSS for Attractive Button Styling and Animations -->
-    <style>
-        /* Base button styling */
-        .btn {
-            padding: 12px 24px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            border-radius: 8px;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        /* Attractive gradient background using btn4 (updated with primary color #818cf8) */
-        .btn.btn4 {
-            background: linear-gradient(135deg, #818cf8, #a5b4fc);
-            color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        /* Hover effect: subtle lift and increased shadow */
-        .btn.btn4:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-        }
-        /* Add a shine effect on hover */
-        .btn.btn4::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -75%;
-            width: 50%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: skewX(-25deg);
-        }
-        .btn.btn4:hover::before {
-            animation: shine 0.5s forwards;
-        }
-        @keyframes shine {
-            to {
-                left: 125%;
-            }
-        }
-        /* Style for the overlay */
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-/* Style for the overlay content */
-#overlay-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-/* Style for the "Got it" button */
-#got-it-btn {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#got-it-btn:hover {
-    background-color: #0056b3;
-}
-    </style>
-
-    <title>STUDENT LEADERS BOARD SMKMIL</title>
 </head>
+
 <body>
-    <div id="overlay">
-        <div id="overlay-content">
-            <p>Our website is being updated. Please check back later.</p>
-            <button id="got-it-btn">Got it!</button>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <nav class="sidebar close">
-        <header>
-            <div class="image-text">
-                <span class="image">
-                    <img src="logo.png">
-                </span>
-
-                <div class="text logo-text">
-                    <span class="name">SMK MUNSHI<br>IBRAHIM LABIS</span>
-                </div>
-            </div>
-
-            <i class='bx bx-menu toggle'></i>
-        </header>
-
-        <div class="menu-bar">
-            <div class="menu">
-
-                <ul class="menu-links">
-                    <li class="nav-link">
-                        <a href="index.html">
-                            <i class='bx bx-home-alt icon'></i>
-                            <span class="text nav-text">Home</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="about-us.html">
-                            <i class='bx bx-user icon'></i>
-                            <span class="text nav-text">About Us</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="info.html">
-                            <i class='bx bx-info-circle icon'></i>
-                            <span class="text nav-text">Information</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="activity.html">
-                            <i class='bx bx-message-square-add icon'></i>
-                            <span class="text nav-text">Activity</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="noti.html">
-                            <i class='bx bx-bell icon'></i>
-                            <span class="text nav-text">Notifications</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="register.html">
-                            <i class='bx bx-registered icon'></i>
-                            <span class="text nav-text">Register Form</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="subscribe.html">
-                            <i class='bx bx-mail-send icon'></i>
-                            <span class="text nav-text">Subscribe Here</span>
-                        </a>
-                    </li>
+    <!-- Spinner End -->
 
 
-
-                </ul>
-            </div>
-
-            <div class="bottom-content">
-                <li class="#">
-                    <a href="contact.html">
-                        <i class='bx bxs-contact icon' ></i>
-                        <span class="text nav-text">Contact Us</span>
-                    </a>
-                </li>
-
-
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="logo comb rbg.png" alt="SLB SMKMIL Logo" height="50">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about-us.html" class="nav-item nav-link">About Us</a>
+                <a href="info.html" class="nav-item nav-link">Information</a>
+                <a href="activity.html" class="nav-item nav-link">Activity</a>
+                <a href="register.html" class="nav-item nav-link">Registration</a>
+                <a href="subscribe.html" class="nav-item nav-link">Subscribe</a>
+                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
             </div>
         </div>
-
     </nav>
+    <!-- Navbar End -->
 
-    <section class="home">
-        <div class="text">HOME</div>
-        <a href="noti.html">
-            <hr style=" width: 90%; margin: 5px auto; border: none; border-top: 2px solid black;"><marquee class="flash1" behavior="scroll" direction="left" style="color: red; font-size: 25px;"><strong>!!! NEW NOTIFICATIONS AVAILABLE !!!  Click Here To Check Out The New Notification!</strong></marquee><hr style=" width: 90%; margin: 5px auto; border: none; border-top: 2px solid black;"><br>
-            </a>
-        <section class="container">
-            <div class="testimonial">
-                <div class="testi-content">
-                    <div class="slide">
-                        <img src="logo comb.png" alt="" class="image-1">
-                        <p>Welcome To OFFICAL WEBSIDE for<br> STUDENT LEADER BOARD<br> SEKOLAH MENENGAH KEBANGSAAN MUNSHI IBRAHIM LABIS</p>
-                        <!--======= <h1 style="color: red;">!!! NEW NOTIFICATIONS AVAILABLE !!!</h1>
-                        <a href="noti.html">
-                            <button class="btn btn4 btns">Check It Now</button>
-                        </a> ===== -->
-                        <a href="about-us.html">
-                            <button class="btn btn4">Find Out More About Us</button>
-                        </a>
-                        <a href="activity.html">
-                            <button class="btn btn4">Find Out More About Activity</button>
-                        </a>
-                        <a href="contact.html">
-                            <button class="btn btn4">Contact Us</button>
-                        </a>
-                        
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="image/carousel-1.jpg" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-sm-10 col-lg-8">
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Welcome to Sekolah Menengah Kebangsaan Munshi Ibrahim Labis</h5>
+                                <h1 class="display-3 text-white animated slideInDown">Student Leaders Board Official Portal</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">We are the student leaders, committed to excellence and making a difference.</p>
+                                <a href="info.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Learn More</a>
+                                <a href="register.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Register Now</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-        </section>
+            </div>
         </div>
-    </section>
+    </div>
+    <!-- Carousel End -->        
 
-    <style>
-        .btns{
-            background-color: red;
-        }
-        .btns:hover{
-            padding: 15px 25px;
-        }
-    </style>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="about-us.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="https://bit.ly/pslbsmkmil" target="_blank">Privacy Policy</a>
+                    <a class="btn btn-link" href="https://bit.ly/tslbsmkmil" target="_blank">Terms & Condition</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>JKR 484, JALAN SEKOLAH, 85300 LABIS, JOHOR.</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+6011-5552 2281</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>slbsmkmil@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=100081324157349" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@slbsmkmil" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <script>document.write(new Date().getFullYear())</script> SLB SMKMIL | All Right Reserved
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html">Home</a>
+                            <a href="subscribe.html">Subscribe</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
 
-    <script src="script.js"></script>
-    <script async src="https://js.usechat.ai/widget/3624618d-de1b-4e92-9fcb-3b621b8218de.js"></script><a id="usechat-button" style="color: #ddd; font-size: 11px;" href="https://app.usechat.ai/widget/3624618d-de1b-4e92-9fcb-3b621b8218de">UseChat</a>
-<script>
-    // Wait for the DOM to be fully loaded
-document.addEventListener("DOMContentLoaded", function() {
-    // Get the overlay and the "Got it" button
-    var overlay = document.getElementById("overlay");
-    var gotItBtn = document.getElementById("got-it-btn");
 
-    // Function to hide the overlay
-    function hideOverlay() {
-        overlay.style.display = "none";
-    }
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-    // Add an event listener to the "Got it" button
-    gotItBtn.addEventListener("click", hideOverlay);
-});
-</script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>

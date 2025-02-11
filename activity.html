@@ -30,9 +30,6 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTC7V5EM0J"></script>
 <script>
@@ -44,16 +41,18 @@
 </script>
 
     <style>
-        /* General Styling for the Text Section */
+        /* Activity Section Styling */
 .home {
     padding: 60px 0;
     background-color: #f9f9f9;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+.activity-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+    animation: fadeInDown 1s ease-in-out;
 }
 
 .testimonial {
@@ -64,60 +63,104 @@
 }
 
 .testi-content {
-    line-height: 1.8;
-    color: #333;
-}
-
-.testi-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #2c3e50;
-    font-weight: 700;
     text-align: center;
 }
 
-.testi-content p {
-    font-size: 1.1rem;
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide h2 {
+    font-size: 2rem;
+    color: #444;
     margin-bottom: 20px;
-    color: #555;
 }
 
-.testi-content hr {
-    border: 0;
-    height: 1px;
-    background: black;
-    margin: 30px 0;
-}
-
-.testi-content p strong {
-    color: #2c3e50;
-    font-weight: 600;
-}
-
-/* Styling for Lists */
-.testi-content ul {
-    margin-left: 20px;
+.slide p {
+    font-size: 1.2rem;
+    color: #666;
     margin-bottom: 20px;
 }
 
-.testi-content ul li {
-    list-style-type: disc;
-    margin-bottom: 10px;
-    color: #555;
+.more-info-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .testi-content h1 {
-        font-size: 2rem;
-    }
+.more-info-button:hover {
+    background-color: #0056b3;
+}
 
-    .testi-content p {
-        font-size: 1rem;
-    }
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+}
 
-    .testimonial {
-        padding: 20px;
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -136,8 +179,7 @@
         margin: 10px auto 0; /* Space between text and line */
     }
     </style>
-
-    </head>
+</head>
 
 <body>
     <!-- Spinner Start -->
@@ -161,8 +203,8 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">Home</a>
                 <a href="about-us.html" class="nav-item nav-link">About Us</a>
-                <a href="info.html" class="nav-item nav-link active">Information</a>
-                <a href="activity.html" class="nav-item nav-link">Activity</a>
+                <a href="info.html" class="nav-item nav-link">Information</a>
+                <a href="activity.html" class="nav-item nav-link active">Activity</a>
                 <a href="register.html" class="nav-item nav-link">Registration</a>
                 <a href="subscribe.html" class="nav-item nav-link">Subscribe</a>
                 <a href="contact.html" class="nav-item nav-link">Contact Us</a>
@@ -176,40 +218,39 @@
         <section class="container">
             <div class="testimonial">
                 <div class="testi-content">
-                    <div class="slide1">
-                        <h1 class="heading-with-line">INTRODUCTION AND HISTORY OF <br> STUDENT LEADER BOARD</h1><br><br>
-                        <p>Student Leaders Board (SLB) is an initiative established by the Johor State Education Department (JPNJ) in response to the need for human resource development in leadership, especially in the Iskandar Malaysia region. The program began in 2015 under the mandate of Tuan Haji Aminudin bin Adam, Director of JPNJ, with the aim of identifying, training, and showcasing young leaders at the secondary and primary school levels.</p>
-                        <hr>
-                        <p style="font-weight: bolder;">Here are the key points regarding the establishment and development of SLB:</p>
-                        <br>
-                        <p style="font-weight: bold;">1. Establishment of SLB:</p>
-                        <p>- The idea of establishing SLB stemmed from awareness of the need for human resource development in leadership in the Iskandar Malaysia region.</p>
-                        <p>- The mandate for establishing SLB was given to the Private Education Unit, Private Education Sector, and Special Education of JPNJ in 2015.</p>
-                        <p>- SLB was established in response to students' interests and needs in the field of leadership.</p>
-                        <br>
-                        <p style="font-weight: bold;">2. Implementation:</p>
-                        <p>- The management and implementation of SLB were initiated by En. Mohd Syahidan bin Zainal Abidin, Assistant Director of the Private Education Unit of JPNJ.</p>
-                        <p>- Initially, only a few schools were involved, but by 2017, there were already 22 schools involved from 11 districts in Johor.</p>
-                        <p>- Main Trainers (MTs), who are Guidance and Counseling Teachers (GBTs), were assigned to develop strategic plans and plan SLB activities in schools.</p>
-                        <p>- In 2019, SLB was expanded to involve more secondary schools and also primary schools, benefiting over 1000 schools in Johor.</p>
-                        <br>
-                        <p style="font-weight: bold;">3. Operation and Restructuring:</p>
-                        <p>- SLB operations were placed under the management of the Student Affairs Unit (Counseling Sub-Unit) starting January 1, 2021.</p>
-                        <p>- Puan Norashuha binti Tajuddin, Assistant Director of the Student Affairs Unit (Counseling Sub-Unit), was tasked with managing SLB operations.</p>
-                        <p>- Main Trainers (MTs) were given special training to lead SLB at the district level.</p>
-                        <br>
-                        <p style="font-weight: bold;">4. Module Development:</p>
-                        <p>- The module was published in 2021 to assist SLB coordinators in schools in implementing more leadership activities.</p>
-                        <hr>
-                        <p>SLB serves as an organizational body responsible for training and showcasing student leadership talent at the secondary and primary school levels in Johor. This is in line with the aspirations of the Malaysia Education Development Plan (PPPM) to foster leadership skills among students to face the challenges of the 21st century.</p>
-                    </div>
-                    <br>
+                    <h1 class="heading-with-line">ACTIVITY</h1><br>
+                    <div class="carousel">
+                        <button class="carousel-button prev" aria-label="Previous Slide">&#10094;</button>
+                        <div class="slides">
+                            <div class="slide active">
+                                <h2>Cikgu Zamri's <br>Retirement Ceremony</h2>
+                                <p>Date : 25 May 2023</p><br>
+                                <a href="#">
+                                    <button class="more-info-button">More Information</button>
+                                </a>
+                            </div>
+                            <div class="slide">
+                                <h2>Khusus Kepimpinan <br>Pemimpin Muda</h2>
+                                <p>Date : 17 May 2023</p><br>
+                                <a href="#">
+                                    <button class="more-info-button">More Information</button>
+                                </a>
+                            </div>
+                            <div class="slide">
+                                <h2>Program Orientasi Pelajar Tingkatan Peralihan & Tingkatan 1<br>Sesi 2023/2024</h2>
+                                <p>Date : 19, 20, 21 & 22 March 2023</p><br>
+                                <a href="#">
+                                    <button class="more-info-button">More Information</button>
+                                </a>
+                            </div>
+                        </div>
+                        <button class="carousel-button next" aria-label="Next Slide">&#10095;</button>
                     </div>
                 </div>
+            </div>
         </section>
     </section>
-
-        
+    
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -268,6 +309,46 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".slide");
+    const slidesContainer = document.querySelector(".slides");
+    const prevButton = document.querySelector(".carousel-button.prev");
+    const nextButton = document.querySelector(".carousel-button.next");
+    let currentIndex = 0;
+
+    // Function to show the current slide
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove("active");
+            if (i === index) {
+                slide.classList.add("active");
+            }
+        });
+        slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    // Function to go to the next slide
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    // Function to go to the previous slide
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    // Event listeners for buttons
+    nextButton.addEventListener("click", nextSlide);
+    prevButton.addEventListener("click", prevSlide);
+
+    // Show the first slide initially
+    showSlide(currentIndex);
+});
+    </script>
 </body>
 
 </html>

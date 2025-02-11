@@ -1,8 +1,35 @@
-<!-- Creating by LION LIM | https://lionlim1111.github.io/lsb -->
 <!DOCTYPE html>
 <html lang="en">
-    <meta name="keywords" content="Student Leaders Board SMK Munshi Ibrahim Labis" />
+
 <head>
+    <meta charset="utf-8">
+    <title>SLB SMKMIL</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="logo slb rbg1.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTC7V5EM0J"></script>
 <script>
@@ -12,209 +39,216 @@
 
   gtag('config', 'G-CTC7V5EM0J');
 </script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="logo slb rbg.png" type="image/x-icon">
-    <script defer src="non-essential.js" async></script>
 
-    <!--======= CSS =======-->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Form Styling */
+        .home {
+            padding: 2rem;
+            background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    <!----===== Boxicons CSS ===== -->
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+        .heading-with-line {
+            position: relative;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #333;
+            animation: fadeInDown 1s ease-in-out;
+        }
 
-    <title>Register</title>
+        .heading-with-line::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: #007bff;
+            margin: 10px auto 0;
+            animation: lineGrow 1s ease-in-out;
+        }
+
+        form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        label {
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        button#btn {
+            background: #007bff;
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        button#btn:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .agreement-container {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+        }
+
+        .agreement-container input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+
+        .agreement-text {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .agreement-text a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .agreement-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes lineGrow {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100px;
+            }
+        }
+    </style>
 </head>
-    <body>
-    <nav class="sidebar close">
-        <header>
-            <div class="image-text">
-                <span class="image">
-                    <img src="logo.png">
-                </span>
 
-                <div class="text logo-text">
-                    <span class="name">SMK MUNSHI<br>IBRAHIM LABIS</span>
-                </div>
-            </div>
-
-            <i class='bx bx-menu toggle'></i>
-        </header>
-
-        <div class="menu-bar">
-            <div class="menu">
-
-                <ul class="menu-links">
-                    <li class="nav-link">
-                        <a href="index.html">
-                            <i class='bx bx-home-alt icon'></i>
-                            <span class="text nav-text">Home</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="about-us.html">
-                            <i class='bx bx-user icon'></i>
-                            <span class="text nav-text">About Us</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="info.html">
-                            <i class='bx bx-info-circle icon'></i>
-                            <span class="text nav-text">Information</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="activity.html">
-                            <i class='bx bx-message-square-add icon'></i>
-                            <span class="text nav-text">Activity</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="noti.html">
-                            <i class='bx bx-bell icon'></i>
-                            <span class="text nav-text">Notifications</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="register.html">
-                            <i class='bx bx-registered icon'></i>
-                            <span class="text nav-text">Register Form</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="subscribe.html">
-                            <i class='bx bx-mail-send icon'></i>
-                            <span class="text nav-text">Subscribe Here</span>
-                        </a>
-                    </li>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
 
 
-
-                </ul>
-            </div>
-
-            <div class="bottom-content">
-                <li class="#">
-                    <a href="contact.html">
-                        <i class='bx bxs-contact icon' ></i>
-                        <span class="text nav-text">Contact Us</span>
-                    </a>
-                </li>
-
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="logo comb rbg.png" alt="SLB SMKMIL Logo" height="50">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about-us.html" class="nav-item nav-link">About Us</a>
+                <a href="info.html" class="nav-item nav-link">Information</a>
+                <a href="activity.html" class="nav-item nav-link">Activity</a>
+                <a href="register.html" class="nav-item nav-link active">Registration</a>
+                <a href="subscribe.html" class="nav-item nav-link">Subscribe</a>
+                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
             </div>
         </div>
-
     </nav>
+    <!-- Navbar End -->
+
 
     <section class="home">
-        <div class="text">REGISTER FORM</div>
-        <a href="noti.html">
-            <hr style=" width: 90%; margin: 5px auto; border: none; border-top: 2px solid black;"><marquee class="flash1" behavior="scroll" direction="left" style="color: red; font-size: 25px;"><strong>!!! NEW NOTIFICATIONS AVAILABLE !!!  Click Here To Check Out The New Notification!</strong></marquee><hr style=" width: 90%; margin: 5px auto; border: none; border-top: 2px solid black;"><br>
-            </a>
-        <form action="https://formspree.io/f/xbjezbgp" method="POST" style="max-width: 600px; margin: 0 auto; width: 100%;">
-            <!-- Inline CSS for responsive portrait to landscape layout and checkbox alignment -->
-            <style>
-                form {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem;
-                }
-                .form-group {
-                    display: flex;
-                    flex-direction: column;
-                }
-                /* Full-width elements span the whole row */
-                .full-width {
-                    width: 100%;
-                }
-                /* Landscape mode: reflow into two columns */
-                @media (orientation: landscape) {
-                    form {
-                        flex-wrap: wrap;
-                    }
-                    .form-group {
-                        flex: 1 1 45%;
-                    }
-                    .full-width {
-                        flex: 1 1 100%;
-                    }
-                    /* Optionally, align the submit button to the right */
-                    button#btn {
-                        align-self: flex-end;
-                    }
-                }
-                /* Basic styling for inputs, selects, and textarea */
-                input, select, textarea {
-                    padding: 0.5rem;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                    font-size: 1rem;
-                    width: 100%;
-                    box-sizing: border-box;
-                }
-                /* Optional: style labels */
-                label {
-                    margin-bottom: 0.3rem;
-                }
-                /* Alternative checkbox alignment using inline-flex */
-                .checkbox-label {
-                    display: inline-flex !important;
-                    align-items: center;
-                    gap: 0.5rem;
-                }
-                .checkbox-label input[type="checkbox"] {
-                    vertical-align: middle;
-                    margin: 0;
-                }
-                /* Simple checkbox container */
-                .agreement-container {
-                    display: flex;
-                    align-items: center;
-                    margin: 10px 0;
-                }
-
-                /* Checkbox styling */
-                .agreement-container input[type="checkbox"] {
-                    margin: 0 10px 0 0;
-                    width: auto;
-                    transform: translateY(-1px);
-                }
-
-                /* Agreement text styling */
-                .agreement-text {
-                    flex: 1;
-                    line-height: 1.4;
-                    font-weight: normal;
-                }
-            </style>
-
+        <h1 class="heading-with-line">REGISTRATION FORM</h1>
+        <form action="https://formspree.io/f/xbjezbgp" method="POST">
             <div class="form-group full-width">
-                <label style="font-weight: bold;">Label with <label class="text-2">*</label> is required to fill</label>
+                <label style="font-weight: bold;">Label with * is required to fill</label>
             </div>
             <div class="form-group">
-                <label for="name">Name <label class="text-2">*</label></label>
+                <label for="name">Name *</label>
                 <input type="text" id="name" name="Name" required>
             </div>
             <div class="form-group">
-                <label for="email">Email <label class="text-2">*</label></label>
+                <label for="email">Email *</label>
                 <input type="email" id="email" name="Email" required>
             </div>
             <div class="form-group">
-                <label for="identity">Identity Card Number <label class="text-2">*</label></label>
+                <label for="identity">Identity Card Number *</label>
                 <input type="text" id="identity" name="Identity" required>
             </div>
             <div class="form-group">
-                <label for="birthdate">Birthdate <label class="text-2">*</label></label>
+                <label for="birthdate">Birthdate *</label>
                 <input type="date" id="birthdate" name="Birthdate" required>
             </div>
             <div class="form-group">
-                <label for="gender">Gender: <label class="text-2">*</label></label>
+                <label for="gender">Gender: *</label>
                 <select id="gender" name="Gender" required>
                     <option value="">Select Gender</option>
                     <option value="Male">Male</option>
@@ -222,7 +256,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="level">Class <label class="text-2">*</label></label>
+                <label for="level">Class *</label>
                 <select id="level" name="Level" required>
                     <option value="">Select Class</option>
                     <option value="1PA">1 PA</option>
@@ -257,17 +291,17 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="mainActivity">Register Activity: <label class="text-2">*</label></label>
+                <label for="mainActivity">Register Activity: *</label>
                 <select id="mainActivity" name="Activity" required onchange="toggleHiringFields()">
                     <option value="">Select Activity</option>
                     <option value="Program Orientasi Pelajar Tingkatan Peralihan & Tingkatan 1 Sesi 2025/2026">
                         Program Orientasi Pelajar Tingkatan Peralihan & Tingkatan 1 Sesi 2025/2026
                     </option>
-                    <option value="School Committee Hiring">School Committee Hiring</option>
+                    <option value="School Committee Hiring 2025">School Committee Hiring 2025</option>
                 </select>
             </div>
             <div class="form-group" id="hiringPositionGroup" style="display: none;">
-                <label for="hiringPosition">Register Hiring Position: <label class="text-2">*</label></label>
+                <label for="hiringPosition">Register Hiring Position: *</label>
                 <select id="hiringPosition" name="Register Hiring Position:" onchange="toggleTechTeamFields()">
                     <option value="">Select Hiring Position</option>
                     <option value="Member of Tech Team">Member of Tech Team</option>
@@ -275,7 +309,7 @@
                 </select>
             </div>
             <div class="form-group" id="techTeamPositionGroup" style="display: none;">
-                <label for="techTeamPosition">Register Tech Team Hiring Position: <label class="text-2">*</label></label>
+                <label for="techTeamPosition">Register Tech Team Hiring Position: *</label>
                 <select id="techTeamPosition" name="Register Tech Team Hiring Position:">
                     <option value="">Select Tech Team Hiring Position</option>
                     <option value="Live Streaming Operator">Live Streaming Operator</option>
@@ -285,14 +319,14 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="date">Registration Date <label class="text-2">*</label></label>
+                <label for="date">Registration Date *</label>
                 <input type="date" id="date" name="Date" required>
             </div>
             <div class="form-group full-width">
                 <div class="agreement-container">
                     <input type="checkbox" name="agreement" id="agreement" required>
                     <label for="agreement" class="agreement-text">
-                        I agree to SLB SMKMIL Official Website <a href="terms.html" target="_blank">Terms and Privacy Policy</a>
+                        I agree to SLB SMKMIL Official Website <a href="https://bit.ly/tpslbsmkmil" target="_blank">Terms and Privacy Policy</a>
                     </label>
                 </div>
             </div>
@@ -300,13 +334,66 @@
                 <button type="submit" id="btn">Register</button>
             </div>
         </form>
+    </section>   
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="about-us.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="https://bit.ly/pslbsmkmil" target="_blank">Privacy Policy</a>
+                    <a class="btn btn-link" href="https://bit.ly/tslbsmkmil" target="_blank">Terms & Condition</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>JKR 484, JALAN SEKOLAH, 85300 LABIS, JOHOR.</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+6011-5552 2281</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>slbsmkmil@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=100081324157349" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@slbsmkmil" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <script>document.write(new Date().getFullYear())</script> SLB SMKMIL | All Right Reserved
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html">Home</a>
+                            <a href="subscribe.html">Subscribe</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
 
 
-    </section>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-    <script src="script.js"></script>
-    <script async src="https://js.usechat.ai/widget/3624618d-de1b-4e92-9fcb-3b621b8218de.js"></script><a id="usechat-button" style="color: #ddd; font-size: 11px;" href="https://app.usechat.ai/widget/3624618d-de1b-4e92-9fcb-3b621b8218de">UseChat</a>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
     <script>
         function toggleHiringFields() {
             const mainActivity = document.getElementById('mainActivity');
@@ -316,7 +403,7 @@
             const techTeamPosition = document.getElementById('techTeamPosition');
 
             // Show/hide hiring position based on main activity selection
-            if (mainActivity.value === 'School Committee Hiring') {
+            if (mainActivity.value === 'School Committee Hiring 2025') {
                 hiringPositionGroup.style.display = 'block';
                 hiringPosition.required = true;
             } else {
@@ -351,6 +438,7 @@
         toggleHiringFields();
         toggleTechTeamFields();
     </script>
+
 </body>
 
 </html>
