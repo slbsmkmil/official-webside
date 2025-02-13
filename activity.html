@@ -432,6 +432,15 @@
 
     // Show the first slide initially
     showSlide(currentIndex);
+
+    // Auto-slide every 5 seconds
+    let autoSlideInterval = setInterval(nextSlide, 5000);
+
+    // Pause auto-slide when user interacts with buttons
+    [prevButton, nextButton].forEach(button => {
+        button.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+        button.addEventListener('mouseleave', () => autoSlideInterval = setInterval(nextSlide, 5000));
+    });
 });
     </script>
 </body>
