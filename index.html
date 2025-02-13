@@ -144,17 +144,53 @@
     </div>
 
     <script>
+        // Set the expiration date (16 February 2025 Time: 11:59:59 A.M.)
+        const expirationDate = new Date('2025-02-16T11:59:59');
+
+        // Function to close the overlay
         function closeOverlay() {
-        const overlay = document.getElementById('overlay');
-        overlay.classList.add('closing');
-        
-        // Wait for animations to complete before hiding
-        overlay.addEventListener('animationend', () => {
-            overlay.style.display = 'none';
-        }, { once: true });
-    }
-    </script>
-    <!-- Overlay Back To School Picture End -->
+            const overlay = document.getElementById('overlay');
+            overlay.classList.add('closing');
+            
+            // Wait for animations to complete before hiding
+            overlay.addEventListener('animationend', () => {
+                overlay.style.display = 'none';
+            }, { once: true });
+        }
+
+        // Function to check if the overlay should be displayed
+        function checkOverlayExpiration() {
+            const now = new Date();
+            const overlay = document.getElementById('overlay');
+
+            // If the current date is after the expiration date, hide the overlay
+            if (now > expirationDate) {
+                overlay.style.display = 'none';
+            } else {
+                overlay.style.display = 'flex'; // Show the overlay
+            }
+        }
+
+        // Optional: Close when clicking outside content
+        document.getElementById('overlay').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('overlay')) {
+                closeOverlay();
+            }
+        });
+
+        // Check expiration on page load
+        checkOverlayExpiration();
+
+        // Optional: Set a timer to automatically hide the overlay on the expiration date
+        const timeUntilExpiration = expirationDate - new Date();
+        if (timeUntilExpiration > 0) {
+            setTimeout(() => {
+                closeOverlay();
+            }, timeUntilExpiration);
+        }
+        </script>
+
+        <!-- Overlay Back To School Picture End -->
 
 
     <!-- Navbar Start -->
