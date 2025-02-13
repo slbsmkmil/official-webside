@@ -99,19 +99,65 @@
   </style>
   <style>
     .heading-with-line {
-        position: relative;
-        text-align: center;
-        margin-bottom: 3rem; /* Adjust as needed */
-    }
+            position: relative;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #333;
+            animation: fadeInDown 1s ease-in-out;
+        }
 
-    .heading-with-line::after {
-        content: '';
-        display: block;
-        width: 100px; /* Length of the line */
-        height: 2px; /* Thickness of the line */
-        background-color: #000; /* Color of the line */
-        margin: 10px auto 0; /* Space between text and line */
-    }
+        .heading-with-line::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: #007bff;
+            margin: 10px auto 0;
+            animation: lineGrow 1s ease-in-out;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes lineGrow {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100px;
+            }
+        }
 </style>
 
 </head>
@@ -156,7 +202,7 @@
         <h2 class="heading-with-line">Committee of Student Leader Board</h2>
         <div class="row">
             <!-- Committee Members -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/rosli.jpg" class="member-img" alt="Principal">
                     <h4 class="mt-3">EN. ROSLI BIN CHE MAN</h4>
@@ -164,7 +210,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/razak.jpg" class="member-img" alt="Teacher Assistant">
                     <h4 class="mt-3">EN. ABD RAZAK BIN OTHMAN</h4>
@@ -172,7 +218,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/norliza.jpg" class="member-img" alt="Teacher Secretary">
                     <h4 class="mt-3">PN. NORLIZA BINTI TOKIRAN</h4>
@@ -180,7 +226,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/tee chia ling.jpg" class="member-img" alt="Teacher Vice Secretary">
                     <h4 class="mt-3">PN. TEE CHIA LING</h4>
@@ -188,13 +234,13 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6" style="display: flex; justify-content: center; align-items: center;">
+            <div class="col-lg-4 col-md-6" style="display: flex; justify-content: center; align-items: center; animation: fadeInUp 1s ease-in-out;">
               <div class="logoslb d-none d-md-block">
                   <img src="logo slb rbg.png" alt="SLB Logo">
               </div>
           </div>
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/fairil.jpg" class="member-img" alt="Teacher Committee">
                     <h4 class="mt-3">EN. FAIRIL BIN MD SAMUDI</h4>
@@ -210,7 +256,7 @@
         <h2 class="heading-with-line">Member of Student Leaders Board</h2>
         <div class="row">
             <!-- Student Leader Cards -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/dayang.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL DAYANG NURHSANAH QISMINA</h4>
@@ -218,7 +264,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/amanina.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL NUR AMANINA NAJLA</h4>
@@ -226,15 +272,15 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/rachel.jpg" class="member-img" alt="Student Leader">
-                    <h4 class="mt-3">SL RACHEL BOK RUI QIAN</h4>
+                    <h4 class="mt-3">SL RACHEL RUI QIAN</h4>
                     <p>STUDENT LEADER BOARD<br>3 A</p>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/zhi qian.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL LIM ZHI QIAN</h4>
@@ -242,7 +288,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/wei yu.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL TAN WEI YU</h4>
@@ -250,7 +296,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/zi rong.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL HOO ZI RONG</h4>
@@ -258,7 +304,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/guan you.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL LIM GUAN YOU</h4>
@@ -266,7 +312,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/john.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL JOHN LIM JIAH LE</h4>
@@ -274,7 +320,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/zhi ying.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL TAN ZHI YING</h4>
@@ -282,7 +328,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/keyssen.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL KEYSSEN A/L JAYACELAN</h4>
@@ -290,7 +336,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/irdyna.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL NUR IRDYNA SOFFEA</h4>
@@ -298,7 +344,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/anis.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL ANIS QAISARA</h4>
@@ -306,7 +352,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/hui wen.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL TAN HUI WEN</h4>
@@ -314,7 +360,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/erchen.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL KU ER CHEN</h4>
@@ -322,7 +368,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/lucas.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL LUCAS KOH MENG HENG</h4>
@@ -330,7 +376,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/diva.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL DIVASHINI A/P DEVENDRARAJ</h4>
@@ -338,7 +384,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/priya.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL PRIYADARSHINI A/P RAGUNATHAN</h4>
@@ -346,7 +392,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
                 <div class="member-card">
                     <img src="image/intan.jpg" class="member-img" alt="Student Leader">
                     <h4 class="mt-3">SL FARAH INTAN SOFEA</h4>

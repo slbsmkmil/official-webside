@@ -166,19 +166,65 @@
 }
 
 .heading-with-line {
-        position: relative;
-        text-align: center;
-        margin-bottom: 3rem; /* Adjust as needed */
-    }
+            position: relative;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #333;
+            animation: fadeInDown 1s ease-in-out;
+        }
 
-    .heading-with-line::after {
-        content: '';
-        display: block;
-        width: 100px; /* Length of the line */
-        height: 2px; /* Thickness of the line */
-        background-color: #000; /* Color of the line */
-        margin: 10px auto 0; /* Space between text and line */
-    }
+        .heading-with-line::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: #007bff;
+            margin: 10px auto 0;
+            animation: lineGrow 1s ease-in-out;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes lineGrow {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100px;
+            }
+        }
     </style>
 </head>
 
@@ -220,7 +266,7 @@
             <div class="testimonial">
                 <div class="testi-content">
                     <h1 class="heading-with-line">ACTIVITY</h1><br>
-                    <div class="carousel">
+                    <div class="carousel" style="animation: fadeInUp 1s ease-in-out;">
                         <button class="carousel-button prev" aria-label="Previous Slide">&#10094;</button>
                         <div class="slides">
                             <div class="slide active">

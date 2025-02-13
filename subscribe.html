@@ -236,6 +236,67 @@
         .slide {
             animation: fadeIn 0.5s ease-out;
         }
+
+        .heading-with-line {
+            position: relative;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #333;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .heading-with-line::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: #007bff;
+            margin: 10px auto 0;
+            animation: lineGrow 1s ease-in-out;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes lineGrow {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100px;
+            }
+        }
     </style>
 </head>
 
@@ -277,23 +338,24 @@
             <div class="testimonial">               
                 <div class="testi-content">
                     <div class="slide">
+                        <h1 class="heading-with-line">SUBSCRIBE NEWSLETTER</h1>
                         <div id="mc_embed_signup">
-                            <div class="h1" style="cursor: default;"><strong>RECAPTCHA CHECK</strong></div>
-                            <div class="p" style="cursor: default;">Click Submit button to make sure you are not a robot.<br><br>
+                            <div class="h1" style="cursor: default;" style="animation: fadeInUp 1s ease-in-out;"><strong>RECAPTCHA CHECK</strong></div>
+                            <div class="p" style="cursor: default;" style="animation: fadeInUp 1s ease-in-out;">Click Submit button to make sure you are not a robot.<br><br>
                                 After the code has matched, it will automatically take you to the subscribe page.<br>Thank You!</div>
                             
-                            <div id="image" class="inline" selectable="False" style="cursor: default;"></div>
+                            <div id="image" class="inline" selectable="False" style="cursor: default; animation: fadeInUp 1s ease-in-out;"></div>
                             
-                            <div class="inline" onclick="generate()">
+                            <div class="inline" onclick="generate()" style="animation: fadeInUp 1s ease-in-out;">
                                 <i class="fas fa-sync"></i>
                             </div>
                                 
-                            <div id="user-input" class="inline">
+                            <div id="user-input" class="inline" style="animation: fadeInUp 1s ease-in-out;">
                                 <input type="text" id="submit" placeholder="Captcha code" />
                             </div>
                             
                             <div>
-                                <input type="submit" id="btn" onclick="printmsg()" value="Submit" />
+                                <input type="submit" id="btn" onclick="printmsg()" value="Submit" style="animation: fadeInUp 1s ease-in-out;" />
                             </div>
                             <p id="key"></p>
                         </div>

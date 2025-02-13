@@ -123,19 +123,65 @@
 }
 
 .heading-with-line {
-        position: relative;
-        text-align: center;
-        margin-bottom: 3rem; /* Adjust as needed */
-    }
+            position: relative;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #333;
+            animation: fadeInDown 1s ease-in-out;
+        }
 
-    .heading-with-line::after {
-        content: '';
-        display: block;
-        width: 100px; /* Length of the line */
-        height: 2px; /* Thickness of the line */
-        background-color: #000; /* Color of the line */
-        margin: 10px auto 0; /* Space between text and line */
-    }
+        .heading-with-line::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: #007bff;
+            margin: 10px auto 0;
+            animation: lineGrow 1s ease-in-out;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes lineGrow {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100px;
+            }
+        }
     </style>
 
     </head>
@@ -204,11 +250,81 @@
                         <hr>
                         <p>SLB serves as an organizational body responsible for training and showcasing student leadership talent at the secondary and primary school levels in Johor. This is in line with the aspirations of the Malaysia Education Development Plan (PPPM) to foster leadership skills among students to face the challenges of the 21st century.</p>
                     </div>
-                    <br>
-                    </div>
+                     <br>
                 </div>
+            </div>
         </section>
     </section>
+
+        <style>
+    /* Animation Keyframes */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes grow {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    .slide1 p {
+        opacity: 0;
+        animation: slideInLeft 0.5s ease-out forwards;
+    }
+
+    .slide1 hr {
+        animation: grow 1.5s ease-out;
+    }
+
+    /* Staggered animations for paragraphs */
+    .slide1 p:nth-child(2) { animation-delay: 0.5s; }
+    .slide1 p:nth-child(3) { animation-delay: 1s; }
+    .slide1 p:nth-child(4) { animation-delay: 1.5s; }
+    .slide1 p:nth-child(5) { animation-delay: 2s; }
+    .slide1 p:nth-child(6) { animation-delay: 2.5s; }
+    .slide1 p:nth-child(7) { animation-delay: 3s; }
+    .slide1 p:nth-child(8) { animation-delay: 3.5s; }
+    .slide1 p:nth-child(9) { animation-delay: 4s; }
+    .slide1 p:nth-child(10) { animation-delay: 4.5s; }
+    .slide1 p:nth-child(11) { animation-delay: 5s; }
+    .slide1 p:nth-child(12) { animation-delay: 5.5s; }
+    .slide1 p:nth-child(13) { animation-delay: 6s; }
+    .slide1 p:nth-child(14) { animation-delay: 6.5s; }
+    .slide1 p:nth-child(15) { animation-delay: 7s; }
+    .slide1 p:nth-child(16) { animation-delay: 7.5s; }
+    .slide1 p:nth-child(17) { animation-delay: 8s; }
+    .slide1 p:nth-child(18) { animation-delay: 8.5s; }
+    .slide1 p:nth-child(19) { animation-delay: 9s; }
+    .slide1 p:nth-child(20) { animation-delay: 9.5s; }
+    .slide1 p:nth-child(21) { animation-delay: 10s; }
+    .slide1 p:nth-child(22) { animation-delay: 10.5s; }
+    .slide1 p:nth-child(23) { animation-delay: 11s; }
+    .slide1 p:nth-child(24) { animation-delay: 11.5s; }
+    .slide1 p:nth-child(25) { animation-delay: 12s; }
+    .slide1 p:last-child { animation-delay: 12.5s; }
+
+    /* Fade-in animation for <hr> elements */
+    .slide1 hr {
+        opacity: 0;
+        animation: fadeIn 1s ease-out forwards;
+    }
+
+    /* Animation delays for <hr> elements */
+    .slide1 hr:nth-of-type(1) { animation-delay: 1.75s; } /* First <hr> fades in after 1.5s */
+    .slide1 hr:nth-of-type(2) { animation-delay: 12.25s; } /* Second <hr> fades in after 6.5s */
+</style>
 
         
 
