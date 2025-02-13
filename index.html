@@ -51,6 +51,68 @@
     </div>
     <!-- Spinner End -->
 
+    <!-- Overlay Back To School Picture Start -->
+    <style>
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .content {
+            background: transparent;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .overlay-image {
+            max-width: 90%;
+            max-height: 70vh;
+            object-fit: contain;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .got-it-button {
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .got-it-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <!-- Overlay -->
+    <div class="overlay" id="overlay">
+        <div class="content">
+            <img src="https://scontent.fkul3-5.fna.fbcdn.net/v/t39.30808-6/477774562_633843169336483_1915649238100425708_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ufp_oj8raR4Q7kNvgHEbjOc&_nc_oc=Adixux1b-TqWycJKydB8o4NbkP8vq6J4ObDL_lhzcBBu9ohKLI_O716CU4lFL7LV8o7XtJfgVVt0gFLrvNrIU4te&_nc_zt=23&_nc_ht=scontent.fkul3-5.fna&_nc_gid=Ayd6CRDTO0LLrlUdc4bbkf9&oh=00_AYAuC7fJFzcgQ_gBmA-dh21r8NnsQsFtKvms_u9BFTkcGQ&oe=67B37A0B" 
+                 alt="Overlay Image" 
+                 class="overlay-image">
+            <button class="got-it-button" onclick="closeOverlay()">Got It!</button>
+        </div>
+    </div>
+
+    <script>
+        function closeOverlay() {
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+    <!-- Overlay Back To School Picture End -->
+
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
