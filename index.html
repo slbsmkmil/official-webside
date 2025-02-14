@@ -143,54 +143,72 @@
         </div>
     </div>
 
-    <script>
-        // Set the expiration date (16 February 2025 Time: 11:59:59 A.M.)
-        const expirationDate = new Date('2025-02-16T11:59:59');
+        <script>
+            // Set expiration date for Malaysia Time (16 February 2025, 8:30 a.m. MYT)
+            const expirationDate = new Date(Date.UTC(2025, 1, 16, 0, 30, 0)); // 16 February 2025, 00:30 UTC (8:30 a.m. MYT is UTC+8)
+            let closeTimeout; // Store timeout reference
 
-        // Function to close the overlay
-        function closeOverlay() {
-            const overlay = document.getElementById('overlay');
-            overlay.classList.add('closing');
-            
-            // Wait for animations to complete before hiding
-            overlay.addEventListener('animationend', () => {
-                overlay.style.display = 'none';
-            }, { once: true });
-        }
-
-        // Function to check if the overlay should be displayed
-        function checkOverlayExpiration() {
-            const now = new Date();
-            const overlay = document.getElementById('overlay');
-
-            // If the current date is after the expiration date, hide the overlay
-            if (now > expirationDate) {
-                overlay.style.display = 'none';
-            } else {
-                overlay.style.display = 'flex'; // Show the overlay
+            // Function to close the overlay
+            function closeOverlay() {
+                const overlay = document.getElementById('overlay');
+                overlay.classList.add('closing');
+                overlay.addEventListener('animationend', () => {
+                    overlay.style.display = 'none';
+                    clearTimeout(closeTimeout); // Clear pending auto-close
+                }, { once: true });
             }
-        }
 
-        // Optional: Close when clicking outside content
-        document.getElementById('overlay').addEventListener('click', (e) => {
-            if (e.target === document.getElementById('overlay')) {
-                closeOverlay();
+            // Function to check if the overlay should be displayed
+            function checkOverlayExpiration() {
+                const now = new Date().getTime(); // Current time in milliseconds
+                const expirationTime = expirationDate.getTime(); // Expiration time in milliseconds
+                const overlay = document.getElementById('overlay');
+
+                if (now > expirationTime) {
+                    overlay.style.display = 'none'; // Hide if expired
+                } else {
+                    overlay.style.display = 'flex'; // Show if not expired
+                }
             }
-        });
 
-        // Check expiration on page load
-        checkOverlayExpiration();
+            // Close overlay when clicking outside
+            document.getElementById('overlay').addEventListener('click', (e) => {
+                if (e.target === document.getElementById('overlay')) {
+                    closeOverlay();
+                }
+            });
 
-        // Optional: Set a timer to automatically hide the overlay on the expiration date
-        const timeUntilExpiration = expirationDate - new Date();
-        if (timeUntilExpiration > 0) {
-            setTimeout(() => {
-                closeOverlay();
-            }, timeUntilExpiration);
-        }
+            // Set auto-close timeout (Malaysia Time)
+            const timeUntilExpiration = expirationDate.getTime() - new Date().getTime();
+            if (timeUntilExpiration > 0) {
+                closeTimeout = setTimeout(closeOverlay, timeUntilExpiration);
+            }
+
+            // Initialize on load
+            checkOverlayExpiration();
         </script>
 
         <!-- Overlay Back To School Picture End -->
+
+        <!-- Disappear code function start -->
+        <!--
+            <script>
+                // make a few of code to became commant function script
+                function autoCommentCode(code, delay) {
+                setTimeout(() => {
+                    // Wrap the code in comment tags, change the //code after the commentedCode, remember add the commant tags simbol in front and after the codes
+                    const commentedCode = `//code`;
+                    console.log(commentedCode); // Output the commented code (or replace with your logic)
+                }, delay);
+
+
+                //Optional: 
+                // Automatically comment out the code after 5 seconds (5000 milliseconds)
+                // autoCommentCode(codeToComment, 5000);
+            }
+            </script>
+        -->
+        <!-- Disappear code function end -->
 
 
     <!-- Navbar Start -->
