@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.3.1] - 2025-02-15
+### Fixed
+- Speed Auto Slide
+  - pb0001
+  - pb0002
+  - pb0003
 
 ## [v2.3.1] - 2025-02-15
 ### Fixed
