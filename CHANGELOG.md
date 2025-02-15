@@ -1,7 +1,11 @@
 # Changelog
 
+## [v2.2.6] - 2025-02-15
+### Added
+- About Us
+  - Internship Student Leader
 
-## [v2.2.5] - 2025-02-14
+## [v2.2.5] - 2025-02-15
 ### Added
 - About Us
   - One New Student Leader
