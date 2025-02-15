@@ -1,5 +1,10 @@
 # Changelog
 
+## [v2.3.2] - 2025-02-15
+### Fixed
+- Registration Form
+- About Us Member Class Information
+
 ## [v2.3.1] - 2025-02-15
 ### Fixed
 - Speed Auto Slide
