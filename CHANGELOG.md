@@ -1,5 +1,14 @@
 # Changelog
 
+
+## [v2.3.0] - 2025-02-15
+### Added
+- Activity Program Book Section
+  - pb0001
+  - pb0002
+  - pb0003
+
+
 ## [v2.2.7] - 2025-02-15
 ### Fixed
 - About Us Section
