@@ -1,5 +1,10 @@
 # Changelog
 
+## [v2.3.3] - 2025-02-16
+### Fixed
+- About Us Section
+  - Picture of Internship Student Leader
+
 ## [v2.3.2] - 2025-02-15
 ### Fixed
 - Registration Form
