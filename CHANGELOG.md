@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.3.4] - 2025-02-22
+### Fixed
+- Contact Us
+  - Google Maps
+
+
 ## [v2.3.3] - 2025-02-16
 ### Fixed
 - About Us Section
