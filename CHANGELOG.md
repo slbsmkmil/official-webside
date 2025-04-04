@@ -1,5 +1,16 @@
 # Changelog
 
+## [v2.3.5] - 2025-04-04
+### Added
+- Forum Section
+  - Index
+  - About Us
+  - Information
+  - Activity
+  - Registration
+  - Subscribe
+  - Contact Us
+
 ## [v2.3.4] - 2025-02-22
 ### Fixed
 - Contact Us
