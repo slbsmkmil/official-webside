@@ -1,5 +1,10 @@
 # Changelog
 
+## [v2.3.6] - 2025-04-07
+### Fixed
+- Activity
+  - More Information Link
+
 ## [v2.3.5] - 2025-04-04
 ### Added
 - Forum Section
