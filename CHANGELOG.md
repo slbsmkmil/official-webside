@@ -1,5 +1,14 @@
 # Changelog
 
+## [v2.4.0] - 2025-05-01
+### Fixed
+- Index
+  - Change Group Photos
+- About Us Section
+  - Internship Student Leader Upgrade To Student Leader
+- Activity
+  - Add Activity
+
 ## [v2.3.6] - 2025-04-07
 ### Fixed
 - Activity
