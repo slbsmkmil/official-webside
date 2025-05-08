@@ -1,5 +1,10 @@
 # Changelog
 
+## [v2.4.1] - 2025-05-09
+### Added
+- About Us Section
+  - District Student Leaders
+
 ## [v2.4.0] - 2025-05-01
 ### Fixed
 - Index
