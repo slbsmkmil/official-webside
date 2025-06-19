@@ -1,5 +1,9 @@
 # Changelog
 
+## [v2.5.0] - 2025-06-20
+### Fixed
+- AI Chatbot
+
 ## [v2.4.1] - 2025-05-09
 ### Added
 - About Us Section
