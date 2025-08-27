@@ -299,117 +299,103 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('inquiryForm');
-            const spinner = document.getElementById('spinner');
-            const submitButton = document.getElementById('submitButton');
-            
-            // Add event listener for form submission
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Validate form
-                if (validateForm()) {
-                    // Show loading spinner
-                    spinner.style.display = 'block';
-                    submitButton.disabled = true;
-                    
-                    // Simulate form submission (in a real scenario, this would be an actual form submission)
-                    setTimeout(function() {
-                        form.reset();
-                        spinner.style.display = 'none';
-                        submitButton.disabled = false;
-                    }, 2000);
-                }
-            });
-            
-            // Add event listener for reset button
-            document.getElementById('resetButton').addEventListener('click', function() {
-                clearErrors();
-            });
-            
-            // Form validation function
-            function validateForm() {
-                let isValid = true;
-                clearErrors();
-                
-                // Validate Full Name
-                const fullName = document.getElementById('fullName');
-                if (!fullName.value.trim()) {
-                    showError('fullNameError', 'Please provide your full name');
-                    isValid = false;
-                }
-                
-                // Validate ID Number
-                const idNumber = document.getElementById('idNumber');
-                if (!idNumber.value.trim()) {
-                    showError('idNumberError', 'Please provide your ID number');
-                    isValid = false;
-                }
-                
-                // Validate Class
-                const classSelect = document.getElementById('class');
-                if (!classSelect.value) {
-                    showError('classError', 'Please select your class');
-                    isValid = false;
-                }
-                
-                // Validate Gender
-                const gender = document.getElementById('gender');
-                if (!gender.value) {
-                    showError('genderError', 'Please select your gender');
-                    isValid = false;
-                }
-                
-                // Validate Contact Number
-                const contactNumber = document.getElementById('contactNumber');
-                if (!contactNumber.value.trim()) {
-                    showError('contactNumberError', 'Please provide a contact number');
-                    isValid = false;
-                } else if (!/^[+\d][\d\s\-()]{8,}$/.test(contactNumber.value)) {
-                    showError('contactNumberError', 'Please provide a valid contact number');
-                    isValid = false;
-                }
-                
-                // Validate Incident Date
-                const incidentDate = document.getElementById('incidentDate');
-                if (!incidentDate.value) {
-                    showError('incidentDateError', 'Please select the date of incident');
-                    isValid = false;
-                }
-                
-                // Validate Incident Location
-                const incidentLocation = document.getElementById('incidentLocation');
-                if (!incidentLocation.value.trim()) {
-                    showError('incidentLocationError', 'Please provide the location of incident');
-                    isValid = false;
-                }
-                
-                // Validate Incident Description
-                const incidentDescription = document.getElementById('incidentDescription');
-                if (!incidentDescription.value.trim()) {
-                    showError('incidentDescriptionError', 'Please provide a description of the incident');
-                    isValid = false;
-                }
-                
-                return isValid;
-            }
-            
-            // Show error message
-            function showError(elementId, message) {
-                const errorElement = document.getElementById(elementId);
-                errorElement.textContent = message;
-                errorElement.style.display = 'block';
-            }
-            
-            // Clear all error messages
-            function clearErrors() {
-                const errorElements = document.querySelectorAll('.error-message');
-                errorElements.forEach(function(element) {
-                    element.style.display = 'none';
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('inquiryForm');
+    const spinner = document.getElementById('spinner');
+    const submitButton = document.getElementById('submitButton');
+    
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        if (validateForm()) {
+            spinner.style.display = 'block';
+            submitButton.disabled = true;
+
+            try {
+                const formData = new FormData(form);
+
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
                 });
+
+                if (response.ok) {
+                    form.reset();
+                } else {
+                    console.error("Form submission failed", response.statusText);
+                    alert("There was a problem submitting your form. Please try again.");
+                }
+            } catch (err) {
+                console.error("Error submitting form", err);
+                alert("Network error. Please try again later.");
             }
+
+            spinner.style.display = 'none';
+            submitButton.disabled = false;
+        }
+    });
+
+    document.getElementById('resetButton').addEventListener('click', function() {
+        clearErrors();
+    });
+
+    function validateForm() {
+        let isValid = true;
+        clearErrors();
+
+        if (!document.getElementById('fullName').value.trim()) {
+            showError('fullNameError', 'Please provide your full name');
+            isValid = false;
+        }
+        if (!document.getElementById('idNumber').value.trim()) {
+            showError('idNumberError', 'Please provide your ID number');
+            isValid = false;
+        }
+        if (!document.getElementById('class').value) {
+            showError('classError', 'Please select your class');
+            isValid = false;
+        }
+        if (!document.getElementById('gender').value) {
+            showError('genderError', 'Please select your gender');
+            isValid = false;
+        }
+        const contactNumber = document.getElementById('contactNumber').value.trim();
+        if (!contactNumber) {
+            showError('contactNumberError', 'Please provide a contact number');
+            isValid = false;
+        } else if (!/^[+\d][\d\s\-()]{8,}$/.test(contactNumber)) {
+            showError('contactNumberError', 'Please provide a valid contact number');
+            isValid = false;
+        }
+        if (!document.getElementById('incidentDate').value) {
+            showError('incidentDateError', 'Please select the date of incident');
+            isValid = false;
+        }
+        if (!document.getElementById('incidentLocation').value.trim()) {
+            showError('incidentLocationError', 'Please provide the location of incident');
+            isValid = false;
+        }
+        if (!document.getElementById('incidentDescription').value.trim()) {
+            showError('incidentDescriptionError', 'Please provide a description of the incident');
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    function showError(elementId, message) {
+        const errorElement = document.getElementById(elementId);
+        errorElement.textContent = message;
+        errorElement.style.display = 'block';
+    }
+
+    function clearErrors() {
+        document.querySelectorAll('.error-message').forEach(el => {
+            el.style.display = 'none';
         });
-    </script>
+    }
+});
+</script>
 </body>
 </html>
