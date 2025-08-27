@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bully Case Inquiry Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teal: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                        },
+                        blue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(120deg, #e0f2fe, #f0fdfa);
+            min-height: 100vh;
+        }
+        
+        .form-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        input, select, textarea {
+            transition: all 0.3s ease;
+        }
+        
+        input:hover, select:hover, textarea:hover {
+            border-color: #3b82f6;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            ring: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0f766e;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #f8fafc;
+            transform: translateY(-2px);
+        }
+        
+        .spinner {
+            display: none;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .error-message {
+            display: none;
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+<body class="py-8 px-4">
+    <div class="max-w-2xl mx-auto">
+        <!-- Header Section -->
+        <header class="text-center mb-8">
+            <div class="flex justify-center items-center mb-4">
+                <div class="w-16 h-16 rounded-full bg-teal-500 flex items-center justify-center text-white">
+                    <i class="fas fa-shield-heart text-2xl"></i>
+                </div>
+            </div>
+            <h1 class="text-3xl font-bold text-gray-800">Bully Case Inquiry Form</h1>
+            <p class="text-gray-600 mt-2">Your voice matters. Please share your experience confidentially.</p>
+        </header>
+
+        <!-- Form Section -->
+        <main>
+            <div class="bg-white rounded-xl shadow-lg form-card p-6 md:p-8">
+                <form id="inquiryForm" action="https://formspree.io/f/mrbagvlo" method="POST">
+                    <!-- Full Name -->
+                    <div class="mb-6">
+                        <label for="fullName" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-user text-gray-400"></i>
+                            </div>
+                            <input type="text" id="fullName" name="fullName" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your full name">
+                        </div>
+                        <div id="fullNameError" class="error-message">Please provide your full name</div>
+                    </div>
+
+                    <!-- IC Number / Student ID -->
+                    <div class="mb-6">
+                        <label for="idNumber" class="block text-gray-700 font-medium mb-2">IC Number / Student ID</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-id-card text-gray-400"></i>
+                            </div>
+                            <input type="text" id="idNumber" name="idNumber" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your ID number">
+                        </div>
+                        <div id="idNumberError" class="error-message">Please provide your ID number</div>
+                    </div>
+
+                    <!-- Class and Gender in a row for larger screens -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <!-- Class -->
+                        <div>
+                            <label for="class" class="block text-gray-700 font-medium mb-2">Class</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-graduation-cap text-gray-400"></i>
+                                </div>
+                                <select id="class" name="class" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none">
+                                    <option value="" disabled selected>Select your class</option>
+                                    <option value="1PA">1 PA</option>
+                                    <option value="1ALF">1 ALF</option>
+                                    <option value="1ARIS">1 ARIS</option>
+                                    <option value="1EINS">1 EINS</option>
+                                    <option value="1NEWT">1 NEWT</option>
+                                    <option value="1DARW">1 DARW</option>
+                                    <option value="2ALR">2 ALR</option>
+                                    <option value="2ARIS">2 ARIS</option>
+                                    <option value="2EINS">2 EINS</option>
+                                    <option value="2NEWT">2 NEWT</option>
+                                    <option value="2DARW">2 DARW</option>
+                                    <option value="3ALG">3 ALG</option>
+                                    <option value="3ARIS">3 ARIS</option>
+                                    <option value="3EINS">3 EINS</option>
+                                    <option value="3NEWT">3 NEWT</option>
+                                    <option value="3DARW">3 DARW</option>
+                                    <option value="4UM">4 UM</option>
+                                    <option value="4USM">4 USM</option>
+                                    <option value="4UPM">4 UPM</option>
+                                    <option value="4UKM">4 UKM</option>
+                                    <option value="4UTM">4 UTM</option>
+                                    <option value="4IBK">4 IBK</option>
+                                    <option value="4EST">4 EST</option>
+                                    <option value="5UM">5 UM</option>
+                                    <option value="5UPM">5 UPM</option>
+                                    <option value="5UKM">5 UKM</option>
+                                    <option value="5UTM">5 UTM</option>
+                                    <option value="5IBS">5 IBS</option>
+                                    <option value="5EST">5 EST</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                    <i class="fas fa-chevron-down text-gray-400"></i>
+                                </div>
+                            </div>
+                            <div id="classError" class="error-message">Please select your class</div>
+                        </div>
+
+                        <!-- Gender -->
+                        <div>
+                            <label for="gender" class="block text-gray-700 font-medium mb-2">Gender</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-venus-mars text-gray-400"></i>
+                                </div>
+                                <select id="gender" name="gender" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none">
+                                    <option value="" disabled selected>Select your gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                                    <i class="fas fa-chevron-down text-gray-400"></i>
+                                </div>
+                            </div>
+                            <div id="genderError" class="error-message">Please select your gender</div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Number -->
+                    <div class="mb-6">
+                        <label for="contactNumber" class="block text-gray-700 font-medium mb-2">Contact Number</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-phone text-gray-400"></i>
+                            </div>
+                            <input type="tel" id="contactNumber" name="contactNumber" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your contact number">
+                        </div>
+                        <div id="contactNumberError" class="error-message">Please provide a valid contact number</div>
+                    </div>
+
+                    <!-- Date of Incident -->
+                    <div class="mb-6">
+                        <label for="incidentDate" class="block text-gray-700 font-medium mb-2">Date of Incident</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-calendar-day text-gray-400"></i>
+                            </div>
+                            <input type="date" id="incidentDate" name="incidentDate" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div id="incidentDateError" class="error-message">Please select the date of incident</div>
+                    </div>
+
+                    <!-- Location of Incident -->
+                    <div class="mb-6">
+                        <label for="incidentLocation" class="block text-gray-700 font-medium mb-2">Location of Incident</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-map-marker-alt text-gray-400"></i>
+                            </div>
+                            <input type="text" id="incidentLocation" name="incidentLocation" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Where did the incident occur?">
+                        </div>
+                        <div id="incidentLocationError" class="error-message">Please provide the location of incident</div>
+                    </div>
+
+                    <!-- Description of Incident -->
+                    <div class="mb-6">
+                        <label for="incidentDescription" class="block text-gray-700 font-medium mb-2">Description of Incident</label>
+                        <div class="relative">
+                            <div class="absolute top-3 left-3">
+                                <i class="fas fa-align-left text-gray-400"></i>
+                            </div>
+                            <textarea id="incidentDescription" name="incidentDescription" rows="5" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Please describe what happened"></textarea>
+                        </div>
+                        <div id="incidentDescriptionError" class="error-message">Please provide a description of the incident</div>
+                    </div>
+
+                    <!-- Upload Evidence -->
+                    <div class="mb-8">
+                        <label for="evidence" class="block text-gray-700 font-medium mb-2">Upload Evidence (Optional)</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-paperclip text-gray-400"></i>
+                            </div>
+                            <input type="file" id="evidence" name="evidence" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="space-y-4">
+                        <button type="submit" id="submitButton" class="btn-primary w-full bg-teal-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-teal-700 flex items-center justify-center">
+                            <span>Submit Report</span>
+                            <div id="spinner" class="spinner ml-2"></div>
+                        </button>
+                        <button type="reset" id="resetButton" class="btn-secondary w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-gray-50">
+                            Reset Form
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="mt-8 text-center text-gray-600 text-sm">
+            <p class="mb-2">All information submitted is kept strictly confidential and will be reviewed by the school counselor</p>
+            <p>For urgent help, call our hotline: <a href="tel:123-456-789" class="text-blue-600 hover:underline">123-456-789</a></p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('inquiryForm');
+            const spinner = document.getElementById('spinner');
+            const submitButton = document.getElementById('submitButton');
+            
+            // Add event listener for form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate form
+                if (validateForm()) {
+                    // Show loading spinner
+                    spinner.style.display = 'block';
+                    submitButton.disabled = true;
+                    
+                    // Simulate form submission (in a real scenario, this would be an actual form submission)
+                    setTimeout(function() {
+                        alert('Thank you for your report. We will review it and take appropriate action.');
+                        form.reset();
+                        spinner.style.display = 'none';
+                        submitButton.disabled = false;
+                    }, 2000);
+                }
+            });
+            
+            // Add event listener for reset button
+            document.getElementById('resetButton').addEventListener('click', function() {
+                clearErrors();
+            });
+            
+            // Form validation function
+            function validateForm() {
+                let isValid = true;
+                clearErrors();
+                
+                // Validate Full Name
+                const fullName = document.getElementById('fullName');
+                if (!fullName.value.trim()) {
+                    showError('fullNameError', 'Please provide your full name');
+                    isValid = false;
+                }
+                
+                // Validate ID Number
+                const idNumber = document.getElementById('idNumber');
+                if (!idNumber.value.trim()) {
+                    showError('idNumberError', 'Please provide your ID number');
+                    isValid = false;
+                }
+                
+                // Validate Class
+                const classSelect = document.getElementById('class');
+                if (!classSelect.value) {
+                    showError('classError', 'Please select your class');
+                    isValid = false;
+                }
+                
+                // Validate Gender
+                const gender = document.getElementById('gender');
+                if (!gender.value) {
+                    showError('genderError', 'Please select your gender');
+                    isValid = false;
+                }
+                
+                // Validate Contact Number
+                const contactNumber = document.getElementById('contactNumber');
+                if (!contactNumber.value.trim()) {
+                    showError('contactNumberError', 'Please provide a contact number');
+                    isValid = false;
+                } else if (!/^[+\d][\d\s\-()]{8,}$/.test(contactNumber.value)) {
+                    showError('contactNumberError', 'Please provide a valid contact number');
+                    isValid = false;
+                }
+                
+                // Validate Incident Date
+                const incidentDate = document.getElementById('incidentDate');
+                if (!incidentDate.value) {
+                    showError('incidentDateError', 'Please select the date of incident');
+                    isValid = false;
+                }
+                
+                // Validate Incident Location
+                const incidentLocation = document.getElementById('incidentLocation');
+                if (!incidentLocation.value.trim()) {
+                    showError('incidentLocationError', 'Please provide the location of incident');
+                    isValid = false;
+                }
+                
+                // Validate Incident Description
+                const incidentDescription = document.getElementById('incidentDescription');
+                if (!incidentDescription.value.trim()) {
+                    showError('incidentDescriptionError', 'Please provide a description of the incident');
+                    isValid = false;
+                }
+                
+                return isValid;
+            }
+            
+            // Show error message
+            function showError(elementId, message) {
+                const errorElement = document.getElementById(elementId);
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+            }
+            
+            // Clear all error messages
+            function clearErrors() {
+                const errorElements = document.querySelectorAll('.error-message');
+                errorElements.forEach(function(element) {
+                    element.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
