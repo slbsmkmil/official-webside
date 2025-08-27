@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,54 +40,60 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(120deg, #e0f2fe, #f0fdfa);
             min-height: 100vh;
         }
-        
+
         .form-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .form-card:hover {
             transform: translateY(-5px);
         }
-        
-        input, select, textarea {
+
+        input,
+        select,
+        textarea {
             transition: all 0.3s ease;
         }
-        
-        input:hover, select:hover, textarea:hover {
+
+        input:hover,
+        select:hover,
+        textarea:hover {
             border-color: #3b82f6;
         }
-        
-        input:focus, select:focus, textarea:focus {
+
+        input:focus,
+        select:focus,
+        textarea:focus {
             outline: none;
             ring: none;
             border-color: #3b82f6;
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
         }
-        
+
         .btn-primary {
             transition: all 0.3s ease;
         }
-        
+
         .btn-primary:hover {
             background-color: #0f766e;
             transform: translateY(-2px);
         }
-        
+
         .btn-secondary {
             transition: all 0.3s ease;
         }
-        
+
         .btn-secondary:hover {
             background-color: #f8fafc;
             transform: translateY(-2px);
         }
-        
+
         .spinner {
             display: none;
             width: 24px;
@@ -96,19 +103,37 @@
             border-top-color: #fff;
             animation: spin 1s ease-in-out infinite;
         }
-        
+
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
-        
+
         .error-message {
             display: none;
             color: #ef4444;
             font-size: 0.875rem;
             margin-top: 0.25rem;
         }
+
+        #popupOverlay.show {
+            display: flex;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
+
 <body class="py-8 px-4">
     <div class="max-w-2xl mx-auto">
         <!-- Header Section -->
@@ -122,6 +147,19 @@
             <p class="text-gray-600 mt-2">Your voice matters. Please share your experience confidentially.</p>
         </header>
 
+        <!-- Overlay Popup (Hidden by Default) -->
+        <div id="popupOverlay"
+            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+            <div class="bg-white rounded-xl shadow-lg max-w-sm w-full p-6 text-center">
+                <div id="popupIcon" class="text-4xl mb-4"></div>
+                <h2 id="popupTitle" class="text-xl font-semibold mb-2"></h2>
+                <p id="popupMessage" class="text-gray-600 mb-4"></p>
+                <button onclick="closePopup()" class="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700">
+                    OK
+                </button>
+            </div>
+        </div>
+
         <!-- Form Section -->
         <main>
             <div class="bg-white rounded-xl shadow-lg form-card p-6 md:p-8">
@@ -133,7 +171,9 @@
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <i class="fas fa-user text-gray-400"></i>
                             </div>
-                            <input type="text" id="fullName" name="fullName" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your full name">
+                            <input type="text" id="fullName" name="fullName"
+                                class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="Enter your full name">
                         </div>
                         <div id="fullNameError" class="error-message">Please provide your full name</div>
                     </div>
@@ -145,7 +185,9 @@
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <i class="fas fa-id-card text-gray-400"></i>
                             </div>
-                            <input type="text" id="idNumber" name="idNumber" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your ID number">
+                            <input type="text" id="idNumber" name="idNumber"
+                                class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="Enter your ID number">
                         </div>
                         <div id="idNumberError" class="error-message">Please provide your ID number</div>
                     </div>
@@ -159,7 +201,8 @@
                                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                     <i class="fas fa-graduation-cap text-gray-400"></i>
                                 </div>
-                                <select id="class" name="class" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none">
+                                <select id="class" name="class"
+                                    class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none">
                                     <option value="" disabled selected>Select your class</option>
                                     <option value="1PA">1 PA</option>
                                     <option value="1ALF">1 ALF</option>
@@ -205,7 +248,8 @@
                                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                     <i class="fas fa-venus-mars text-gray-400"></i>
                                 </div>
-                                <select id="gender" name="gender" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none">
+                                <select id="gender" name="gender"
+                                    class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none">
                                     <option value="" disabled selected>Select your gender</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
@@ -225,7 +269,9 @@
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <i class="fas fa-phone text-gray-400"></i>
                             </div>
-                            <input type="tel" id="contactNumber" name="contactNumber" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your contact number">
+                            <input type="tel" id="contactNumber" name="contactNumber"
+                                class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="Enter your contact number">
                         </div>
                         <div id="contactNumberError" class="error-message">Please provide a valid contact number</div>
                     </div>
@@ -237,53 +283,66 @@
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <i class="fas fa-calendar-day text-gray-400"></i>
                             </div>
-                            <input type="date" id="incidentDate" name="incidentDate" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <input type="date" id="incidentDate" name="incidentDate"
+                                class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                         </div>
                         <div id="incidentDateError" class="error-message">Please select the date of incident</div>
                     </div>
 
                     <!-- Location of Incident -->
                     <div class="mb-6">
-                        <label for="incidentLocation" class="block text-gray-700 font-medium mb-2">Location of Incident</label>
+                        <label for="incidentLocation" class="block text-gray-700 font-medium mb-2">Location of
+                            Incident</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <i class="fas fa-map-marker-alt text-gray-400"></i>
                             </div>
-                            <input type="text" id="incidentLocation" name="incidentLocation" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Where did the incident occur?">
+                            <input type="text" id="incidentLocation" name="incidentLocation"
+                                class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="Where did the incident occur?">
                         </div>
-                        <div id="incidentLocationError" class="error-message">Please provide the location of incident</div>
+                        <div id="incidentLocationError" class="error-message">Please provide the location of incident
+                        </div>
                     </div>
 
                     <!-- Description of Incident -->
                     <div class="mb-6">
-                        <label for="incidentDescription" class="block text-gray-700 font-medium mb-2">Description of Incident</label>
+                        <label for="incidentDescription" class="block text-gray-700 font-medium mb-2">Description of
+                            Incident</label>
                         <div class="relative">
                             <div class="absolute top-3 left-3">
                                 <i class="fas fa-align-left text-gray-400"></i>
                             </div>
-                            <textarea id="incidentDescription" name="incidentDescription" rows="5" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Please describe what happened"></textarea>
+                            <textarea id="incidentDescription" name="incidentDescription" rows="5"
+                                class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="Please describe what happened"></textarea>
                         </div>
-                        <div id="incidentDescriptionError" class="error-message">Please provide a description of the incident</div>
+                        <div id="incidentDescriptionError" class="error-message">Please provide a description of the
+                            incident</div>
                     </div>
 
                     <!-- Upload Evidence -->
                     <div class="mb-8">
-                        <label for="evidence" class="block text-gray-700 font-medium mb-2">Upload Evidence (Optional)</label>
+                        <label for="evidence" class="block text-gray-700 font-medium mb-2">Upload Evidence
+                            (Optional)</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                 <i class="fas fa-paperclip text-gray-400"></i>
                             </div>
-                            <input type="file" id="evidence" name="evidence" class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                            <input type="file" id="evidence" name="evidence"
+                                class="pl-10 w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
                         </div>
                     </div>
 
                     <!-- Buttons -->
                     <div class="space-y-4">
-                        <button type="submit" id="submitButton" class="btn-primary w-full bg-teal-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-teal-700 flex items-center justify-center">
+                        <button type="submit" id="submitButton"
+                            class="btn-primary w-full bg-teal-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-teal-700 flex items-center justify-center">
                             <span>Submit Report</span>
                             <div id="spinner" class="spinner ml-2"></div>
                         </button>
-                        <button type="reset" id="resetButton" class="btn-secondary w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-gray-50">
+                        <button type="reset" id="resetButton"
+                            class="btn-secondary w-full border border-gray-300 text-gray-700 py-3 px-4 rounded-lg font-medium hover:bg-gray-50">
                             Reset Form
                         </button>
                     </div>
@@ -293,109 +352,139 @@
 
         <!-- Footer Section -->
         <footer class="mt-8 text-center text-gray-600 text-sm">
-            <p class="mb-2">All information submitted is kept strictly confidential and will be reviewed by the school counselor</p>
-            <p>For urgent help, call our school discipline teacher: <a href="tel:0122669304" class="text-blue-600 hover:underline">+6012-266 9304</a></p>
+            <p class="mb-2">All information submitted is kept strictly confidential and will be reviewed by the school
+                counselor</p>
+            <p>For urgent help, call our school discipline teacher: <a href="tel:0122669304"
+                    class="text-blue-600 hover:underline">+6012-266 9304</a></p>
         </footer>
     </div>
 
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('inquiryForm');
-    const spinner = document.getElementById('spinner');
-    const submitButton = document.getElementById('submitButton');
-    
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        if (validateForm()) {
-            spinner.style.display = 'block';
-            submitButton.disabled = true;
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('inquiryForm');
+            const spinner = document.getElementById('spinner');
+            const submitButton = document.getElementById('submitButton');
 
-            try {
-                const formData = new FormData(form);
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
 
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                });
+                if (validateForm()) {
+                    spinner.style.display = 'block';
+                    submitButton.disabled = true;
 
-                if (response.ok) {
-                    form.reset();
-                } else {
-                    console.error("Form submission failed", response.statusText);
-                    alert("There was a problem submitting your form. Please try again.");
+                    try {
+                        const formData = new FormData(form);
+
+                        const response = await fetch(form.action, {
+                            method: form.method,
+                            body: formData,
+                            headers: { 'Accept': 'application/json' }
+                        });
+
+                        if (response.ok) {
+                            form.reset();
+                            showPopup("success", "Report Submitted", "Your report has been submitted successfully. Thank you for speaking up.");
+                        } else {
+                            console.error("Form submission failed", response.statusText);
+                            showPopup("error", "Submission Failed", "There was a problem submitting your form. Please try again.");
+                        }
+                    } catch (err) {
+                        console.error("Error submitting form", err);
+                        showPopup("error", "Network Error", "Network error. Please try again later.");
+                    }
+
+                    spinner.style.display = 'none';
+                    submitButton.disabled = false;
                 }
-            } catch (err) {
-                console.error("Error submitting form", err);
-                alert("Network error. Please try again later.");
+            });
+
+            document.getElementById('resetButton').addEventListener('click', function () {
+                clearErrors();
+            });
+
+            function validateForm() {
+                let isValid = true;
+                clearErrors();
+
+                if (!document.getElementById('fullName').value.trim()) {
+                    showError('fullNameError', 'Please provide your full name');
+                    isValid = false;
+                }
+                if (!document.getElementById('idNumber').value.trim()) {
+                    showError('idNumberError', 'Please provide your ID number');
+                    isValid = false;
+                }
+                if (!document.getElementById('class').value) {
+                    showError('classError', 'Please select your class');
+                    isValid = false;
+                }
+                if (!document.getElementById('gender').value) {
+                    showError('genderError', 'Please select your gender');
+                    isValid = false;
+                }
+                const contactNumber = document.getElementById('contactNumber').value.trim();
+                if (!contactNumber) {
+                    showError('contactNumberError', 'Please provide a contact number');
+                    isValid = false;
+                } else if (!/^[+\d][\d\s\-()]{8,}$/.test(contactNumber)) {
+                    showError('contactNumberError', 'Please provide a valid contact number');
+                    isValid = false;
+                }
+                if (!document.getElementById('incidentDate').value) {
+                    showError('incidentDateError', 'Please select the date of incident');
+                    isValid = false;
+                }
+                if (!document.getElementById('incidentLocation').value.trim()) {
+                    showError('incidentLocationError', 'Please provide the location of incident');
+                    isValid = false;
+                }
+                if (!document.getElementById('incidentDescription').value.trim()) {
+                    showError('incidentDescriptionError', 'Please provide a description of the incident');
+                    isValid = false;
+                }
+
+                return isValid;
             }
 
-            spinner.style.display = 'none';
-            submitButton.disabled = false;
-        }
-    });
+            function showError(elementId, message) {
+                const errorElement = document.getElementById(elementId);
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+            }
 
-    document.getElementById('resetButton').addEventListener('click', function() {
-        clearErrors();
-    });
+            function clearErrors() {
+                document.querySelectorAll('.error-message').forEach(el => {
+                    el.style.display = 'none';
+                });
+            }
 
-    function validateForm() {
-        let isValid = true;
-        clearErrors();
+            // ===== Popup Functions =====
+            window.showPopup = function (type, title, message) {
+                const overlay = document.getElementById("popupOverlay");
+                const popupIcon = document.getElementById("popupIcon");
+                const popupTitle = document.getElementById("popupTitle");
+                const popupMessage = document.getElementById("popupMessage");
 
-        if (!document.getElementById('fullName').value.trim()) {
-            showError('fullNameError', 'Please provide your full name');
-            isValid = false;
-        }
-        if (!document.getElementById('idNumber').value.trim()) {
-            showError('idNumberError', 'Please provide your ID number');
-            isValid = false;
-        }
-        if (!document.getElementById('class').value) {
-            showError('classError', 'Please select your class');
-            isValid = false;
-        }
-        if (!document.getElementById('gender').value) {
-            showError('genderError', 'Please select your gender');
-            isValid = false;
-        }
-        const contactNumber = document.getElementById('contactNumber').value.trim();
-        if (!contactNumber) {
-            showError('contactNumberError', 'Please provide a contact number');
-            isValid = false;
-        } else if (!/^[+\d][\d\s\-()]{8,}$/.test(contactNumber)) {
-            showError('contactNumberError', 'Please provide a valid contact number');
-            isValid = false;
-        }
-        if (!document.getElementById('incidentDate').value) {
-            showError('incidentDateError', 'Please select the date of incident');
-            isValid = false;
-        }
-        if (!document.getElementById('incidentLocation').value.trim()) {
-            showError('incidentLocationError', 'Please provide the location of incident');
-            isValid = false;
-        }
-        if (!document.getElementById('incidentDescription').value.trim()) {
-            showError('incidentDescriptionError', 'Please provide a description of the incident');
-            isValid = false;
-        }
+                if (type === "success") {
+                    popupIcon.innerHTML = '<i class="fas fa-check-circle text-green-500"></i>';
+                } else {
+                    popupIcon.innerHTML = '<i class="fas fa-times-circle text-red-500"></i>';
+                }
 
-        return isValid;
-    }
+                popupTitle.textContent = title;
+                popupMessage.textContent = message;
 
-    function showError(elementId, message) {
-        const errorElement = document.getElementById(elementId);
-        errorElement.textContent = message;
-        errorElement.style.display = 'block';
-    }
+                overlay.classList.remove("hidden");
+                overlay.classList.add("flex");
+            }
 
-    function clearErrors() {
-        document.querySelectorAll('.error-message').forEach(el => {
-            el.style.display = 'none';
+            window.closePopup = function () {
+                const overlay = document.getElementById("popupOverlay");
+                overlay.classList.add("hidden");
+                overlay.classList.remove("flex");
+            }
         });
-    }
-});
-</script>
+    </script>
 </body>
+
 </html>
