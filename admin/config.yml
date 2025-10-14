@@ -3,16 +3,58 @@ backend:
   repo: slbsmkmil/official-webside
   branch: main
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "image/uploads"
+public_folder: "/image/uploads"
 
 collections:
   - name: "pages"
-    label: "Website Pages"
+    label: "网站页面"
     files:
-      - label: "Homepage"
+      - label: "首页"
         name: "index"
         file: "index.html"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "body", widget: "markdown" }
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "内容", name: "body", widget: "markdown" }
+
+      - label: "关于我们"
+        name: "about-us"
+        file: "about-us.html"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "内容", name: "body", widget: "markdown" }
+
+      - label: "Information"
+        name: "info"
+        file: "info.html"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "内容", name: "body", widget: "markdown" }
+
+      - label: "Activity"
+        name: "activity"
+        file: "activity.html"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "内容", name: "body", widget: "markdown" }
+
+      - label: "Registration"
+        name: "register"
+        file: "register.html"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "内容", name: "body", widget: "markdown" }
+
+      - label: "Subscribe"
+        name: "subscribe"
+        file: "subscribe.html"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "内容", name: "body", widget: "markdown" }
+
+      - label: "Contact Us"
+        name: "contact"
+        file: "contact.html"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "内容", name: "body", widget: "markdown" }
