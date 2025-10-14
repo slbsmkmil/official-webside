@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>SLB Official Website CMS</title>
-    <script src="https://unpkg.com/pages-cms@latest/dist/pages-cms.js"></script>
+    <meta charset="utf-8" />
+    <title>Website Editor - Pages CMS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
+    <script src="https://unpkg.com/pages-cms@latest"></script>
     <script>
-      PagesCMS.init();
+      PagesCMS.init({
+        configPath: 'config.yml' // 告诉 CMS 去哪里找配置文件
+      });
     </script>
   </body>
 </html>
