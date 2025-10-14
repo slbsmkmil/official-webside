@@ -1,0 +1,4 @@
+build:
+  environment: github-pages
+  settings:
+    path: .
