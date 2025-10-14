@@ -1,4 +1,53 @@
-build:
-  environment: github-pages
-  settings:
-    path: .
+backend:
+  name: github
+  repo: slbsmkmil/official-webside
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Website Pages"
+    files:
+      - label: "Home"
+        name: "index"
+        file: "index.html"
+        fields:
+          - { label: "Main Content", name: "body", widget: "markdown" }
+
+      - label: "About Us"
+        name: "about"
+        file: "about-us.html"
+        fields:
+          - { label: "Main Content", name: "body", widget: "markdown" }
+
+      - label: "Information"
+        name: "info"
+        file: "info.html"
+        fields:
+          - { label: "Main Content", name: "body", widget: "markdown" }
+
+      - label: "Activity"
+        name: "activity"
+        file: "activity.html"
+        fields:
+          - { label: "Main Content", name: "body", widget: "markdown" }
+
+      - label: "Registration"
+        name: "register"
+        file: "register.html"
+        fields:
+          - { label: "Main Content", name: "body", widget: "markdown" }
+
+      - label: "Subscribe"
+        name: "subscribe"
+        file: "subscribe.html"
+        fields:
+          - { label: "Main Content", name: "body", widget: "markdown" }
+
+      - label: "Contact Us"
+        name: "contact"
+        file: "contact.html"
+        fields:
+          - { label: "Main Content", name: "body", widget: "markdown" }
