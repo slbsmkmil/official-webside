@@ -1,53 +1,88 @@
-backend:
-  name: github
-  repo: slbsmkmil/official-webside
-  branch: main
+media:
+  input: image/uploads
+  output: /image/uploads
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+content:
+  - name: home
+    label: Home
+    type: file
+    file: index.html
+    fields:
+      - name: title
+        label: 标题
+        type: string
+      - name: body
+        label: 主要内容
+        type: rich-text
 
-collections:
-  - name: "pages"
-    label: "Website Pages"
-    files:
-      - label: "Home"
-        name: "index"
-        file: "index.html"
-        fields:
-          - { label: "Main Content", name: "body", widget: "markdown" }
+  - name: about
+    label: About Us
+    type: file
+    file: about-us.html
+    fields:
+      - name: title
+        label: 标题
+        type: string
+      - name: body
+        label: 主要内容
+        type: rich-text
 
-      - label: "About Us"
-        name: "about"
-        file: "about-us.html"
-        fields:
-          - { label: "Main Content", name: "body", widget: "markdown" }
+  - name: info
+    label: Information
+    type: file
+    file: info.html
+    fields:
+      - name: title
+        label: 标题
+        type: string
+      - name: body
+        label: 主要内容
+        type: rich-text
 
-      - label: "Information"
-        name: "info"
-        file: "info.html"
-        fields:
-          - { label: "Main Content", name: "body", widget: "markdown" }
+  - name: activity
+    label: Activity
+    type: file
+    file: activity.html
+    fields:
+      - name: title
+        label: 标题
+        type: string
+      - name: body
+        label: 主要内容
+        type: rich-text
 
-      - label: "Activity"
-        name: "activity"
-        file: "activity.html"
-        fields:
-          - { label: "Main Content", name: "body", widget: "markdown" }
+  - name: register
+    label: Registration
+    type: file
+    file: register.html
+    fields:
+      - name: title
+        label: 标题
+        type: string
+      - name: body
+        label: 主要内容
+        type: rich-text
 
-      - label: "Registration"
-        name: "register"
-        file: "register.html"
-        fields:
-          - { label: "Main Content", name: "body", widget: "markdown" }
+  - name: subscribe
+    label: Subscribe
+    type: file
+    file: subscribe.html
+    fields:
+      - name: title
+        label: 标题
+        type: string
+      - name: body
+        label: 主要内容
+        type: rich-text
 
-      - label: "Subscribe"
-        name: "subscribe"
-        file: "subscribe.html"
-        fields:
-          - { label: "Main Content", name: "body", widget: "markdown" }
-
-      - label: "Contact Us"
-        name: "contact"
-        file: "contact.html"
-        fields:
-          - { label: "Main Content", name: "body", widget: "markdown" }
+  - name: contact
+    label: Contact Us
+    type: file
+    file: contact.html
+    fields:
+      - name: title
+        label: 标题
+        type: string
+      - name: body
+        label: 主要内容
+        type: rich-text
