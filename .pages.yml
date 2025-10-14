@@ -1,6 +1,6 @@
 media:
-  input: image
-  output: /image
+  input: uploads
+  output: /uploads
 
 content:
   - name: home
