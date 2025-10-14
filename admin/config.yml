@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: slbsmkmil/official-webside   # 改成你的仓库名
+  branch: main                      # 或者 master，看你的默认分支
+  auth_scope: repo
+  base_url: https://pagescms.org
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "pages"
+    label: "Website Pages"
+    folder: "/"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
