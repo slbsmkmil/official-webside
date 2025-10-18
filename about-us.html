@@ -346,8 +346,10 @@
 
   <!-- 简化的动态加载脚本 -->
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // 隐藏加载spinner
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM loaded, starting member loading...");
+    
+    // Hide loading spinner
     const spinner = document.getElementById('spinner');
     if (spinner) {
         spinner.style.display = 'none';
@@ -359,52 +361,88 @@
     };
 
     function showError(container, msg) {
-        console.error(msg);
-        container.innerHTML = `<div class="col-12 text-center text-danger">${msg}</div>`;
+        console.error('Error:', msg);
+        container.innerHTML = `<div class="col-12 text-center text-danger p-3 border rounded bg-light">
+            <h5>Load Failed</h5>
+            <p>${msg}</p>
+            <small>Please check console for details</small>
+        </div>`;
+    }
+
+    function showLoading(container) {
+        container.innerHTML = '<div class="col-12 text-center p-3"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div><p class="mt-2">Loading member data...</p></div>';
     }
 
     async function loadMembers() {
+        console.log('Starting to load members...');
+        
+        // Show loading status
+        showLoading(sections.student);
+        showLoading(sections.internship);
+
         try {
-            // 尝试加载成员数据
-            const response = await fetch('data/members/manifest.json');
+            const manifestUrl = 'data/members/manifest.json';
+            console.log('Fetching manifest from:', manifestUrl);
+            
+            const response = await fetch(manifestUrl);
+            console.log('Response status:', response.status, response.statusText);
+            
             if (!response.ok) {
-                throw new Error('Unable to load member list');
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
             
             const fileList = await response.json();
+            console.log('Manifest content:', fileList);
             
-            if (!Array.isArray(fileList) || fileList.length === 0) {
-                showError(sections.student, 'Member list is empty');
-                showError(sections.internship, 'Member list is empty');
+            if (!Array.isArray(fileList)) {
+                throw new Error('Manifest is not a valid array');
+            }
+            
+            if (fileList.length === 0) {
+                showError(sections.student, 'Member list is empty - no files in manifest.json');
+                showError(sections.internship, 'Member list is empty - no files in manifest.json');
                 return;
             }
 
-            // 加载所有成员文件
+            console.log(`Found ${fileList.length} member files to load`);
+
+            // Load all member files
             const members = [];
             for (const fileName of fileList) {
                 try {
-                    const memberResponse = await fetch(`data/members/${fileName}`);
+                    const memberUrl = `data/members/${fileName}`;
+                    console.log('Loading member:', memberUrl);
+                    
+                    const memberResponse = await fetch(memberUrl);
                     if (memberResponse.ok) {
                         const member = await memberResponse.json();
+                        console.log('Loaded member:', member);
                         members.push(member);
+                    } else {
+                        console.warn(`Failed to load ${fileName}: HTTP ${memberResponse.status}`);
                     }
                 } catch (error) {
-                    console.warn(`Unable to load member file: ${fileName}`, error);
+                    console.warn(`Error loading member file ${fileName}:`, error);
                 }
             }
 
-            // 清空加载提示
+            console.log(`Successfully loaded ${members.length} members`);
+
+            // Clear loading indicators
             sections.student.innerHTML = '';
             sections.internship.innerHTML = '';
 
-            // 根据section分类显示成员
+            // Display members by section
+            let studentCount = 0;
+            let internshipCount = 0;
+
             members.forEach(member => {
                 const container = sections[member.section];
                 if (container) {
                     const col = document.createElement("div");
                     col.className = "col-lg-3 col-md-4 col-sm-6";
                     col.style.animation = "fadeInUp 1s ease-in-out";
-                    const photoSrc = member.photo || 'image/user.jpg';
+                    const photoSrc = member.photo || 'image/default.jpg';
                     col.innerHTML = `
                       <div class="member-card">
                         <img src="${photoSrc}" class="member-img" alt="${member.name}">
@@ -413,29 +451,35 @@
                       </div>
                     `;
                     container.appendChild(col);
+                    
+                    if (member.section === 'student') studentCount++;
+                    if (member.section === 'internship') internshipCount++;
+                } else {
+                    console.warn('No container found for section:', member.section, member);
                 }
             });
 
-            // 如果没有成员，显示提示信息
-            if (sections.student.children.length === 0) {
-                sections.student.innerHTML = '<div class="col-12 text-center">No Student Leaders Available</div>';
+            console.log(`Displayed ${studentCount} student members and ${internshipCount} internship members`);
+
+            // Show message if no members
+            if (studentCount === 0) {
+                sections.student.innerHTML = '<div class="col-12 text-center text-muted p-4 border rounded"><p>No student leader members yet</p><small>Please add student members via PagesCMS</small></div>';
             }
-            if (sections.internship.children.length === 0) {
-                sections.internship.innerHTML = '<div class="col-12 text-center">No Internship Student Leaders Available</div>';
+            if (internshipCount === 0) {
+                sections.internship.innerHTML = '<div class="col-12 text-center text-muted p-4 border rounded"><p>No internship members yet</p><small>Please add internship members via PagesCMS</small></div>';
             }
 
         } catch (error) {
             console.error('Failed to load member data:', error);
-            showError(sections.student, 'Failed to load member data, please try again later');
-            showError(sections.internship, 'Failed to load member data, please try again later');
+            showError(sections.student, `Load failed: ${error.message}`);
+            showError(sections.internship, `Load failed: ${error.message}`);
         }
     }
 
-    // 加载动态成员
+    // Load dynamic members
     loadMembers();
-  });
-  </script>
-
+});
+</script>
   <!-- JavaScript Libraries -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -450,4 +494,5 @@
   <script id="messenger-widget-b" src="https://cdn.botpenguin.com/website-bot.js" defer>68543d78a306b60e50544d8f,68543d5a83bcc80f6098336f</script>
 </body>
 </html>
+
 
