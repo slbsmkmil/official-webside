@@ -544,31 +544,46 @@
   <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
   <script>
-fetch('data/members')
-  .then(response => response.json())
-  .then(members => {
-    const sections = {
-      committee: document.querySelector('#committee-section .row'),
-      district: document.querySelector('#district-section .row'),
-      student: document.querySelector('#student-section .row'),
-      internship: document.querySelector('#internship-section .row')
-    };
+async function loadMembers() {
+  const sections = {
+    committee: document.querySelector("#committee-section + .row"),
+    district: document.querySelector("#district-section + .row"),
+    student: document.querySelector("#student-section + .row"),
+    internship: document.querySelector("#internship-section + .row")
+  };
 
-    members.forEach(member => {
-      const card = `
-        <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
-          <div class="member-card">
-            <img src="${member.photo}" class="member-img" alt="${member.name}">
-            <h4 class="mt-3">${member.name}</h4>
-            <p>${member.position}<br>${member.class}</p>
-          </div>
+  try {
+    const response = await fetch('data/members/');
+    const files = await response.text();
+
+    // PagesCMS 静态环境不支持目录列出文件，因此我们用 manifest.json
+    // 如果你有多个成员，请创建 data/members/manifest.json 列出文件：
+    // ["lim-guan-you.json", "nur-irdyna-soffea.json", ...]
+    const list = await fetch('data/members/manifest.json').then(res => res.json());
+
+    for (const file of list) {
+      const member = await fetch(`data/members/${file}`).then(res => res.json());
+      const container = sections[member.section];
+      if (!container) continue;
+
+      const col = document.createElement("div");
+      col.className = "col-lg-3 col-md-4 col-sm-6";
+      col.style.animation = "fadeInUp 1s ease-in-out";
+      col.innerHTML = `
+        <div class="member-card">
+          <img src="${member.photo}" class="member-img" alt="${member.name}">
+          <h4 class="mt-3">${member.name}</h4>
+          <p>${member.position}<br>${member.class}</p>
         </div>
       `;
-      if (sections[member.section]) {
-        sections[member.section].insertAdjacentHTML('beforeend', card);
-      }
-    });
-  });
+      container.appendChild(col);
+    }
+  } catch (err) {
+    console.error("Error loading members:", err);
+  }
+}
+
+loadMembers();
 </script>
 
 
@@ -590,5 +605,6 @@ fetch('data/members')
 </body>
 
 </html>
+
 
 
