@@ -1,17 +1,25 @@
 site:
-  name: "SMKMIL Tech Team Website"
-  logo: "/images/logo.png"
-  description: "Official Website for SMKMIL PA System & Tech Team"
+  name: "SLB SMKMIL Official Website"
+  logo: "/logo slb rbg.png"
+  description: "Student Leader Board - SMK Munshi Ibrahim Labis"
 
 collections:
   - name: "members"
-    label: "Member Area"
+    label: "Members"
     folder: "data/members"
     create: true
     slug: "{{name}}"
     format: "json"
     fields:
       - { name: "name", label: "Full Name", widget: "string" }
-      - { name: "position", label: "Position", widget: "string" }
-      - { name: "photo", label: "Photo URL", widget: "image" }
-      - { name: "bio", label: "Short Bio", widget: "text" }
+      - { name: "position", label: "Position / Title", widget: "string" }
+      - { name: "class", label: "Class", widget: "string" }
+      - { name: "photo", label: "Photo", widget: "image" }
+      - name: "section"
+        label: "Section"
+        widget: "select"
+        options:
+          - { label: "Committee of Student Leader Board", value: "committee" }
+          - { label: "Member of District Student Leaders Board", value: "district" }
+          - { label: "Member of Student Leaders Board", value: "student" }
+          - { label: "Internship Member of Student Leaders Board", value: "internship" }
