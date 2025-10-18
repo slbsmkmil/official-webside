@@ -23,15 +23,19 @@ content:
       - name: position
         label: Position / Title
         type: string
+        required: true
       - name: class
         label: Class
         type: string
+        required: true
       - name: photo
         label: Photo
         type: image
+        required: true
       - name: section
         label: Section
         type: string
+        required: true
         description: "Enter: committee, student, or internship (lowercase)"
 
   - name: about
