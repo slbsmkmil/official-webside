@@ -24,6 +24,5 @@ collections:
         widget: "select"
         options:
           - { label: "Committee of Student Leader Board", value: "committee" }
-          - { label: "Member of District Student Leaders Board", value: "district" }
           - { label: "Member of Student Leaders Board", value: "student" }
           - { label: "Internship Member of Student Leaders Board", value: "internship" }
