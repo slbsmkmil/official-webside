@@ -1,41 +1,40 @@
-content:
-  - name: "members"
-    label: "Members"
-    folder: "data/members"
+collections:
+  # === Member Collection ===
+  - type: collection
+    name: members
+    label: Members
+    path: data/members/{{slug}}.json
     create: true
-    slug: "{{name}}"
-    format: "json"
     fields:
-      - name: "name"
-        label: "Full Name"
-        widget: "string"
-      - name: "position"
-        label: "Position / Title"
-        widget: "string"
-      - name: "class"
-        label: "Class"
-        widget: "string"
-      - name: "photo"
-        label: "Photo"
-        widget: "image"
-      - name: "section"
-        label: "Section"
-        widget: "select"
+      - name: name
+        label: Full Name
+        component: text
+      - name: position
+        label: Position / Title
+        component: text
+      - name: class
+        label: Class
+        component: text
+      - name: photo
+        label: Photo
+        component: image
+      - name: section
+        label: Section
+        component: select
         options:
-          - label: "Committee of Student Leader Board"
-            value: "committee"
-          - label: "Member of Student Leaders Board"
-            value: "student"
-          - label: "Internship Member of Student Leaders Board"
-            value: "internship"
+          - label: Committee of Student Leader Board
+            value: committee
+          - label: Member of Student Leaders Board
+            value: student
+          - label: Internship Member of Student Leaders Board
+            value: internship
 
-  - name: "pages"
-    label: "Website Pages"
-    files:
-      - file: "about-us.html"
-        label: "About Us Page"
-        name: "aboutus"
-        fields:
-          - name: "body"
-            label: "Page Content"
-            widget: "markdown"
+  # === Static Page ===
+  - type: file
+    name: aboutus
+    label: About Us Page
+    path: about-us.html
+    fields:
+      - name: body
+        label: Page Content
+        component: markdown
