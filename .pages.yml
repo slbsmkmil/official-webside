@@ -33,17 +33,14 @@ content:
         label: Section
         type: select
         options:
-          - label: Committee of Student Leader Board
-            value: committee
-          - label: Member of Student Leaders Board
-            value: student
-          - label: Internship Member of Student Leaders Board
-            value: internship
+          committee: Committee of Student Leader Board
+          student: Member of Student Leaders Board
+          internship: Internship Member of Student Leaders Board
 
   - name: about
     label: About Us
     type: file
-    path: about-us.html
+    path: about-us.md
     format: yaml-frontmatter
     fields:
       - name: title
