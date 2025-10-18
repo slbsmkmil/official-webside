@@ -31,22 +31,15 @@ content:
         type: image
       - name: section
         label: Section
-        type: string
-        description: "Enter: committee, student, or internship (lowercase)"
+        type: select
+        options: ["committee", "student", "internship"]
 
   - name: about
     label: About Us
     type: file
     path: about-us.html
-    format: html
+    format: raw
     fields:
-      - name: title
-        label: Page Title
-        type: string
-        default: "About Us"
-      - name: description
-        label: Meta Description
-        type: text
       - name: body
         label: Page Content
         type: rich-text
