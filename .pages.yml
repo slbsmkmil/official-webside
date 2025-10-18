@@ -31,7 +31,7 @@ collections:
   - name: aboutus
     label: About Us
     path: content/pages
-    file: about-us.md
+    file: about-us.html
     fields:
       - name: title
         label: Title
