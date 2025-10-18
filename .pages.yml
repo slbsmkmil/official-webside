@@ -3,7 +3,7 @@ site:
   logo: "/logo slb rbg.png"
   description: "Student Leader Board - SMK Munshi Ibrahim Labis"
 
-media_folder: "image"  # 所有图片存放位置
+media_folder: "image"   # 上传的媒体（照片）存放到仓库的 image/ 文件夹
 public_folder: "/image"
 
 collections:
@@ -11,13 +11,15 @@ collections:
     label: "Members"
     folder: "data/members"
     create: true
-    slug: "{{name}}"
+    slug: "{{name | slugify}}"
     format: "json"
     fields:
       - { name: "name", label: "Full Name", widget: "string" }
       - { name: "position", label: "Position / Title", widget: "string" }
       - { name: "class", label: "Class", widget: "string" }
-      - { name: "photo", label: "Photo", widget: "image" }
+      - name: "photo"
+        label: "Photo (JPG)"
+        widget: "image"
       - name: "section"
         label: "Section"
         widget: "select"
