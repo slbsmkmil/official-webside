@@ -6,17 +6,28 @@ content:
     slug: "{{name}}"
     format: "json"
     fields:
-      - { name: "name", label: "Full Name", widget: "string" }
-      - { name: "position", label: "Position / Title", widget: "string" }
-      - { name: "class", label: "Class", widget: "string" }
-      - { name: "photo", label: "Photo", widget: "image" }
+      - name: "name"
+        label: "Full Name"
+        widget: "string"
+      - name: "position"
+        label: "Position / Title"
+        widget: "string"
+      - name: "class"
+        label: "Class"
+        widget: "string"
+      - name: "photo"
+        label: "Photo"
+        widget: "image"
       - name: "section"
         label: "Section"
         widget: "select"
         options:
-          - { label: "Committee of Student Leader Board", value: "committee" }
-          - { label: "Member of Student Leaders Board", value: "student" }
-          - { label: "Internship Member of Student Leaders Board", value: "internship" }
+          - label: "Committee of Student Leader Board"
+            value: "committee"
+          - label: "Member of Student Leaders Board"
+            value: "student"
+          - label: "Internship Member of Student Leaders Board"
+            value: "internship"
 
   - name: "pages"
     label: "Website Pages"
@@ -25,4 +36,6 @@ content:
         label: "About Us Page"
         name: "aboutus"
         fields:
-          - { name: "body", label: "Page Content", widget: "markdown" }
+          - name: "body"
+            label: "Page Content"
+            widget: "markdown"
