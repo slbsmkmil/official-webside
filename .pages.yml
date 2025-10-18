@@ -14,7 +14,11 @@ collections:
       - { name: "name", label: "Full Name", widget: "string" }
       - { name: "position", label: "Position / Title", widget: "string" }
       - { name: "class", label: "Class", widget: "string" }
-      - { name: "photo", label: "Photo", widget: "image" }
+      - name: "photo"
+        label: "Photo"
+        widget: "image"
+        media_folder: "image"
+        public_folder: "/image"
       - name: "section"
         label: "Section"
         widget: "select"
