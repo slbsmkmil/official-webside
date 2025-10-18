@@ -32,7 +32,7 @@ content:
       - name: section
         label: Section
         type: string
-        options: ["committee", "student", "internship"]
+        description: "Enter: committee, student, or internship (lowercase)"
 
   - name: about
     label: About Us
