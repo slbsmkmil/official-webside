@@ -1,22 +1,42 @@
 # .pages.yml
-backend:
-  name: git-gateway
-  branch: main
+media: media
 
-media_folder: "/image"
-public_folder: "/image"
-
-collections:
-  - name: "members"
-    label: "Members"
-    folder: "data/members"
-    create: true
+content:
+  - name: members
+    label: Members
+    type: collection
+    path: data/members
+    view:
+      fields: [name, position, class, section]
     fields:
-      - {label: "Full Name", name: "name", widget: "string"}
-      - {label: "Position", name: "position", widget: "string"}
-      - {label: "Class", name: "class", widget: "string"}
-      - {label: "Photo", name: "photo", widget: "image"}
-      - label: "Section"
-        name: "section"
-        widget: "select"
-        options: ["committee", "student", "internship"]
+      - name: name
+        label: Full Name
+        type: string
+      - name: position
+        label: Position / Title
+        type: string
+      - name: class
+        label: Class
+        type: string
+      - name: photo
+        label: Photo
+        type: image
+      - name: section
+        label: Section
+        type: select
+        options:
+          - label: Committee of Student Leader Board
+            value: committee
+          - label: Member of Student Leaders Board
+            value: student
+          - label: Internship Member of Student Leaders Board
+            value: internship
+
+  - name: about
+    label: About Us Page
+    type: file
+    path: about-us.html
+    fields:
+      - name: body
+        label: Page Content
+        type: rich-text
