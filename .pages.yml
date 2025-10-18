@@ -1,17 +1,4 @@
 site:
-  name: "Official Webside"
-  logo: "/logo.png"
-  description: "SMKMIL Tech Team Official Website"
-
-collections:
-  - name: "pages"
-    label: "Website Pages"
-    folder: "content/pages"
-    create: true
-    fields:
-      - { name: "title", label: "Title", widget: "string" }
-      - { name: "body", label: "Content", widget: "markdown" }
-site:
   name: "SMKMIL Tech Team Website"
   logo: "/images/logo.png"
   description: "Official Website for SMKMIL PA System & Tech Team"
