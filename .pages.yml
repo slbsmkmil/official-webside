@@ -1,12 +1,4 @@
-site:
-  name: "SLB SMKMIL Official Website"
-  logo: "/logo slb rbg.png"
-  description: "Student Leader Board - SMK Munshi Ibrahim Labis"
-
-media_folder: "image"  # 所有图片存放位置
-public_folder: "/image"
-
-collections:
+about-us.html:
   - name: "members"
     label: "Members"
     folder: "data/members"
