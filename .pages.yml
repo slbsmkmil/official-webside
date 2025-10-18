@@ -1,16 +1,13 @@
-# .pages.yml 的正确格式
-
 collections:
   - name: members
     label: Members
-    path: content/members
+    path: data/members
     extension: json
-    format: json
+    create: true
     fields:
       - name: name
         label: Full Name
         component: text
-        required: true
       - name: position
         label: Position / Title
         component: text
@@ -20,7 +17,6 @@ collections:
       - name: photo
         label: Photo
         component: image
-        required: false
       - name: section
         label: Section
         component: select
@@ -32,16 +28,15 @@ collections:
           - label: Internship Member of Student Leaders Board
             value: internship
 
-  - name: pages
-    label: Pages
+  - name: aboutus
+    label: About Us
     path: content/pages
-    extension: md
-    format: frontmatter
+    file: about-us.md
     fields:
       - name: title
         label: Title
         component: text
-        required: true
+        default: "About Us"
       - name: body
-        label: Content
+        label: Page Content
         component: markdown
