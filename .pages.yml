@@ -3,26 +3,35 @@ site:
   logo: "/logo slb rbg.png"
   description: "Student Leader Board - SMK Munshi Ibrahim Labis"
 
-collections:
-  - name: "members"
-    label: "Members"
-    folder: "data/members"
-    create: true
-    slug: "{{name | slugify}}"
-    format: "json"
-    fields:
-      - { name: "name", label: "Full Name", widget: "string" }
-      - { name: "position", label: "Position / Title", widget: "string" }
-      - { name: "class", label: "Class", widget: "string" }
-      - name: "photo"
-        label: "Photo (.jpg only)"
-        widget: "image"
-        media_folder: "image"
-        public_folder: "/image"
-      - name: "section"
-        label: "Section"
-        widget: "select"
-        options:
-          - { label: "Committee of Student Leader Board", value: "committee" }
-          - { label: "Member of Student Leaders Board", value: "student" }
-          - { label: "Internship Member of Student Leaders Board", value: "internship" }
+content:
+  collections:
+    - id: "members"
+      name: "Members"
+      type: "folder"
+      path: "data/members"
+      format: "json"
+      slug_field: "name"
+      create: true
+      fields:
+        - id: "name"
+          name: "Full Name"
+          type: "string"
+        - id: "position"
+          name: "Position / Title"
+          type: "string"
+        - id: "class"
+          name: "Class"
+          type: "string"
+        - id: "photo"
+          name: "Photo (.jpg only)"
+          type: "image"
+          directory: "image"
+          public_path: "/image"
+        - id: "section"
+          name: "Section"
+          type: "select"
+          options:
+            - { label: "Committee of Student Leader Board", value: "committee" }
+            - { label: "Member of District Student Leaders Board", value: "district" }
+            - { label: "Member of Student Leaders Board", value: "student" }
+            - { label: "Internship Member of Student Leaders Board", value: "internship" }
