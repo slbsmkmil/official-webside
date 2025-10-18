@@ -547,28 +547,23 @@
 async function loadMembers() {
   const sections = {
     committee: document.querySelector("#committee-section + .row"),
-    district: document.querySelector("#district-section + .row"),
     student: document.querySelector("#student-section + .row"),
     internship: document.querySelector("#internship-section + .row")
   };
 
   try {
-    const response = await fetch('data/members/');
-    const files = await response.text();
-
-    // PagesCMS 静态环境不支持目录列出文件，因此我们用 manifest.json
-    // 如果你有多个成员，请创建 data/members/manifest.json 列出文件：
-    // ["lim-guan-you.json", "nur-irdyna-soffea.json", ...]
+    // 从 manifest.json 获取成员文件列表
     const list = await fetch('data/members/manifest.json').then(res => res.json());
 
     for (const file of list) {
       const member = await fetch(`data/members/${file}`).then(res => res.json());
       const container = sections[member.section];
-      if (!container) continue;
+      if (!container) continue; // 若 section 不存在则跳过
 
       const col = document.createElement("div");
       col.className = "col-lg-3 col-md-4 col-sm-6";
       col.style.animation = "fadeInUp 1s ease-in-out";
+
       col.innerHTML = `
         <div class="member-card">
           <img src="${member.photo}" class="member-img" alt="${member.name}">
@@ -576,6 +571,7 @@ async function loadMembers() {
           <p>${member.position}<br>${member.class}</p>
         </div>
       `;
+
       container.appendChild(col);
     }
   } catch (err) {
@@ -585,6 +581,7 @@ async function loadMembers() {
 
 loadMembers();
 </script>
+
 
 
 
@@ -605,6 +602,7 @@ loadMembers();
 </body>
 
 </html>
+
 
 
 
