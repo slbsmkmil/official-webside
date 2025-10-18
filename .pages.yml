@@ -1,40 +1,13 @@
-media:
-  input: uploads
-  output: /uploads
+site:
+  name: "Official Webside"
+  logo: "/logo.png"
+  description: "SMKMIL Tech Team Official Website"
 
-content:
-  - name: home
-    label: Home Page
-    type: file
-    file: index.html
+collections:
+  - name: "pages"
+    label: "Website Pages"
+    folder: "content/pages"
+    create: true
     fields:
-      - name: title
-        label: Page Title
-        type: string
-      - name: body
-        label: Page Content
-        type: rich-text
-
-  - name: about
-    label: About Page
-    type: file
-    file: about.html
-    fields:
-      - name: title
-        label: Page Title
-        type: string
-      - name: body
-        label: Page Content
-        type: rich-text
-
-  - name: contact
-    label: Contact Page
-    type: file
-    file: contact.html
-    fields:
-      - name: title
-        label: Page Title
-        type: string
-      - name: body
-        label: Page Content
-        type: rich-text
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "body", label: "Content", widget: "markdown" }
