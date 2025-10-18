@@ -1,4 +1,7 @@
 collections:
+  # ========================
+  # 👥 Members Collection
+  # ========================
   - name: "members"
     label: "Members"
     folder: "data/members"
@@ -18,11 +21,14 @@ collections:
           - { label: "Member of Student Leaders Board", value: "student" }
           - { label: "Internship Member of Student Leaders Board", value: "internship" }
 
+  # ========================
+  # 📄 Website Pages Section
+  # ========================
   - name: "pages"
     label: "Website Pages"
     files:
       - file: "about-us.html"
         label: "About Us Page"
-        name: "about"
+        name: "aboutus"
         fields:
           - { name: "body", label: "Page Content", widget: "markdown" }
