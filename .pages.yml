@@ -1,25 +1,25 @@
-collections:
+# .pages.yml
+pages:
   - name: members
     label: Members
-    path: data/members
-    extension: json
-    create: true
+    path: content/members
+    format: json
     fields:
       - name: name
         label: Full Name
-        component: text
+        type: text
       - name: position
         label: Position / Title
-        component: text
+        type: text
       - name: class
         label: Class
-        component: text
+        type: text
       - name: photo
         label: Photo
-        component: image
+        type: image
       - name: section
         label: Section
-        component: select
+        type: select
         options:
           - label: Committee of Student Leader Board
             value: committee
@@ -28,15 +28,15 @@ collections:
           - label: Internship Member of Student Leaders Board
             value: internship
 
-  - name: aboutus
+  - name: about
     label: About Us
     path: content/pages
     file: about-us.html
+    format: html
     fields:
       - name: title
         label: Title
-        component: text
-        default: "About Us"
-      - name: body
-        label: Page Content
-        component: markdown
+        type: text
+      - name: content
+        label: Content
+        type: markdown
