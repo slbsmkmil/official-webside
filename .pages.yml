@@ -11,3 +11,20 @@ collections:
     fields:
       - { name: "title", label: "Title", widget: "string" }
       - { name: "body", label: "Content", widget: "markdown" }
+site:
+  name: "SMKMIL Tech Team Website"
+  logo: "/images/logo.png"
+  description: "Official Website for SMKMIL PA System & Tech Team"
+
+collections:
+  - name: "members"
+    label: "Member Area"
+    folder: "data/members"
+    create: true
+    slug: "{{name}}"
+    format: "json"
+    fields:
+      - { name: "name", label: "Full Name", widget: "string" }
+      - { name: "position", label: "Position", widget: "string" }
+      - { name: "photo", label: "Photo URL", widget: "image" }
+      - { name: "bio", label: "Short Bio", widget: "text" }
