@@ -29,7 +29,7 @@ content:
       - name: order
         label: Display Order
         type: number
-        description: "Lower numbers appear first. Use 10, 20, 30 for easy reordering."
+        description: "Lower numbers appear first. Use 10, 20, 30 for easy reordering. Student Leaders: 100-19, Internship Members: 200-299"
         default: 100
       - name: position
         label: Position / Title
