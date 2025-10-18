@@ -17,3 +17,12 @@ collections:
           - { label: "Committee of Student Leader Board", value: "committee" }
           - { label: "Member of Student Leaders Board", value: "student" }
           - { label: "Internship Member of Student Leaders Board", value: "internship" }
+
+  - name: "pages"
+    label: "Website Pages"
+    files:
+      - file: "about-us.html"
+        label: "About Us Page"
+        name: "about"
+        fields:
+          - { name: "body", label: "Page Content", widget: "markdown" }
