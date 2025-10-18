@@ -1,0 +1,25 @@
+site:
+  name: "SLB SMKMIL Official Website"
+  logo: "/logo slb rbg.png"
+  description: "Student Leader Board - SMK Munshi Ibrahim Labis"
+
+content:
+  collections:
+  - name: "members"
+    label: "Members"
+    folder: "data/members"
+    create: true
+    slug: "{{name}}"
+    format: "json"
+    fields:
+      - { name: "name", label: "Full Name", widget: "string" }
+      - { name: "position", label: "Position / Title", widget: "string" }
+      - { name: "class", label: "Class", widget: "string" }
+      - { name: "photo", label: "Photo", widget: "image" }
+      - name: "section"
+        label: "Section"
+        widget: "select"
+        options:
+          - { label: "Committee of Student Leader Board", value: "committee" }
+          - { label: "Member of Student Leaders Board", value: "student" }
+          - { label: "Internship Member of Student Leaders Board", value: "internship" }
