@@ -1,5 +1,5 @@
 # .pages.yml
-media: media
+media: image
 
 content:
   - name: members
