@@ -31,8 +31,8 @@ content:
         type: image
       - name: section
         label: Section
-        type: select
-        options: ["committee", "student", "internship"]
+        type: string
+        description: "Enter: committee, student, or internship (lowercase)"
 
   - name: about
     label: About Us
