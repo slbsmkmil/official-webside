@@ -1,4 +1,4 @@
-collections:
+content:
   - name: "members"
     label: "Members"
     folder: "data/members"
