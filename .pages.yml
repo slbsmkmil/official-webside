@@ -43,7 +43,7 @@ content:
   - name: about
     label: About Us
     type: file
-    path: about-us.md
+    path: about-us.html
     format: yaml-frontmatter
     fields:
       - name: title
