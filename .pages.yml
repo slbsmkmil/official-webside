@@ -8,7 +8,7 @@ collections:
     label: "Members"
     folder: "data/members"
     create: true
-    slug: "{{name}}"
+    slug: "{{name | slugify}}"
     format: "json"
     fields:
       - { name: "name", label: "Full Name", widget: "string" }
