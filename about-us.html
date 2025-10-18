@@ -543,43 +543,116 @@
   <!-- Back to Top -->
   <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-  <script>
-async function loadMembers() {
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
   const sections = {
     committee: document.querySelector("#committee-section + .row"),
     student: document.querySelector("#student-section + .row"),
     internship: document.querySelector("#internship-section + .row")
   };
 
-  try {
-    // 从 manifest.json 获取成员文件列表
-    const list = await fetch('data/members/manifest.json').then(res => res.json());
+  function showError(msg) {
+    console.error(msg);
+    const el = document.createElement('div');
+    el.style.color = '#b00';
+    el.style.margin = '12px 0';
+    el.textContent = '成员加载出错：' + msg;
+    // 插在 student section 顶部作为提示（可改）
+    const place = sections.student || document.body;
+    place.parentNode.insertBefore(el, place);
+  }
+
+  async function tryFetchManifest() {
+    try {
+      const res = await fetch('data/members/manifest.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('manifest HTTP ' + res.status);
+      const json = await res.json();
+      return json;
+    } catch (err) {
+      console.warn('fetch manifest failed:', err);
+      return null;
+    }
+  }
+
+  // 备用：从 GitHub API 列出目录（只在公开 repo 且允许时工作）
+  async function tryGithubApiList() {
+    try {
+      const apiUrl = 'https://api.github.com/repos/slbsmkmil/official-webside/contents/data/members';
+      const res = await fetch(apiUrl);
+      if (!res.ok) throw new Error('GitHub API HTTP ' + res.status);
+      const items = await res.json();
+      if (!Array.isArray(items)) throw new Error('GitHub API result not array');
+      // 过滤出 .json 文件名
+      return items
+        .filter(i => i && i.name && i.name.endsWith('.json'))
+        .map(i => i.name);
+    } catch (err) {
+      console.warn('github api list failed:', err);
+      return null;
+    }
+  }
+
+  async function loadMemberFile(fileName) {
+    try {
+      const res = await fetch(`data/members/${fileName}`, { cache: 'no-store' });
+      if (!res.ok) throw new Error(fileName + ' HTTP ' + res.status);
+      return await res.json();
+    } catch (err) {
+      console.warn('load member file failed:', fileName, err);
+      return null;
+    }
+  }
+
+  function createMemberCol(member) {
+    const col = document.createElement("div");
+    col.className = "col-lg-3 col-md-4 col-sm-6";
+    col.style.animation = "fadeInUp 1s ease-in-out";
+    const photoSrc = member.photo || 'image/default.jpg';
+    col.innerHTML = `
+      <div class="member-card">
+        <img src="${photoSrc}" class="member-img" alt="${member.name}">
+        <h4 class="mt-3">${member.name}</h4>
+        <p>${member.position}<br>${member.class}</p>
+      </div>
+    `;
+    return col;
+  }
+
+  async function renderAllMembers() {
+    // 先尝试 manifest.json
+    let list = await tryFetchManifest();
+
+    // 如果 manifest 不是数组或为空，尝试 GitHub API 作为备选
+    if (!Array.isArray(list)) {
+      const alt = await tryGithubApiList();
+      if (Array.isArray(alt) && alt.length > 0) {
+        list = alt;
+      } else {
+        showError('无法读取 data/members/manifest.json，也无法通过 GitHub API 列表获取成员。请确认 manifest.json 存在并且返回 JSON 数组，或将文件部署到 GitHub Pages。');
+        return;
+      }
+    }
+
+    // 最终确保 list 为数组
+    if (!Array.isArray(list) || list.length === 0) {
+      showError('成员列表为空。请在 data/members/manifest.json 中列出成员文件名（JSON 数组）。');
+      return;
+    }
 
     for (const file of list) {
-      const member = await fetch(`data/members/${file}`).then(res => res.json());
+      const member = await loadMemberFile(file);
+      if (!member) continue;
       const container = sections[member.section];
-      if (!container) continue; // 若 section 不存在则跳过
-
-      const col = document.createElement("div");
-      col.className = "col-lg-3 col-md-4 col-sm-6";
-      col.style.animation = "fadeInUp 1s ease-in-out";
-
-      col.innerHTML = `
-        <div class="member-card">
-          <img src="${member.photo}" class="member-img" alt="${member.name}">
-          <h4 class="mt-3">${member.name}</h4>
-          <p>${member.position}<br>${member.class}</p>
-        </div>
-      `;
-
-      container.appendChild(col);
+      if (!container) {
+        console.warn('Unknown section for member', member.name, member.section);
+        continue;
+      }
+      container.appendChild(createMemberCol(member));
     }
-  } catch (err) {
-    console.error("Error loading members:", err);
   }
-}
 
-loadMembers();
+  renderAllMembers();
+});
 </script>
 
 
@@ -602,6 +675,7 @@ loadMembers();
 </body>
 
 </html>
+
 
 
 
