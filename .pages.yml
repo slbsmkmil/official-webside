@@ -1,42 +1,22 @@
 # .pages.yml
-pages:
-  - name: members
-    label: Members
-    path: content/members
-    format: json
-    fields:
-      - name: name
-        label: Full Name
-        type: text
-      - name: position
-        label: Position / Title
-        type: text
-      - name: class
-        label: Class
-        type: text
-      - name: photo
-        label: Photo
-        type: image
-      - name: section
-        label: Section
-        type: select
-        options:
-          - label: Committee of Student Leader Board
-            value: committee
-          - label: Member of Student Leaders Board
-            value: student
-          - label: Internship Member of Student Leaders Board
-            value: internship
+backend:
+  name: git-gateway
+  branch: main
 
-  - name: about
-    label: About Us
-    path: content/pages
-    file: about-us.html
-    format: html
+media_folder: "static/img"
+public_folder: "/img"
+
+collections:
+  - name: "members"
+    label: "Members"
+    folder: "data/members"
+    create: true
     fields:
-      - name: title
-        label: Title
-        type: text
-      - name: content
-        label: Content
-        type: markdown
+      - {label: "Full Name", name: "name", widget: "string"}
+      - {label: "Position", name: "position", widget: "string"}
+      - {label: "Class", name: "class", widget: "string"}
+      - {label: "Photo", name: "photo", widget: "image"}
+      - label: "Section"
+        name: "section"
+        widget: "select"
+        options: ["committee", "student", "internship"]
