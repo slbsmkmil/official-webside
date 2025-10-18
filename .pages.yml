@@ -32,10 +32,10 @@ content:
       - name: section
         label: Section
         type: select
-        options:
-          committee: Committee of Student Leader Board
-          student: Member of Student Leaders Board
-          internship: Internship Member of Student Leaders Board
+        options: 
+          - "Committee of Student Leader Board"
+          - "Member of Student Leaders Board"
+          - "Internship Member of Student Leaders Board"
 
   - name: about
     label: About Us
