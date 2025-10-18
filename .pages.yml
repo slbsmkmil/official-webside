@@ -55,15 +55,3 @@ content:
       - name: body
         label: Page Content
         type: rich-text
-
-  - name: manifest
-    label: Member Manifest
-    type: file
-    path: data/members/manifest.json
-    format: json
-    fields:
-      - name: body
-        label: Member File List
-        type: code
-        options:
-          language: json
