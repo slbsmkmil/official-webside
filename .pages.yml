@@ -6,12 +6,20 @@ content:
     label: Members
     type: collection
     path: data/members
+    format: json
     view:
       fields: [name, position, class, section]
+      primary: name
+      sort: [name, position]
+      default:
+        sort: name
+        order: asc
+    filename: "{name}.json"
     fields:
       - name: name
         label: Full Name
         type: string
+        required: true
       - name: position
         label: Position / Title
         type: string
@@ -33,10 +41,18 @@ content:
             value: internship
 
   - name: about
-    label: About Us Page
+    label: About Us
     type: file
-    path: about-us.html
+    path: about-us.md
+    format: yaml-frontmatter
     fields:
+      - name: title
+        label: Title
+        type: string
+        default: "About Us"
+      - name: description
+        label: Description
+        type: text
       - name: body
         label: Page Content
         type: rich-text
