@@ -1,4 +1,4 @@
-about-us.html:
+about-us:
   - name: "members"
     label: "Members"
     folder: "data/members"
