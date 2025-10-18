@@ -32,7 +32,7 @@ content:
       - name: section
         label: Section
         type: string
-        description: "Enter: Committee, Member, or Internship"
+        options: ["committee", "student", "internship"]
 
   - name: about
     label: About Us
