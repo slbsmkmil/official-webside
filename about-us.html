@@ -642,9 +642,22 @@ document.addEventListener("DOMContentLoaded", () => {
     for (const file of list) {
       const member = await loadMemberFile(file);
       if (!member) continue;
-      const container = sections[member.section];
-      if (!container) {
+      
+      // 根据 section 字段的值确定显示在哪个区域
+      let container;
+      if (member.section === 'committee' || member.section === 'Committee of Student Leader Board') {
+        container = sections.committee;
+      } else if (member.section === 'student' || member.section === 'Member of Student Leaders Board') {
+        container = sections.student;
+      } else if (member.section === 'internship' || member.section === 'Internship Member of Student Leaders Board') {
+        container = sections.internship;
+      } else {
         console.warn('Unknown section for member', member.name, member.section);
+        continue;
+      }
+      
+      if (!container) {
+        console.warn('Container not found for section', member.section);
         continue;
       }
       container.appendChild(createMemberCol(member));
@@ -675,6 +688,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </body>
 
 </html>
+
 
 
 
