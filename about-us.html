@@ -31,146 +31,150 @@
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CTC7V5EM0J"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CTC7V5EM0J');
-  </script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CTC7V5EM0J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CTC7V5EM0J');
+</script>
     
-  <!-- Custom Styles -->
-  <style>
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f8f9fa;
-        color: #333;
-    }
-    .header {
-        background-color: #007bff;
-        color: white;
-        padding: 20px 0;
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    .section-title {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    .member-card {
-        background-color: white;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        transition: transform 0.3s ease;
-    }
-    .member-card:hover {
-        transform: translateY(-5px);
-    }
-    .member-card img {
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        margin-bottom: 15px;
-    }
-    .member-card h4 {
-        font-size: 1.25rem;
-        margin-bottom: 10px;
-    }
-    .member-card p {
-        font-size: 0.9rem;
-        color: #666;
-        margin-bottom: 0;
-    }
-    .logoslb img {
-        max-width: 150px;
-        margin: 0 auto;
-        display: block;
-    }
-    .logoslb{
-      max-width: 75%;
-    }
-    .heading-with-line {
-        position: relative;
-        text-align: center;
-        margin-bottom: 2rem;
-        font-size: 2.5rem;
-        color: #333;
-        animation: fadeInDown 1s ease-in-out;
-    }
-    .heading-with-line::after {
-        content: '';
-        display: block;
-        width: 100px;
-        height: 3px;
-        background-color: #007bff;
-        margin: 10px auto 0;
-        animation: lineGrow 1s ease-in-out;
-    }
-    /* Animations */
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    @keyframes lineGrow {
-        from {
-            width: 0;
-        }
-        to {
-            width: 100px;
-        }
-    }
-    .loading {
-        text-align: center;
-        padding: 20px;
-        color: #666;
-    }
+    <!-- Custom Styles -->
+    <style>
+      body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f8f9fa;
+          color: #333;
+      }
+      .header {
+          background-color: #007bff;
+          color: white;
+          padding: 20px 0;
+          text-align: center;
+          margin-bottom: 30px;
+      }
+      .section-title {
+          font-size: 2rem;
+          font-weight: 700;
+          margin-bottom: 20px;
+          text-align: center;
+      }
+      .member-card {
+          background-color: white;
+          border-radius: 10px;
+          padding: 20px;
+          margin-bottom: 20px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          text-align: center;
+      }
+      .member-card img {
+          border-radius: 50%;
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          margin-bottom: 15px;
+      }
+      .member-card h4 {
+          font-size: 1.25rem;
+          margin-bottom: 10px;
+      }
+      .member-card p {
+          font-size: 0.9rem;
+          color: #666;
+          margin-bottom: 0;
+      }
+      .logoslb img {
+          max-width: 150px;
+          margin: 0 auto;
+          display: block;
+      }
+      .logoslb{
+        max-width: 75%;
+      }
   </style>
+  <style>
+    .heading-with-line {
+            position: relative;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #333;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .heading-with-line::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: #007bff;
+            margin: 10px auto 0;
+            animation: lineGrow 1s ease-in-out;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes lineGrow {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100px;
+            }
+        }
+</style>
+
 </head>
 
 <body>
-  <!-- Spinner Start -->
-  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+
+   <!-- Spinner Start -->
+   <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
     <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
         <span class="sr-only">Loading...</span>
     </div>
-  </div>
-  <!-- Spinner End -->
+</div>
+<!-- Spinner End -->
 
-  <!-- Navbar Start -->
-  <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
     <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <img src="logo comb rbg.png" alt="SLB SMKMIL Logo" height="50">
     </a>
@@ -189,352 +193,484 @@
             <a href="contact.html" class="nav-item nav-link">Contact Us</a>
         </div>
     </div>
-  </nav>
-  <!-- Navbar End -->
+</nav>
+<!-- Navbar End -->
 
-  <!-- Main Content -->
-  <div class="container py-5">
-
-    <!-- Committee Section -->
-    <h2 class="heading-with-line" id="committee-section">Committee of Student Leader Board</h2>
-    <div class="row" id="committee-members">
-        <!-- 静态委员会成员 -->
-        <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
-            <div class="member-card">
-                <img src="image/rosli.jpg" class="member-img" alt="Principal">
-                <h4 class="mt-3">EN. ROSLI BIN CHE MAN</h4>
-                <p>PRINCIPAL<br>SMK MUNSHI IBRAHIM LABIS</p>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
-            <div class="member-card">
-                <img src="image/razak.jpg" class="member-img" alt="Teacher Assistant">
-                <h4 class="mt-3">EN. ABD RAZAK BIN OTHMAN</h4>
-                <p>TEACHER ASSISTANT OF STUDENT AFFAIRS<br>SMK MUNSHI IBRAHIM LABIS</p>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
-            <div class="member-card">
-                <img src="image/norliza.jpg" class="member-img" alt="Teacher Secretary">
-                <h4 class="mt-3">PN. NORLIZA BINTI TOKIRAN</h4>
-                <p>TEACHER SECRETARY OF STUDENT LEADER BOARD<br>SMK MUNSHI IBRAHIM LABIS</p>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
-            <div class="member-card">
-                <img src="image/tee chia ling.jpg" class="member-img" alt="Teacher Vice Secretary">
-                <h4 class="mt-3">PN. TEE CHIA LING</h4>
-                <p>TEACHER VICE SECRETARY OF <br> STUDENT LEADER BOARD<br>SMK MUNSHI IBRAHIM LABIS</p>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" style="display: flex; justify-content: center; align-items: center; animation: fadeInUp 1s ease-in-out;">
-          <div class="logoslb d-none d-md-block">
-              <img src="logo slb rbg.png" alt="SLB Logo">
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
-            <div class="member-card">
-                <img src="image/fairil.jpg" class="member-img" alt="Teacher Committee">
-                <h4 class="mt-3">EN. FAIRIL BIN MD SAMUDI</h4>
-                <p>TEACHER COMMITTEE OF <br> STUDENT LEADER BOARD<br>SMK MUNSHI IBRAHIM LABIS</p>
-            </div>
-        </div>
-    </div>
-
-    <br>
-    <br>
-
-    <!-- District Student Leaders Section -->
-    <h2 class="heading-with-line" id="district-section">Member of District Student Leaders Board</h2>
-    <div class="row" id="district-members">
-        <!-- 静态区域学生领袖 -->
-        <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
-            <div class="member-card">
-                <img src="image/guan you.jpg" class="member-img" alt="District Student Leader">
-                <h4 class="mt-3">DSL LIM GUAN YOU</h4>
-                <p>DISTRICT STUDENT LEADER BOARD<br>4 UM</p>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" style="display: flex; justify-content: center; align-items: center; animation: fadeInUp 1s ease-in-out;">
-            <div class="logoslb d-none d-md-block">
-                <img src="dslb/logo dslb rbg.png" alt="SLB Logo">
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
-            <div class="member-card">
-                <img src="image/irdyna.jpg" class="member-img" alt="District Student Leader">
-                <h4 class="mt-3">DSL NUR IRDYNA SOFFEA</h4>
-                <p>DISTRICT STUDENT LEADER BOARD<br>4 USM</p>
-            </div>
-        </div>
-    </div>
-
-    <br>
-    <br>
-
-    <!-- Student Leaders Section -->
-    <h2 class="heading-with-line" id="student-section">Member of Student Leaders Board</h2>
-    <div class="row" id="student-members">
-        <div class="col-12 loading">
-            <p>Loading student members...</p>
-        </div>
-    </div>
-
-    <br>
-    <br>
-
-    <!-- Internship Section -->
-    <h2 class="heading-with-line" id="internship-section">Internship Member of Student Leaders Board</h2>
-    <div class="row" id="internship-members">
-        <div class="col-12 loading">
-            <p>Loading internship members...</p>
-        </div>
-    </div>
-  </div>
-
-  <!-- Footer Start -->
-  <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <!-- Main Content -->
     <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Quick Link</h4>
-                <a class="btn btn-link" href="about-us.html">About Us</a>
-                <a class="btn btn-link" href="contact.html">Contact Us</a>
-                <a class="btn btn-link" href="https://bit.ly/tslbsmkmil" target="_blank">Terms & Conditions</a>
-                <a class="btn btn-link" href="https://bit.ly/pslbsmkmil" target="_blank">Privacy Policy</a>
+
+        <!-- Committee Section -->
+        <h2 class="heading-with-line" id="committee-section">Committee of Student Leader Board</h2>
+        <div class="row">
+            <!-- Committee Members -->
+            <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/rosli.jpg" class="member-img" alt="Principal">
+                    <h4 class="mt-3">EN. ROSLI BIN CHE MAN</h4>
+                    <p>PRINCIPAL<br>SMK MUNSHI IBRAHIM LABIS</p>
+                </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Contact</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>JKR 484, JALAN SEKOLAH, 85300 LABIS, JOHOR.</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+6011-5552 2281</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>slbsmkmil@gmail.com</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=100081324157349" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@slbsmkmil" target="_blank"><i class="fab fa-youtube"></i></a>
+
+            <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/razak.jpg" class="member-img" alt="Teacher Assistant">
+                    <h4 class="mt-3">EN. ABD RAZAK BIN OTHMAN</h4>
+                    <p>TEACHER ASSISTANT OF STUDENT AFFAIRS<br>SMK MUNSHI IBRAHIM LABIS</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/norliza.jpg" class="member-img" alt="Teacher Secretary">
+                    <h4 class="mt-3">PN. NORLIZA BINTI TOKIRAN</h4>
+                    <p>TEACHER SECRETARY OF STUDENT LEADER BOARD<br>SMK MUNSHI IBRAHIM LABIS</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/tee chia ling.jpg" class="member-img" alt="Teacher Vice Secretary">
+                    <h4 class="mt-3">PN. TEE CHIA LING</h4>
+                    <p>TEACHER VICE SECRETARY OF <br> STUDENT LEADER BOARD<br>SMK MUNSHI IBRAHIM LABIS</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" style="display: flex; justify-content: center; align-items: center; animation: fadeInUp 1s ease-in-out;">
+              <div class="logoslb d-none d-md-block">
+                  <img src="logo slb rbg.png" alt="SLB Logo">
+              </div>
+          </div>
+
+            <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/fairil.jpg" class="member-img" alt="Teacher Committee">
+                    <h4 class="mt-3">EN. FAIRIL BIN MD SAMUDI</h4>
+                    <p>TEACHER COMMITTEE OF <br> STUDENT LEADER BOARD<br>SMK MUNSHI IBRAHIM LABIS</p>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <script>document.write(new Date().getFullYear())</script> SLB SMKMIL | All Right Reserved
+
+        <br>
+        <br>
+
+        <!-- District Student Leaders Section -->
+        <h2 class="heading-with-line" id="district-section">Member of District Student Leaders Board</h2>
+        <div class="row">
+            <!-- Student Leader Cards -->
+            <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/guan you.jpg" class="member-img" alt="District Student Leader">
+                    <h4 class="mt-3">DSL LIM GUAN YOU</h4>
+                    <p>DISTRICT STUDENT LEADER BOARD<br>4 UM</p>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <div class="footer-menu">
-                        <a href="index.html">Home</a>
-                        <a href="subscribe.html">Subscribe</a>
-                        <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="col-lg-4 col-md-6" style="display: flex; justify-content: center; align-items: center; animation: fadeInUp 1s ease-in-out;">
+                <div class="logoslb d-none d-md-block">
+                    <img src="dslb/logo dslb rbg.png" alt="SLB Logo">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/irdyna.jpg" class="member-img" alt="District Student Leader">
+                    <h4 class="mt-3">DSL NUR IRDYNA SOFFEA</h4>
+                    <p>DISTRICT STUDENT LEADER BOARD<br>4 USM</p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <!-- Student Leaders Section -->
+        <h2 class="heading-with-line" id="student-section">Member of Student Leaders Board</h2>
+        <div class="row">
+            <!-- Student Leader Cards -->
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/dayang.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL DAYANG NURHASNAA QISMINA</h4>
+                    <p>STUDENT LEADER BOARD<br>5 UKM</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/amanina.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL NUR AMANINA NAJLA</h4>
+                    <p>STUDENT LEADER BOARD<br>5 UPM</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/rachel.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL RACHEL BOK RUI QIAN</h4>
+                    <p>STUDENT LEADER BOARD<br>4 UM</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/zhi qian.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL LIM ZHI QIAN</h4>
+                    <p>STUDENT LEADER BOARD<br>4 UM</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/wei yu.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL TAN WEI YU</h4>
+                    <p>STUDENT LEADER BOARD<br>4 UM</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/zi rong.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL HOO ZI RONG</h4>
+                    <p>STUDENT LEADER BOARD<br>4 UM</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/john.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL JOHN LIM JIAH LE</h4>
+                    <p>STUDENT LEADER BOARD<br>4 UM</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/zhi ying.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL TAN ZHI YING</h4>
+                    <p>STUDENT LEADER BOARD<br>4 UM</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/anis.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL ANIS QAISARA</h4>
+                    <p>STUDENT LEADER BOARD<br>4 UM</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/sufi.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL MUHAMMAD SUFI ADAM</h4>
+                    <p>STUDENT LEADER BOARD<br>4 IBK</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/hui wen.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL TAN HUI WEN</h4>
+                    <p>STUDENT LEADER BOARD<br>3 ARIS</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/erchen.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL KU ER CHEN</h4>
+                    <p>STUDENT LEADER BOARD<br>3 ARIS</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/lucas.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL LUCAS KOH MENG HENG</h4>
+                    <p>STUDENT LEADER BOARD<br>3 ARIS</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/diva.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL DIVASHINI A/P DEVENDRARAJ</h4>
+                    <p>STUDENT LEADER BOARD<br>3 EINS</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/priya.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL PRIYADARSHINI A/P RAGUNATHAN</h4>
+                    <p>STUDENT LEADER BOARD<br>3 NEWT</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/intan.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL FARAH INTAN SOFEA</h4>
+                    <p>STUDENT LEADER BOARD<br>3 ALG</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/zhafran.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL MUHAMMAD ZHAFRAN</h4>
+                    <p>STUDENT LEADER BOARD <br> 2 ALR</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/faiq.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL FAIQ ZUHAIR</h4>
+                    <p>STUDENT LEADER BOARD <br> 2 ALR</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/zunur.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL ZUNUR QALISYA MUNAWWARAH</h4>
+                    <p>STUDENT LEADER BOARD <br> 2 ALR</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/farhan.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL AHMAD FARHAN AFIF</h4>
+                    <p>STUDENT LEADER BOARD <br> 2 ALR</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/jin sen.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL LIM JIN SEN</h4>
+                    <p>STUDENT LEADER BOARD <br> 2 ARIS</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/yu heng.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL THAN YU HENG</h4>
+                    <p>STUDENT LEADER BOARD <br> 2 ARIS</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/sharon.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL SHARON TEO KAR XIN</h4>
+                    <p>STUDENT LEADER BOARD <br> 2 ARIS</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/ammar.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL AMMAR NASUHA</h4>
+                    <p>STUDENT LEADER BOARD  <br> 2 ALR</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6" style="animation: fadeInUp 1s ease-in-out;">
+                <div class="member-card">
+                    <img src="image/sabira.jpg" class="member-img" alt="Student Leader">
+                    <h4 class="mt-3">SL NOR SABIRA SHAKIRA</h4>
+                    <p>STUDENT LEADER BOARD <br> 2 ALR</p>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+        <br/>
+
+        <h2 class="heading-with-line" id="internship-section">Internship Member of Student Leaders Board</h2>
+        <div class="row">
+            
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="about-us.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="https://bit.ly/tslbsmkmil" target="_blank">Terms & Conditions</a>
+                    <a class="btn btn-link" href="https://bit.ly/pslbsmkmil" target="_blank">Privacy Policy</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>JKR 484, JALAN SEKOLAH, 85300 LABIS, JOHOR.</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+6011-5552 2281</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>slbsmkmil@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=100081324157349" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@slbsmkmil" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+      <div class="container">
+          <div class="copyright">
+              <div class="row">
+                  <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                      &copy; <script>document.write(new Date().getFullYear())</script> SLB SMKMIL | All Right Reserved
+                  </div>
+                  <div class="col-md-6 text-center text-md-end">
+                      <div class="footer-menu">
+                          <a href="index.html">Home</a>
+                          <a href="subscribe.html">Subscribe</a>
+                          <a href="contact.html">Contact</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
   <!-- Footer End -->
+
 
   <!-- Back to Top -->
   <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-  <!-- 简化的动态加载脚本 -->
-  <script>
+ <script>
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM loaded, starting member loading...");
-    
-    // Hide loading spinner
-    const spinner = document.getElementById('spinner');
-    if (spinner) {
-        spinner.style.display = 'none';
+  const sections = {
+    committee: document.querySelector("#committee-section + .row"),
+    student: document.querySelector("#student-section + .row"),
+    internship: document.querySelector("#internship-section + .row")
+  };
+
+  function showError(msg) {
+    console.error(msg);
+    const el = document.createElement('div');
+    el.style.color = '#b00';
+    el.style.margin = '12px 0';
+    el.textContent = '成员加载出错：' + msg;
+    // 插在 student section 顶部作为提示（可改）
+    const place = sections.student || document.body;
+    place.parentNode.insertBefore(el, place);
+  }
+
+  async function tryFetchManifest() {
+    try {
+      const res = await fetch('data/members/manifest.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('manifest HTTP ' + res.status);
+      const json = await res.json();
+      return json;
+    } catch (err) {
+      console.warn('fetch manifest failed:', err);
+      return null;
+    }
+  }
+
+  // 备用：从 GitHub API 列出目录（只在公开 repo 且允许时工作）
+  async function tryGithubApiList() {
+    try {
+      const apiUrl = 'https://api.github.com/repos/slbsmkmil/official-webside/contents/data/members';
+      const res = await fetch(apiUrl);
+      if (!res.ok) throw new Error('GitHub API HTTP ' + res.status);
+      const items = await res.json();
+      if (!Array.isArray(items)) throw new Error('GitHub API result not array');
+      // 过滤出 .json 文件名
+      return items
+        .filter(i => i && i.name && i.name.endsWith('.json'))
+        .map(i => i.name);
+    } catch (err) {
+      console.warn('github api list failed:', err);
+      return null;
+    }
+  }
+
+  async function loadMemberFile(fileName) {
+    try {
+      const res = await fetch(`data/members/${fileName}`, { cache: 'no-store' });
+      if (!res.ok) throw new Error(fileName + ' HTTP ' + res.status);
+      return await res.json();
+    } catch (err) {
+      console.warn('load member file failed:', fileName, err);
+      return null;
+    }
+  }
+
+  function createMemberCol(member) {
+    const col = document.createElement("div");
+    col.className = "col-lg-3 col-md-4 col-sm-6";
+    col.style.animation = "fadeInUp 1s ease-in-out";
+    const photoSrc = member.photo || 'image/default.jpg';
+    col.innerHTML = `
+      <div class="member-card">
+        <img src="${photoSrc}" class="member-img" alt="${member.name}">
+        <h4 class="mt-3">${member.name}</h4>
+        <p>${member.position}<br>${member.class}</p>
+      </div>
+    `;
+    return col;
+  }
+
+  async function renderAllMembers() {
+    // 先尝试 manifest.json
+    let list = await tryFetchManifest();
+
+    // 如果 manifest 不是数组或为空，尝试 GitHub API 作为备选
+    if (!Array.isArray(list)) {
+      const alt = await tryGithubApiList();
+      if (Array.isArray(alt) && alt.length > 0) {
+        list = alt;
+      } else {
+        showError('无法读取 data/members/manifest.json，也无法通过 GitHub API 列表获取成员。请确认 manifest.json 存在并且返回 JSON 数组，或将文件部署到 GitHub Pages。');
+        return;
+      }
     }
 
-    const sections = {
-        student: document.getElementById("student-members"),
-        internship: document.getElementById("internship-members")
-    };
-
-    function showError(container, msg) {
-        console.error('Error:', msg);
-        container.innerHTML = `<div class="col-12 text-center text-danger p-3 border rounded bg-light">
-            <h5>Load Failed</h5>
-            <p>${msg}</p>
-            <small>Please check console for details</small>
-        </div>`;
+    // 最终确保 list 为数组
+    if (!Array.isArray(list) || list.length === 0) {
+      showError('成员列表为空。请在 data/members/manifest.json 中列出成员文件名（JSON 数组）。');
+      return;
     }
 
-    function showLoading(container) {
-        container.innerHTML = '<div class="col-12 text-center p-3"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div><p class="mt-2">Loading member data...</p></div>';
+    for (const file of list) {
+      const member = await loadMemberFile(file);
+      if (!member) continue;
+      
+      // 根据 section 字段的值确定显示在哪个区域
+      let container;
+      if (member.section === 'committee' || member.section === 'Committee of Student Leader Board') {
+        container = sections.committee;
+      } else if (member.section === 'student' || member.section === 'Member of Student Leaders Board') {
+        container = sections.student;
+      } else if (member.section === 'internship' || member.section === 'Internship Member of Student Leaders Board') {
+        container = sections.internship;
+      } else {
+        console.warn('Unknown section for member', member.name, member.section);
+        continue;
+      }
+      
+      if (!container) {
+        console.warn('Container not found for section', member.section);
+        continue;
+      }
+      container.appendChild(createMemberCol(member));
     }
+  }
 
-    // 自动扫描成员文件，无需 manifest.json
-    async function scanMemberFiles() {
-        try {
-            // 尝试获取成员目录列表
-            const membersUrl = 'data/members/';
-            console.log('Scanning member directory:', membersUrl);
-            
-            // 注意：这种方法只在某些服务器配置下工作
-            // 如果失败，我们将回退到硬编码列表
-            const response = await fetch(membersUrl);
-            if (response.ok) {
-                const text = await response.text();
-                // 解析HTML响应以获取文件列表（如果服务器返回目录列表）
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, 'text/html');
-                const links = doc.querySelectorAll('a[href$=".json"]');
-                const fileList = Array.from(links).map(link => link.href.split('/').pop());
-                
-                console.log('Scanned files:', fileList);
-                return fileList.filter(file => file !== 'manifest.json');
-            }
-        } catch (error) {
-            console.warn('Directory scanning failed:', error);
-        }
-        
-        // 如果扫描失败，使用硬编码的文件列表
-        console.log('Using fallback file list');
-        return [
-            "dayang-nurhasnaa.json",
-            "nur-amanina.json", 
-            "rachel-bok.json",
-            "lim-zhi-qian.json",
-            "tan-wei-yu.json",
-            "hoo-zi-rong.json",
-            "john-lim.json",
-            "tan-zhi-ying.json",
-            "anis-qaisara.json",
-            "muhammad-sufi.json",
-            "tan-hui-wen.json",
-            "ku-er-chen.json",
-            "lucas-koh.json",
-            "divashini.json",
-            "priyadarshini.json",
-            "farah-intan.json",
-            "muhammad-zhafran.json",
-            "faiq-zuhair.json",
-            "zunur-qalisya.json",
-            "ahmad-farhan.json",
-            "lim-jin-sen.json",
-            "than-yu-heng.json",
-            "sharon-teo.json",
-            "ammar-nasuha.json",
-            "nor-sabira.json"
-        ];
-    }
-
-    async function loadMembers() {
-        console.log('Starting to load members...');
-        
-        // Show loading status
-        showLoading(sections.student);
-        showLoading(sections.internship);
-
-        try {
-            // 首先尝试扫描文件
-            const fileList = await scanMemberFiles();
-            console.log('File list:', fileList);
-            
-            if (!Array.isArray(fileList) || fileList.length === 0) {
-                showError(sections.student, 'No member files found');
-                showError(sections.internship, 'No member files found');
-                return;
-            }
-
-            console.log(`Found ${fileList.length} member files to load`);
-
-            // Load all member files
-            const members = [];
-            for (const fileName of fileList) {
-                try {
-                    const memberUrl = `data/members/${fileName}`;
-                    console.log('Loading member:', memberUrl);
-                    
-                    const memberResponse = await fetch(memberUrl);
-                    if (memberResponse.ok) {
-                        const member = await memberResponse.json();
-                        console.log('Loaded member:', member);
-                        members.push(member);
-                    } else {
-                        console.warn(`Failed to load ${fileName}: HTTP ${memberResponse.status}`);
-                    }
-                } catch (error) {
-                    console.warn(`Error loading member file ${fileName}:`, error);
-                }
-            }
-
-            console.log(`Successfully loaded ${members.length} members`);
-
-            // 按 order 字段排序成员
-            members.sort((a, b) => {
-                // 确保 order 字段存在，默认为 100
-                const orderA = a.order || 100;
-                const orderB = b.order || 100;
-                return orderA - orderB;
-            });
-
-            console.log('Members after sorting:', members);
-
-            // Clear loading indicators
-            sections.student.innerHTML = '';
-            sections.internship.innerHTML = '';
-
-            // Display members by section
-            let studentCount = 0;
-            let internshipCount = 0;
-
-            members.forEach(member => {
-                const container = sections[member.section];
-                if (container) {
-                    const col = document.createElement("div");
-                    col.className = "col-lg-3 col-md-4 col-sm-6";
-                    col.style.animation = "fadeInUp 1s ease-in-out";
-                    const photoSrc = member.photo || 'image/default.jpg';
-                    col.innerHTML = `
-                      <div class="member-card">
-                        <img src="${photoSrc}" class="member-img" alt="${member.name}">
-                        <h4 class="mt-3">${member.name}</h4>
-                        <p>${member.position}<br>${member.class}</p>
-                        ${member.order ? `<small class="text-muted">Order: ${member.order}</small>` : ''}
-                      </div>
-                    `;
-                    container.appendChild(col);
-                    
-                    if (member.section === 'student') studentCount++;
-                    if (member.section === 'internship') internshipCount++;
-                } else {
-                    console.warn('No container found for section:', member.section, member);
-                }
-            });
-
-            console.log(`Displayed ${studentCount} student members and ${internshipCount} internship members`);
-
-            // Show message if no members
-            if (studentCount === 0) {
-                sections.student.innerHTML = '<div class="col-12 text-center text-muted p-4 border rounded"><p>No student leader members yet</p><small>Please add student members via PagesCMS</small></div>';
-            }
-            if (internshipCount === 0) {
-                sections.internship.innerHTML = '<div class="col-12 text-center text-muted p-4 border rounded"><p>No internship members yet</p><small>Please add internship members via PagesCMS</small></div>';
-            }
-
-        } catch (error) {
-            console.error('Failed to load member data:', error);
-            showError(sections.student, `Load failed: ${error.message}`);
-            showError(sections.internship, `Load failed: ${error.message}`);
-        }
-    }
-
-    // Load dynamic members
-    loadMembers();
+  renderAllMembers();
 });
 </script>
-  
+
+
+
+
   <!-- JavaScript Libraries -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -546,9 +682,15 @@ document.addEventListener("DOMContentLoaded", () => {
   <!-- Template Javascript -->
   <script src="js/main.js"></script>
 
-  <script id="messenger-widget-b" src="https://cdn.botpenguin.com/website-bot.js" defer>68543d78a306b60e50544d8f,68543d5a83bcc80f6098336f</script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script id="messenger-widget-b" src="https://cdn.botpenguin.com/website-bot.js" defer>68543d78a306b60e50544d8f,68543d5a83bcc80f6098336f</script>
 </body>
+
 </html>
+
+
+
 
 
 
