@@ -5,53 +5,24 @@ content:
   - name: members
     label: Members
     type: collection
-    path: data/members
+    path: data/members # This is where the JSON files will be saved
     format: json
     view:
       fields: [name, order, position, class, section]
       primary: name
       sort: [order, name]
-      default:
-        sort: order
-        order: asc
-    filename: "{slug}.json"
+    filename: "{slug}" # CMS adds .json automatically
     fields:
-      - name: name
-        label: Full Name
-        type: string
-        required: true
-      - name: slug
-        label: URL Slug (for filename)
-        type: string
-        required: true
-        description: "Use lowercase letters and hyphens, e.g.: dayang-nurhasnaa"
-        pattern: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
-      - name: order
-        label: Display Order
-        type: number
-        description: "Lower numbers appear first. Use 10, 20, 30 for easy reordering. Student Leaders: 100-19, Internship Members: 200-299"
-        default: 100
-      - name: position
-        label: Position / Title
-        type: string
-      - name: class
-        label: Class
-        type: string
-      - name: photo
-        label: Photo
-        type: image
-      - name: section
-        label: Section
-        type: string
-        required: true
-        description: "Enter: committee, student, or internship (lowercase)"
-
-  - name: about
-    label: About Us
-    type: file
-    path: about-us.html
-    format: raw
-    fields:
-      - name: body
-        label: Page Content
-        type: rich-text
+      - { name: name, label: "Full Name", type: string, required: true }
+      - { name: slug, label: "URL Slug", type: string, required: true }
+      - { name: order, label: "Order", type: number, default: 100 }
+      - { name: position, label: "Position", type: string }
+      - { name: class, label: "Class", type: string }
+      - { name: photo, label: "Photo", type: image }
+      - { 
+          name: section, 
+          label: "Section", 
+          type: select, 
+          options: ["committee", "student", "internship"],
+          required: true 
+        }
