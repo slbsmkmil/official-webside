@@ -5,7 +5,7 @@ A brief description of what this project does and who it's for information of SL
 
 School Project And Information Only
 
-COPYRIGHT © 2025 | Student Leaders Board Sekolah Menengah Kebangsaan Munshi Ibrahim Labis
+COPYRIGHT © 2025-2026 | Student Leaders Board Sekolah Menengah Kebangsaan Munshi Ibrahim Labis
 
 Attention
 This project is open-source for viewing but is protected under the [School Organization License](LICENSE). The source code may not be copied, modified, or redistributed without explicit permission from the copyright holder. This project is intended for use within Student Leaders Board Sekolah Menengah Kebangsaan Munshi Ibrahim Labis only and contains sensitive student information that must be handled in compliance with privacy laws.

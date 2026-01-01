@@ -8,6 +8,8 @@
   - Contact Number
 - All
   - Contact Number
+- MD Files
+  - Copyrights
 
 ## [v2.5.0] - 2025-06-20
 ### Fixed
