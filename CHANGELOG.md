@@ -4,6 +4,8 @@
 ### Update
 - About Us Section
   - Member of Internship Student Leader
+- Contact Us Section
+  - Contact Number
 
 ## [v2.5.0] - 2025-06-20
 ### Fixed
