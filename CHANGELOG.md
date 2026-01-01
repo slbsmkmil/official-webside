@@ -1,5 +1,10 @@
 # Changelog
 
+## [v3.0.0] - 2026-01-01
+### Update
+- About Us Section
+  - Member of Internship Student Leader
+
 ## [v2.5.0] - 2025-06-20
 ### Fixed
 - AI Chatbot
