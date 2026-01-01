@@ -1,28 +1,55 @@
-# .pages.yml
 media: image
 
 content:
   - name: members
     label: Members
     type: collection
-    path: data/members # This is where the JSON files will be saved
+    path: data/members
     format: json
     view:
-      fields: [name, order, position, class, section]
+      fields: [name, order, position, section]
       primary: name
       sort: [order, name]
-    filename: "{slug}" # CMS adds .json automatically
+    filename: "{slug}"
     fields:
-      - { name: name, label: "Full Name", type: string, required: true }
-      - { name: slug, label: "URL Slug", type: string, required: true }
-      - { name: order, label: "Order", type: number, default: 100 }
-      - { name: position, label: "Position", type: string }
-      - { name: class, label: "Class", type: string }
-      - { name: photo, label: "Photo", type: image }
-      - { 
-          name: section, 
-          label: "Section", 
-          type: select, 
-          options: ["committee", "student", "internship"],
-          required: true 
-        }
+      - name: name
+        label: Full Name
+        type: string
+        required: true
+      - name: slug
+        label: URL Slug (for filename)
+        type: string
+        required: true
+        description: "e.g., dayang-nurhasnaa"
+      - name: order
+        label: Display Order
+        type: number
+        default: 100
+      - name: position
+        label: Position / Title
+        type: string
+      - name: class
+        label: Class
+        type: string
+      - name: photo
+        label: Photo
+        type: image
+      - name: section
+        label: Section
+        type: select
+        required: true
+        options:
+          values:
+            - committee
+            - student
+            - internship
+
+  - name: about
+    label: About Us
+    type: file
+    path: about-us.html
+    format: raw
+    fields:
+      - name: body
+        label: Page Content
+        type: rich-text
