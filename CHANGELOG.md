@@ -1,5 +1,10 @@
 # Changelog
 
+## [v3.1.0] - 2026-01-08
+### Update
+- About Us Section
+  - Member of Student Leader
+
 ## [v3.0.0] - 2026-01-01
 ### Update
 - About Us Section
