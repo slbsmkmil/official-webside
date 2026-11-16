@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://slbsmkmil.github.io/official-webside/sitemap.xml
